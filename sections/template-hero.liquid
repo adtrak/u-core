@@ -1,5 +1,7 @@
-<div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+<div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 bg-black">
     <p>Hero test</p>
+    <h1 class="text-white">{{ section.settings.title }}</h1>
+    <span class="text-yellow">{{  section.settings.sub-title }}</span>
 </div>
 
 {% schema %}
@@ -15,8 +17,36 @@
             "type": "text",
             "id": "title",
             "default": "Title",
-            "label": "H2 Title"
-        }   
+            "label": "H1 Title"
+        }, 
+        {
+            "type": "text",
+            "id": "sub-title",
+            "default": "Sub Title",
+            "label": "Sub Title"
+        }, 
+        {
+            "id": "link-one",
+            "type": "url",
+            "label": "Link URL"
+        },
+        {
+            "id": "link-one-text",
+            "type": "text",
+            "label": "Link text",
+            "default": "Mens"
+        },
+        {
+            "id": "link-two",
+            "type": "url",
+            "label": "Link URL"
+        },
+        {
+            "id": "link-two-text",
+            "type": "text",
+            "label": "Link text",
+            "default": "Womens"
+        }      
     ],
 }
 {% endschema %}
