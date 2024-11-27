@@ -15,9 +15,7 @@
         "title": "Title",
         "sub-title": "Sub Title",
         "link-one": "shopify://pages/contact",
-        "link-one-text": "Mens",
-        "link-two": "",
-        "link-two-text": "Womens"
+        "link-two": "shopify://pages/contact"
       }
     },
     "featured-collection": {
