@@ -11,11 +11,11 @@
   x-data="{ mobileMenuOpen: false }"
   x-cloak>
   <div class="mx-auto px-4 sm:px-6">
-    <div class="flex justify-center items-center py-6 md:justify-start md:space-x-10">
+    <div class="flex justify-center items-center py-6 md:justify-start md:space-x-10 border-black border-2 rounded-full">
       <!-- STORE NAME / STORE LOGO -->
-      <div class="flex justify-start lg:flex-1 truncate">
+      <div class="flex bg-black justify-start lg:flex-1 truncate">
         <a href="{{ routes.root_url }}" class="max-w-[200px]">
-          <img src="{{ 'logo.png' | asset_url }}" alt="">
+          <img src="{{ 'logo.svg' | asset_url }}" alt="">
         </a>
       </div>
 

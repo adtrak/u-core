@@ -12,16 +12,15 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       'white': '#ffffff',
-      'black': '#0D021A',
-      'blue': '#3b5cc4',
-      'green': '#32CD32',
-      'red': '#DC143C',
-      'dark-blue': '#12284c',
-      'grey': '#F5F5F5',
+      'black': '#000',
+      'grey': '#39383A',
+      'yellow': '#D5DE24',
     },
     fontSize: {
     },
     fontFamily: {
+      sans: ["azo-sans-web", "sans-serif"],
+      heading: ["normalidad-wide", "sans-serif"],
     },
     screens: {
       'sm': '480px',
