@@ -9,18 +9,23 @@
  */
 {
   "sections": {
+    "template_hero_YGwtBG": {
+      "type": "template-hero",
+      "settings": {
+        "title": "Title",
+        "sub-title": "Sub Title",
+        "link-one": "shopify://pages/contact",
+        "link-one-text": "Mens",
+        "link-two": "",
+        "link-two-text": "Womens"
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
         "title": "Featured Collection",
         "featured_collection": "all",
         "number_of_products_to_show": 4
-      }
-    },
-    "template_hero_YGwtBG": {
-      "type": "template-hero",
-      "settings": {
-        "title": "Title"
       }
     }
   },
