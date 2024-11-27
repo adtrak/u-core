@@ -1,0 +1,23 @@
+{% if pagination.pages > 1 %}
+  <nav role="navigation" class="flex justify-center items-center my-4 md:my-6">
+    {% if pagination.previous %}
+      <a href="{{ pagination.previous.url }}" class="text-blue px-[12px] py-[4px] font-light md:text-base">
+        <i class="fa fa-angle-left text-blue" aria-hidden="true"></i>
+      </a>
+    {% endif %}
+
+    {% for part in pagination.parts %}
+      {% if part.is_link %}
+        <a href="{{ part.previous.url }}" class="text-black hover:bg-grey p-1 font-light md:text-base hover:text-blue">{{ part.title }}</a>
+      {% else %}
+        <span class="bg-blue text-white px-[12px] py-[4px] font-light md:text-base">{{ part.title }}</span>
+      {% endif %}
+    {% endfor %}
+
+    {% if pagination.next %}
+      <a href="{{ pagination.next.url }}" class="text-blue px-[12px] py-[4px] font-light md:text-base">
+        <i class="fa fa-angle-right text-blue" aria-hidden="true"></i>
+      </a>
+    {% endif %}
+  </nav>
+{% endif %}

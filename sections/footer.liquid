@@ -1,0 +1,99 @@
+{% assign mail = "" %}
+{% assign telephone = "" %}
+
+
+{% if section.settings.mail == "" %}
+    {% assign mail = shop.email %}
+    {% else %}
+    {% assign mail = section.settings.mail %}
+{% endif %}
+
+{% if section.settings.telephone == "" %}
+    {% assign telephone = shop.phone %}
+    {% else %}
+    {% assign telephone = section.settings.telephone %}
+{% endif %}
+
+<section class="bg-dark-blue font-semibold text-white">
+    <footer class="container mx-auto px-1 py-5 md:px-[50px] md:pt-[70px] md:pb-[20px]">
+        <div class="md:flex justify-between items-center">
+            <div class="text-xl md:text-2xl">
+                <p><a href="tel:{{ telephone }}">{{ telephone }}</a></p>
+                <p><a href="mailto:{{ mail }}">{{ mail }}</a><p>
+                <ul class="flex mt-1">
+                    {% for block in section.blocks %} 
+                        {% if block.type == 'social' %}
+                        <li class="mr-1 md:mr-2"><a href="{{ block.settings.url }}"><i class="{{ block.settings.fa }}"></i></a></li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="mt-4 md:mt-auto">
+                <ul class="flex flex-wrap md:flex-row justify-around">
+                    {% for block in section.blocks %} 
+                        {% if block.type == 'accreditation' %}
+                            <li><img src="{{ block.settings.image | img_url: 'master' }}"  class="w-[150px] py-1 mr-5"></li>
+                        {% endif %}
+                    {% endfor %}
+
+                </ul>
+            </div>
+        </div>
+        <div class="mt-4 md:mt-[100px]">
+            <ul class="flex flex-col md:flex-row md:justify-around md:px-[200px] text-[12px]">
+                <a href="">© Adtrak 2022. All Rights Reserved.</a>
+                <a href="/pages/privacy-policy">Privacy Policy</a>
+                <a href="/pages/terms-and-conditions">Terms & Conditions</a>
+                <a href="/pages/legal">Legal</a>
+            </ul>
+        </div>
+    </footer>
+</section>
+
+{% schema %}
+{
+    "name": "Footer",
+    "settings": [
+        {
+            "type": "text",
+            "id": "mail",
+            "label": "Email"
+        },
+        {
+            "type": "text",
+            "id": "telephone",
+            "label": "Telephone"
+        }
+    ],
+    "blocks": [
+            {
+            "name": "Social",
+            "type": "social",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "fa",
+                    "default": "far fa-lightbulb",
+                    "label": "Font Awesome Code"
+                },
+                {
+                    "type": "text",
+                    "id": "url",
+                    "label": "Social Link Url"
+                }
+            ]
+        },
+        {
+            "name": "Accreditation",
+            "type": "accreditation",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
