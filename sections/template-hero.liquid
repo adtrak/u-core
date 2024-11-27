@@ -4,14 +4,34 @@
 
 {% schema %}
 {
-    "name": "Main Hero",
+    "name": "Hero",
+    "presets": [
+        {
+            "name": "Hero"
+        }
+    ],
     "settings": [
         {
             "type": "text",
             "id": "title",
-            "default": "Collections",
-            "label": "Title"
-        }
+            "default": "Title",
+            "label": "H2 Title"
+        }   
+    ],
+    "max_blocks": 8,
+    "blocks": [
+      {
+        "type": "link",
+        "name": "collection",
+        "settings": [
+          {
+            "id": "letter_collection",
+            "type": "collection",
+            "label": "Letter Collection"
+          }
+        ]
+      }
     ]
+
 }
 {% endschema %}
