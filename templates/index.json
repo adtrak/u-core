@@ -11,18 +11,37 @@
   "sections": {
     "template_hero_YGwtBG": {
       "type": "template-hero",
+      "blocks": {
+        "button_VDnAHa": {
+          "type": "button",
+          "settings": {
+            "button_text": "Contact Text",
+            "button_link": "shopify://pages/contact"
+          }
+        },
+        "button_mnnt9w": {
+          "type": "button",
+          "settings": {
+            "button_text": "Contact Text Two",
+            "button_link": "shopify://pages/contact"
+          }
+        }
+      },
+      "block_order": [
+        "button_VDnAHa",
+        "button_mnnt9w"
+      ],
       "settings": {
         "title": "Putting you at the centre",
         "sub-title": "Never miss a call again",
-        "link-one": "shopify://pages/contact",
-        "link-two": "shopify://pages/contact",
         "hero_video": "shopify://files/videos/U Core Runner V1 091024.mp4"
       }
     },
     "template_copy_feature_N8HfXb": {
       "type": "template-copy-feature",
       "settings": {
-        "title": "Title"
+        "title": "Title",
+        "body": "Body text"
       }
     },
     "featured-collection": {
