@@ -1,0 +1,10 @@
+{% if btn-style == "white" %}
+    {% assign btn-class = "bg-white border-yellow border-2" %}
+{% elsif btn-style == "black" %}
+    {% assign btn-class = "bg-black" %}
+{% endif %}
+
+<a href="{{ url }}" class="relative flex items-center {{ btn-class }} text-[14px] text-base rounded-[40px] py-[15px] pl-[25px] pr-[40px] text-white tracking-wide uppercase group transition">
+    <span class="leading-none">{{ text }}</span>
+    <span class="absolute right-4 group-hover:translate-x-1 group-focus:translate-x-1 transition">{% render 'icon-chevron-right', size: "1em" %}</span>
+</a>

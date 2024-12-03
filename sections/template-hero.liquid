@@ -1,7 +1,18 @@
-<div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 bg-black">
+<div class="mx-auto py-16 px-4 sm:py-64 sm:px-6 lg:px-8 bg-black">
     <p>Hero test</p>
     <h1 class="text-white">{{ section.settings.title }}</h1>
     <span class="text-yellow">{{  section.settings.sub-title }}</span>
+    <div class="block">
+        <span class="mb-4 xl:mb-0">{% render 'button-with-chevron', text: "SHOP NOW", url: section.settings.link, btn-style: "white", border-color: "border-green" %}</span>
+    </div>
+    {% if section.settings.hero_video %}
+        <div class="absolute inset-0 overflow-hidden">
+          <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="{{ section.settings.hero_video | file_url }}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+    {% endif %}
 </div>
 
 {% schema %}
@@ -34,6 +45,12 @@
             "id": "link-two",
             "type": "url",
             "label": "Womens"
+        },
+        {
+            "type": "file",
+            "id": "hero_video",
+            "label": "Background Video",
+            "accept": ["video"]
         },
           
     ],
