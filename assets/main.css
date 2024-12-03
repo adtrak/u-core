@@ -1,3 +1,13 @@
 #shopify-pc__banner {
   display: none!important;
 }
+
+h1 {
+  color: #FFF;
+  font-size: 65px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 51px; /* 72.857% */
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

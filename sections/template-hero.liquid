@@ -1,18 +1,35 @@
 <div class="mx-auto py-16 px-4 sm:py-64 sm:px-6 lg:px-8 bg-black">
-    <p>Hero test</p>
-    <h1 class="text-white">{{ section.settings.title }}</h1>
-    <span class="text-yellow">{{  section.settings.sub-title }}</span>
-    <div class="block">
-        <span class="mb-4 xl:mb-0">{% render 'button-with-chevron', text: "SHOP NOW", url: section.settings.link, btn-style: "white", border-color: "border-green" %}</span>
+    <h1 class="text-white pb-2">{{ section.settings.title }}</h1>
+    <span class="text-yellow font-heading uppercase">{{  section.settings.sub-title }}</span>
+    
+    <div class="mt-6 flex justify-center gap-4">
+        {% for block in section.blocks %}
+          {% if block.type == 'button' %}
+            <a href="{{ block.settings.button_link }}" class="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded">
+              {{ block.settings.button_text | default: "Click Me" }}
+            </a>
+          {% endif %}
+        {% endfor %}
+
+        <div class="mt-6 flex justify-center gap-4">
+            {% for block in section.blocks %}
+              {% if block.type == 'button' %}
+                <a href="{{ block.settings.button_link }}" class="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded">
+                  {{ block.settings.button_text | default: "Click Me" }}
+                </a>
+              {% endif %}
+            {% endfor %}
+        </div>
     </div>
-    {% if section.settings.hero_video %}
+
+    {% comment %} {% if section.settings.hero_video %}
         <div class="absolute inset-0 overflow-hidden">
           <video autoplay muted loop playsinline class="w-full h-full object-cover">
             <source src="{{ section.settings.hero_video | file_url }}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
-    {% endif %}
+    {% endif %} {% endcomment %}
 </div>
 
 {% schema %}
@@ -37,21 +54,29 @@
             "label": "Sub Title"
         }, 
         {
-            "id": "link-one", 
-            "type": "url",
-            "label": "Mens"
-        },
-        {
-            "id": "link-two",
-            "type": "url",
-            "label": "Womens"
-        },
-        {
             "type": "video",
             "id": "hero_video",
             "label": "Background Video",
         },
-          
     ],
+    "blocks": [
+        {
+        "type": "button",
+        "name": "Button",
+        "settings": [
+            {
+            "type": "text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Click Me"
+            },
+            {
+            "type": "url",
+            "id": "button_link",
+            "label": "Button Link"
+            }
+        ]
+        },
+    ]
 }
 {% endschema %}

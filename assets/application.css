@@ -927,6 +927,10 @@ video {
   width: max-content;
 }
 
+.w-\[179px\] {
+  width: 179px;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1323,6 +1327,11 @@ video {
   padding-bottom: 4px;
 }
 
+.px-\[25px\] {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -1349,6 +1358,10 @@ video {
 
 .pt-3 {
   padding-top: 0.75rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 
 .text-left {
