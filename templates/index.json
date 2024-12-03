@@ -12,10 +12,17 @@
     "template_hero_YGwtBG": {
       "type": "template-hero",
       "settings": {
-        "title": "Title",
-        "sub-title": "Sub Title",
+        "title": "Putting you at the centre",
+        "sub-title": "Never miss a call again",
         "link-one": "shopify://pages/contact",
-        "link-two": "shopify://pages/contact"
+        "link-two": "shopify://pages/contact",
+        "hero_video": "shopify://files/videos/U Core Runner V1 091024.mp4"
+      }
+    },
+    "template_copy_feature_N8HfXb": {
+      "type": "template-copy-feature",
+      "settings": {
+        "title": "Title"
       }
     },
     "featured-collection": {
@@ -24,12 +31,6 @@
         "title": "Featured Collection",
         "featured_collection": "all",
         "number_of_products_to_show": 4
-      }
-    },
-    "template_copy_feature_N8HfXb": {
-      "type": "template-copy-feature",
-      "settings": {
-        "title": "Title"
       }
     }
   },
