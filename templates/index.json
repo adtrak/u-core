@@ -12,6 +12,13 @@
     "template_hero_YGwtBG": {
       "type": "template-hero",
       "blocks": {
+        "button_eATUiM": {
+          "type": "button",
+          "settings": {
+            "button_text": "Click Me",
+            "button_link": ""
+          }
+        },
         "button_VDnAHa": {
           "type": "button",
           "settings": {
@@ -28,6 +35,7 @@
         }
       },
       "block_order": [
+        "button_eATUiM",
         "button_VDnAHa",
         "button_mnnt9w"
       ],
