@@ -14,16 +14,8 @@
         <h1 class="text-white pb-2">{{ section.settings.title }}</h1>
         <span class="text-yellow font-heading uppercase">{{  section.settings.sub-title }}</span>
         
-        <div class="mt-6 flex justify-center gap-4">
+        <div class="mt-6 flex gap-4">
             
-            {% assign test_blocks = true %}
-            {% if test_blocks %}
-            {% for i in (1..2) %}
-                <a href="/test-link-{{ i }}" class="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded">
-                Test Button {{ i }}
-                </a>
-            {% endfor %}
-            {% else %}
             {% for block in section.blocks %}
                 {% if block.type == 'button' %}
                 <a href="{{ block.settings.button_link }}" class="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded">
@@ -31,8 +23,7 @@
                 </a>
                 {% endif %}
             {% endfor %}
-            {% endif %}
-
+            
         </div>
 
     </div>
