@@ -1,72 +1,90 @@
-<div class="mx-auto py-16 px-4 sm:py-64 sm:px-6 lg:px-8 bg-black">
-    <h1 class="text-white pb-2">{{ section.settings.title }}</h1>
-    <span class="text-yellow font-heading uppercase">{{  section.settings.sub-title }}</span>
-    
-    <div class="mt-6 flex justify-center gap-4">
-        {% for block in section.blocks %}
-          {% if block.type == 'button' %}
-            <a href="{{ block.settings.button_link }}" class="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded">
-              {{ block.settings.button_text | default: "Click Me" }}
-            </a>
-          {% endif %}
-        {% endfor %}
-    </div>
+<div class="hero-container mx-auto py-16 px-4 sm:py-64 sm:px-6 lg:px-8 bg-black relative">
 
-    {% comment %} {% if section.settings.hero_video %}
+    {% if section.settings.hero_video %}
         <div class="absolute inset-0 overflow-hidden">
           <video autoplay muted loop playsinline class="w-full h-full object-cover">
             <source src="{{ section.settings.hero_video | file_url }}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
-    {% endif %} {% endcomment %}
+    {% endif %} 
+
+    <div class="hero-content relative z-20">
+
+        <h1 class="text-white pb-2">{{ section.settings.title }}</h1>
+        <span class="text-yellow font-heading uppercase">{{  section.settings.sub-title }}</span>
+        
+        <div class="mt-6 flex justify-center gap-4">
+            
+            {% assign test_blocks = true %}
+            {% if test_blocks %}
+            {% for i in (1..2) %}
+                <a href="/test-link-{{ i }}" class="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded">
+                Test Button {{ i }}
+                </a>
+            {% endfor %}
+            {% else %}
+            {% for block in section.blocks %}
+                {% if block.type == 'button' %}
+                <a href="{{ block.settings.button_link }}" class="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded">
+                    {{ block.settings.button_text | default: "Click Me" }}
+                </a>
+                {% endif %}
+            {% endfor %}
+            {% endif %}
+
+        </div>
+
+    </div>
+
+    
 </div>
 
 {% schema %}
 {
-    "name": "Hero",
-    "presets": [
+  "name": "Hero",
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Title",
+      "label": "H1 Title"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "default": "Sub Title",
+      "label": "Sub Title"
+    },
+    {
+      "type": "video",
+      "id": "hero_video",
+      "label": "Background Video"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
         {
-            "name": "Hero"
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Click Me"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
         }
-    ],
-    "settings": [
-        {
-            "type": "text",
-            "id": "title",
-            "default": "Title",
-            "label": "H1 Title"
-        }, 
-        {
-            "type": "text",
-            "id": "sub-title",
-            "default": "Sub Title",
-            "label": "Sub Title"
-        }, 
-        {
-            "type": "video",
-            "id": "hero_video",
-            "label": "Background Video",
-        },
-    ],
-    "blocks": [
-        {
-            "type": "button",
-            "name": "Button",
-            "settings": [
-                {
-                "type": "text",
-                "id": "button_text",
-                "label": "Button Text",
-                "default": "Click Me"
-                },
-                {
-                "type": "url",
-                "id": "button_link",
-                "label": "Button Link"
-                }
-            ],
-        },
-    ]
+      ]
+    }
+  ]
 }
 {% endschema %}
