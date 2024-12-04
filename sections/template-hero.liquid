@@ -3,24 +3,23 @@
     {% if section.settings.hero_video %}
         <div class="absolute inset-0 overflow-hidden">
           <video autoplay muted loop playsinline class="w-full h-full object-cover">
-            <source src="{{ section.settings.hero_video | file_url }}" type="video/mp4">
+            {% comment %} <source src="{{ section.settings.hero_video }}" type="video/mp4"> {% endcomment %}
+            <source src="{{ 'mens.mp4' | asset_url }}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
     {% endif %} 
 
-    <div class="hero-content relative z-20">
+    <div class="hero-content relative z-20 font-heading">
 
         <h1 class="text-white pb-2">{{ section.settings.title }}</h1>
-        <span class="text-yellow font-heading uppercase">{{  section.settings.sub-title }}</span>
+        <span class="text-yellow uppercase text-3xl">{{  section.settings.sub_title }}</span>
         
         <div class="mt-6 flex gap-4">
             
             {% for block in section.blocks %}
                 {% if block.type == 'button' %}
-                <a href="{{ block.settings.button_link }}" class="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded">
-                    {{ block.settings.button_text | default: "Click Me" }}
-                </a>
+                    {% render 'button', text: block.settings.button_text, url: block.settings.button_link, btn-style: "white" %}
                 {% endif %}
             {% endfor %}
             
