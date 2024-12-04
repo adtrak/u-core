@@ -30,54 +30,48 @@
         </button>
       </div>
 
-      <ul class="parent hidden md:flex space-x-7">
-        {% for link in linklists.main-menu.links %}
-          <li class="group/parent">
-            <a href="{{ link.url }}" class="relative">{{ link.title }}</a>
-            {% if link.links != blank %}
-              <ul class="child hidden group/parent group-hover/parent:block absolute">
-                {% for child_link in link.links %}
-                  <li class="group/child">
-                    <a href="{{ child_link.url }}" class="relative">{{ child_link.title }}</a>
-                    {% if child_link.links != blank %}
-                      <ul class="grandchild hidden group-hover/child:block absolute right-0">
-                        {% for grandchild_link in child_link.links %}
-                          <li>
-                            <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
-                          </li>
-                        {% endfor %}
-                      </ul>
-                    {% endif %}
-                  </li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
+      <div class="header-right flex">
+
+        <ul class="parent hidden md:flex space-x-2">
+          {% for link in linklists.main-menu.links %}
+            <li class="group/parent">
+              {% render 'button', text: link.title, url: link.url, btn-style: "white" %}
+              {% if link.links != blank %}
+                <ul class="child hidden group/parent group-hover/parent:block absolute">
+                  {% for child_link in link.links %}
+                    <li class="group/child">
+                      <a href="{{ child_link.url }}" class="relative">{{ child_link.title }}</a>
+                      {% if child_link.links != blank %}
+                        <ul class="grandchild hidden group-hover/child:block absolute right-0">
+                          {% for grandchild_link in child_link.links %}
+                            <li>
+                              <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
 
 
-      <!-- CART BUTTON / ACCOUNT LINKS IF ENABLED -->
-      <div class="hidden md:flex items-center justify-end md:flex-1 space-x-5">
-        <button
-          id="openSearch"
-          type="button"
-          class="whitespace-nowrap text-base text-white-500 hover:text-gray-900">
-          {% render 'icon-search', icon-colour: "white" %}
-        </button>
-        <a href="{{ routes.cart_url }}" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
-          {% render 'icon-shopping-bag' icon-colour: "white" %}
-        </a>
+        <!-- CART BUTTON / ACCOUNT LINKS IF ENABLED -->
+        <div class="hidden md:flex items-center justify-end md:flex-1 space-x-2 pl-6">
+          <button
+            id="openSearch"
+            type="button"
+            class="bg-black whitespace-nowrap text-base text-white p-2 rounded-full hover:text-gray-900">
+            {% render 'icon-search', icon-colour: "white" %}
+          </button>
+          <a href="{{ routes.cart_url }}" class="bg-black whitespace-nowrap text-base text-white p-2 rounded-full hover:text-gray-900">
+            {% render 'icon-shopping-bag' icon-colour: "white" %}
+          </a>
+        </div>
 
-        {% if shop.customer_accounts_enabled %}
-          {% if customer %}
-            <a href="{{ routes.account_url }}" class="text-base text-white hover:text-gray-900">account</a>
-            {{ 'Log out' | customer_logout_link | replace: '<a', '<a class="text-base text-gray-500 hover:text-gray-900"' }}
-          {% else %}
-            {{ 'Log in ' | customer_login_link | replace: '<a', '<a class="text-base text-white hover:text-gray-900"' }}
-            {{ 'Register' | customer_register_link | replace: '<a', '<a class="text-base text-white hover:text-gray-900"' }}
-          {% endif %}
-        {% endif %}
       </div>
 
       <!-- MOBILE MENU CONTAINER -->
@@ -100,6 +94,8 @@
                 </button>
               </div>
             </div>
+
+            
 
             <!-- NAVIGATION LINKS FOR MOBILE MENU -->
             <div class="pt-3">
@@ -191,9 +187,10 @@
             name="q"
             placeholder="Search"
             class="w-full bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
-          <button type="submit" class="absolute right-0 top-0 mt-2 mr-2 md:mr-5">
-            {% render 'icon-search' %}
-          </button>
+
+            <button type="submit" class="absolute right-0 top-0 mt-2 mr-2 md:mr-5">
+              {% render 'icon-search' %}
+            </button>
         </div>
       </form>
     </div>

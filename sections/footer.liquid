@@ -1,7 +1,6 @@
 {% assign mail = "" %}
 {% assign telephone = "" %}
 
-
 {% if section.settings.mail == "" %}
     {% assign mail = shop.email %}
     {% else %}
@@ -14,12 +13,12 @@
     {% assign telephone = section.settings.telephone %}
 {% endif %}
 
-<section class="bg-dark-blue font-semibold text-white">
+<section class="bg-black font-semibold text-white">
     <footer class="container mx-auto px-1 py-5 md:px-[50px] md:pt-[70px] md:pb-[20px]">
         <div class="md:flex justify-between items-center">
             <div class="text-xl md:text-2xl">
                 <p><a href="tel:{{ telephone }}">{{ telephone }}</a></p>
-                <p><a href="mailto:{{ mail }}">{{ mail }}</a><p>
+                <p><a href="mailto:{{ mail }}">{{ mail }}</a></p>
                 <ul class="flex mt-1">
                     {% for block in section.blocks %} 
                         {% if block.type == 'social' %}
@@ -27,6 +26,16 @@
                         {% endif %}
                     {% endfor %}
                 </ul>
+
+                {% if shop.customer_accounts_enabled %}
+                    {% if customer %}
+                      <a href="{{ routes.account_url }}" class="text-base text-white hover:text-gray-900">account</a>
+                      {{ 'Log out' | customer_logout_link | replace: '<a', '<a class="text-base text-gray-500 hover:text-gray-900"' }}
+                    {% else %}
+                      {{ 'Log in ' | customer_login_link | replace: '<a', '<a class="text-base text-white hover:text-gray-900"' }}
+                      {{ 'Register' | customer_register_link | replace: '<a', '<a class="text-base text-white hover:text-gray-900"' }}
+                    {% endif %}
+                {% endif %}
             </div>
             <div class="mt-4 md:mt-auto">
                 <ul class="flex flex-wrap md:flex-row justify-around">

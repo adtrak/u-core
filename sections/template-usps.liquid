@@ -1,0 +1,95 @@
+<div class="usps-container mx-auto py-16 px-4 sm:py-64 sm:px-6 lg:px-8 bg-black relative">
+   
+    <div class="usp-left">
+
+        {% for block in section.blocks %}
+            {% if block.type == 'usp' %}
+                <div class="usp">
+                    <span>
+                        {% render block.settings.icon %}
+                    </span>
+                    <span>
+                        <p>{% render block.settings.usp_heading %}</p>
+                        <p>{% render block.settings.usp_sub_heading %}</p>
+                    </span>
+                </div>
+            {% endif %}
+        {% endfor %}
+        
+    </div>
+
+    <div class="usp-right">
+    
+    </div>
+    
+</div>
+
+{% schema %}
+{
+  "name": "USPs",
+  "presets": [
+    {
+      "name": "USPs"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Title",
+      "label": "H1 Title"
+    },
+    {
+      "type": "text",
+      "id": "sub_title",
+      "default": "Sub Title",
+      "label": "Sub Title"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "usp",
+      "name": "USP",
+      "settings": [
+        {
+            "type": "text",
+            "id": "usp_heading",
+            "label": "USP Heading",
+            "default": ""
+        },
+        {
+            "type": "text",
+            "id": "usp_sub_heading",
+            "label": "USP Sub Heading",
+            "default": ""
+        },
+        {
+            "type": "select",
+            "id": "icon",
+            "label": "Icon",
+            "options": [
+                {
+                    "value": "icon-phone-hand",
+                    "label": "Phone in hand",
+                },
+                {
+                    "value": "icon-shield",
+                    "label": "Shield",
+                },
+                {
+                    "value": "icon-size",
+                    "label": "Size Icon",
+                },
+                {
+                    "value": "icon-stars",
+                    "label": "Stars",
+                }
+            ]
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+{% render 'icon-close' %}
