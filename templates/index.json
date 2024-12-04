@@ -52,14 +52,6 @@
         "body": "Body text"
       }
     },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured Collection",
-        "featured_collection": "all",
-        "number_of_products_to_show": 4
-      }
-    },
     "template_usps_gYYMw7": {
       "type": "template-usps",
       "blocks": {
@@ -79,12 +71,20 @@
         "title": "Title",
         "sub_title": "Sub Title"
       }
+    },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Collection",
+        "featured_collection": "all",
+        "number_of_products_to_show": 4
+      }
     }
   },
   "order": [
     "template_hero_YGwtBG",
+    "template_usps_gYYMw7",
     "template_copy_feature_N8HfXb",
-    "featured-collection",
-    "template_usps_gYYMw7"
+    "featured-collection"
   ]
 }
