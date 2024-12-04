@@ -41,7 +41,7 @@
       ],
       "settings": {
         "title": "Putting you at the centre",
-        "sub-title": "Never miss a call again",
+        "sub_title": "Never miss a call again",
         "hero_video": "shopify://files/videos/U Core Runner V1 091024.mp4"
       }
     },
