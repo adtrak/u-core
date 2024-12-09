@@ -1,16 +1,17 @@
-<div class="usps-container mx-auto py-16 px-4 sm:py-64 sm:px-6 lg:px-8 bg-black relative">
+<div class="usps-container flex mx-auto py-16 px-4 sm:py-64 sm:px-6 lg:px-8 bg-lightgrey relative w-full">
    
-    <div class="usp-left">
+    <div class="usp-left lg:w-7/12">
 
         {% for block in section.blocks %}
             {% if block.type == 'usp' %}
-                <div class="usp">
+                <div class="usp text-white">
                     <span>
-                        {% render block.settings.icon %}
+                        {% assign icon_name = 'icon-' | append: block.settings.icon %}
+                        {% render icon_name, icon: block.settings.icon %}
                     </span>
-                    <span>
-                        <p>{% render block.settings.usp_heading %}</p>
-                        <p>{% render block.settings.usp_sub_heading %}</p>
+                    <span class="text-black">
+                        <p>{{ block.settings.usp_heading }}</p>
+                        <p>{{ block.settings.usp_sub_heading }}</p>
                     </span>
                 </div>
             {% endif %}
@@ -18,8 +19,11 @@
         
     </div>
 
-    <div class="usp-right">
-    
+    <div class="usp-right bg-black lg:w-5/12">
+        <picture>
+            <source media="(min-width:767px)" srcset="{{ section.settings.image | img_url: '960x' }}" width="938" height="684">
+            <img src="{{ section.settings.image | img_url: '375x375' }}" class="object-cover m-auto md:w-full md:w-full" alt="{{ section.settings.alt }}" loading="eager" width="375" height="375">
+        </picture>
     </div>
     
 </div>
@@ -44,7 +48,12 @@
       "id": "sub_title",
       "default": "Sub Title",
       "label": "Sub Title"
-    }
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "USP Image"
+    }, 
   ],
   "blocks": [
     {
@@ -69,19 +78,19 @@
             "label": "Icon",
             "options": [
                 {
-                    "value": "icon-phone-hand",
+                    "value": "phone-hand",
                     "label": "Phone in hand",
                 },
                 {
-                    "value": "icon-shield",
+                    "value": "shield",
                     "label": "Shield",
                 },
                 {
-                    "value": "icon-size",
+                    "value": "size",
                     "label": "Size Icon",
                 },
                 {
-                    "value": "icon-stars",
+                    "value": "stars",
                     "label": "Stars",
                 }
             ]
