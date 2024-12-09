@@ -45,13 +45,6 @@
         "hero_video": "shopify://files/videos/U Core Runner V1 091024.mp4"
       }
     },
-    "template_copy_feature_N8HfXb": {
-      "type": "template-copy-feature",
-      "settings": {
-        "title": "Title",
-        "body": "Body text"
-      }
-    },
     "template_usps_gYYMw7": {
       "type": "template-usps",
       "blocks": {
@@ -69,7 +62,15 @@
       ],
       "settings": {
         "title": "Title",
-        "sub_title": "Sub Title"
+        "sub_title": "Sub Title",
+        "image": "shopify://shop_images/DSC01011.jpg"
+      }
+    },
+    "template_copy_feature_N8HfXb": {
+      "type": "template-copy-feature",
+      "settings": {
+        "title": "Title",
+        "body": "Body text"
       }
     },
     "featured-collection": {
