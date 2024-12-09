@@ -55,10 +55,37 @@
             "usp_sub_heading": "Free up your hands when at the gym, at work or shopping",
             "icon": "icon-phone-hand"
           }
+        },
+        "usp_MPC6hB": {
+          "type": "usp",
+          "settings": {
+            "usp_heading": "Secure your phone",
+            "usp_sub_heading": "Never lose or have your phone stolen.Keep it close with our patented U-CORE pocket.",
+            "icon": "shield"
+          }
+        },
+        "usp_4X9Nfx": {
+          "type": "usp",
+          "settings": {
+            "usp_heading": "All Phones Fit",
+            "usp_sub_heading": "Versatile pocket which accommodates all phone sizes",
+            "icon": "size"
+          }
+        },
+        "usp_MUPiPX": {
+          "type": "usp",
+          "settings": {
+            "usp_heading": "Quality Material",
+            "usp_sub_heading": "High quality and breathable materials made from a heavy weight jersey cotton.",
+            "icon": "stars"
+          }
         }
       },
       "block_order": [
-        "usp_hYbmwr"
+        "usp_hYbmwr",
+        "usp_MPC6hB",
+        "usp_4X9Nfx",
+        "usp_MUPiPX"
       ],
       "settings": {
         "title": "Title",
