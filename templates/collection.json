@@ -9,22 +9,22 @@
  */
 {
   "sections": {
-    "template": {
-      "type": "template-collection",
-      "settings": {
-        "number_of_products_per_page": 6
-      }
-    },
     "template_hero_LaRNEn": {
       "type": "template-hero",
       "settings": {
         "title": "Title",
         "sub_title": "Sub Title"
       }
+    },
+    "template": {
+      "type": "template-collection",
+      "settings": {
+        "number_of_products_per_page": 6
+      }
     }
   },
   "order": [
-    "template",
-    "template_hero_LaRNEn"
+    "template_hero_LaRNEn",
+    "template"
   ]
 }
