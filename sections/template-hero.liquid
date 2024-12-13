@@ -1,4 +1,8 @@
-<div class="hero-container mx-auto py-16 px-4 sm:py-64 sm:px-6 lg:px-8 bg-black relative">
+{% if template.name == 'product' %}
+<div class="hero-container mx-auto pt-52 pb-36 left-indent bg-black relative">
+{% else %}
+<div class="hero-container rounded mx-auto py-64 left-indent bg-black relative">
+{% endif %}
 
     {% if section.settings.hero_video %}
         <div class="absolute inset-0 overflow-hidden">
@@ -10,10 +14,23 @@
         </div>
     {% endif %} 
 
-    <div class="hero-content relative z-20 font-heading">
+    <div class="hero-content container relative z-20 font-heading">
+        {% if collection.title %}
+            <h1 class="text-white pb-2">{{ collection.title }}</h1>
+        {% elsif product.title %}
+            <h1 class="text-white pb-2">{{ product.title }}</h1>
+        {% else %}
+            <h1 class="text-white pb-2">{{ section.settings.title }}</h1>
+        {% endif %}
 
-        <h1 class="text-white pb-2">{{ section.settings.title }}</h1>
-        <span class="text-yellow uppercase text-3xl">{{  section.settings.sub_title }}</span>
+
+        {% if collection.title %}
+            <span class="text-yellow uppercase text-3xl">{{  section.settings.sub_title }}</span>
+        {% elsif product.title %}
+            
+        {% else %}
+            <span class="text-yellow uppercase text-3xl">{{  section.settings.sub_title }}</span>
+        {% endif %}
         
         <div class="mt-6 flex gap-4">
             
@@ -25,9 +42,14 @@
             
         </div>
 
+        {% unless product %}
+            <div class="mt-16 ml-2">
+                {% render 'icon-arrow-down', icon-colour: "white" %}
+            </div>
+        {% endunless %}
+
     </div>
 
-    
 </div>
 
 {% schema %}
