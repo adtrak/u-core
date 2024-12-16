@@ -96,8 +96,8 @@
     "template_copy_feature_N8HfXb": {
       "type": "template-copy-feature",
       "settings": {
-        "title": "Title",
-        "body": "Body text"
+        "title": "Our Story",
+        "body": "Quisque porttitor venenatis tellus, at malesuada nibh viverra pharetra. Curabitur quis efficitur lacus. Nunc lorem lorem, aliquam eu lectus et, varius maximus diam. Fusce ultricies erat nibh, at tempus ipsum ullamcorper sed.\n\nVivamus porta aliquet molestie. Aenean sodales lacus id blandit lobortis. In pulvinar odio et metus tincidunt malesuada. Pellentesque ac massa metus. Fusce luctus massa ut libero ultricies iaculis. Donec posuere, ante."
       }
     },
     "featured-collection": {
