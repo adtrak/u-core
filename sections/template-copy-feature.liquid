@@ -1,8 +1,8 @@
-<div class="mx-auto py-16 px-4 sm:py-64 sm:px-6 lg:px-8 bg-black">
-    <h1 class="text-white text-xl">{{ section.settings.title }}</h1>
+<div class="mx-auto py-16 px-4 sm:py-64 sm:px-6 lg:px-8 bg-black copy-section">
+    <h1 class="text-white font-heading uppercase text-6xl mb-12">{{ section.settings.title }}</h1>
     
     {% if section.settings.body != blank %}
-        <div class="mb-8 font-light copy">
+        <div class="mb-8 font-light text-white copy lg:w-3/4">
             {{ section.settings.body }}
         </div>
     {% endif %}
