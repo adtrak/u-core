@@ -61,7 +61,7 @@
           "settings": {
             "usp_heading": "Secure your phone",
             "usp_sub_heading": "Never lose or have your phone stolen.Keep it close with our patented U-CORE pocket.",
-            "icon": "shield"
+            "icon": "icon-shield"
           }
         },
         "usp_4X9Nfx": {
@@ -69,7 +69,7 @@
           "settings": {
             "usp_heading": "All Phones Fit",
             "usp_sub_heading": "Versatile pocket which accommodates all phone sizes",
-            "icon": "size"
+            "icon": "icon-size"
           }
         },
         "usp_MUPiPX": {
