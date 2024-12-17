@@ -8,17 +8,7 @@
                 {% if block.type == 'usp' %}
                     <div class="usp w-full border-b-2 border-b-midgrey py-10 text-grey">
                         <span>
-                            {% comment %} {% render 'icon-' | append: block.settings.icon %} {% endcomment %}
-                            {% comment %} {% render 'icon-' | concat: block.settings.icon %} {% endcomment %}
-                            {% comment %} {{  block.settings.icon }} {% endcomment %}
-
-                            {% comment %} <span>
-                                {% assign icon_name = 'icon-' | append: block.settings.icon %}
-                                {% render icon_name %}
-                            </span> {% endcomment %}
-
-                            {% capture icon_name %}icon-{{ block.settings.icon }}{% endcapture %}
-                            {% render icon_name %}
+                            {{ block.settings.icon }}
                         </span>
                         <span>
                             <p class="text-2xl font-bold font-heading uppercase pb-2">{{ block.settings.usp_heading }}</p>
@@ -93,19 +83,19 @@
             "label": "Icon",
             "options": [
                 {
-                    "value": "phone-hand",
+                    "value": "icon-phone-hand",
                     "label": "Phone in hand",
                 },
                 {
-                    "value": "shield",
+                    "value": "icon-shield",
                     "label": "Shield",
                 },
                 {
-                    "value": "size",
+                    "value": "icon-size",
                     "label": "Size Icon",
                 },
                 {
-                    "value": "stars",
+                    "value": "icon-stars",
                     "label": "Stars",
                 }
             ]

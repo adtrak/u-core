@@ -41,6 +41,10 @@
   position: relative;
 }
 
+.copy-video {
+
+}
+
 /* Rounded Corner Styling */
 
 .hero-container.rounded:before,
@@ -52,9 +56,9 @@
   position: absolute;
   bottom: -1px;
   right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
+  width: 321px;
+  height: 285px;
+  z-index: 3;
 }
 
 .usp-right:before {
@@ -67,6 +71,23 @@
   right: 40px;
   width: 100%;
   height: 100%;
+  z-index: 2;
+}
+
+.copy-video {
+  position: absolute;
+}
+
+.copy-video:before {
+  content: "";
+  background: url('black-shape.svg') no-repeat bottom right;
+  background-size: 340px 294px;
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 321px;
+  height: 285px;
   z-index: 2;
 }
 
