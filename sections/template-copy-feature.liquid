@@ -1,5 +1,5 @@
-<div class="mx-auto py-16 sm:py-64 sm:px-6 lg:px-8 bg-black copy-section relative">
-    <div class="mb-[300px]">
+<div class="mx-auto py-16 sm:py-64 sm:px-6 lg:px-8 mb-[160px] bg-black copy-section relative">
+    <div class="mb-[500px]">
         <h1 class="text-white font-heading uppercase text-6xl mb-12">{{ section.settings.title }}</h1>
         
         {% if section.settings.body != blank %}
@@ -15,7 +15,7 @@
 
             <div class="w-full bg-white block">
             
-                <video autoplay muted loop playsinline class="w-full h-[400px] block object-cover">
+                <video autoplay muted loop playsinline class="w-full h-[600px] block object-cover">
                     <source src="{{ section.settings.copy_video }}" type="video/mp4">
                     <source src="{{ 'mens.mp4' | asset_url }}" type="video/mp4">
                 Your browser does not support the video tag.

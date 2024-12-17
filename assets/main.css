@@ -14,6 +14,10 @@
   letter-spacing: 1px;
 }
 
+h1 {
+  line-height: 4.3rem;
+}
+
 #shopify-pc__banner {
   display: none!important;
 }
@@ -22,7 +26,6 @@
 
 .hero-container.rounded {
   position: relative;
-  margin-bottom: 50px;
   border-bottom: 2px white solid;
 }
 

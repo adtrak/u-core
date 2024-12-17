@@ -1,4 +1,4 @@
-<div class="usps-container outer-container bg-lightgrey relative w-full">
+<div class="usps-container outer-container bg-lightgrey relative w-full lg:mb-[160px]">
 
     <div class="container flex">
    
@@ -8,7 +8,20 @@
                 {% if block.type == 'usp' %}
                     <div class="usp w-full border-b-2 border-b-midgrey py-10 text-grey">
                         <span>
-                            {{ block.settings.icon }}
+                            {% comment %} {{ block.settings.icon }} {% endcomment %}
+                             
+                            
+
+                            {% comment %} {% render block.settings.icon | append: "" %} {% endcomment %}
+
+                            
+
+                            {% assign snippet = block.settings.icon %}
+                            {% capture snippet_content %}{% render snippet %}{% endcapture %}
+                            
+                            {{ snippet_content }}
+                           
+                           
                         </span>
                         <span>
                             <p class="text-2xl font-bold font-heading uppercase pb-2">{{ block.settings.usp_heading }}</p>

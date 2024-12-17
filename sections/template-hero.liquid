@@ -1,7 +1,7 @@
 {% if template.name == 'product' %}
-<div class="hero-container mx-auto pt-52 pb-36 left-indent bg-black relative">
+<div class="hero-container mx-auto pt-52 pb-36 left-indent bg-black relative mb-[160px]">
 {% else %}
-<div class="hero-container rounded mx-auto py-64 left-indent bg-black relative">
+<div class="hero-container rounded mx-auto py-64 left-indent bg-black relative mb-[160px]">
 {% endif %}
 
     {% if section.settings.hero_video %}
@@ -16,7 +16,7 @@
 
     <div class="hero-content container relative z-20 font-heading">
         {% if collection.title %}
-            <h1 class="text-white pb-2">{{ collection.title }}</h1>
+            <h1 class="text-white pb-2 text-6xl font-heading uppercase">{{ collection.title }}</h1>
         {% elsif product.title %}
             <h1 class="text-white pb-2">{{ product.title }}</h1>
         {% else %}
@@ -32,7 +32,7 @@
             <span class="text-yellow uppercase text-3xl">{{  section.settings.sub_title }}</span>
         {% endif %}
         
-        <div class="mt-6 flex gap-4">
+        <div class="mt-16 flex gap-4">
             
             {% for block in section.blocks %}
                 {% if block.type == 'button' %}
