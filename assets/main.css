@@ -44,8 +44,11 @@ h1 {
   position: relative;
 }
 
-.copy-video {
+/* USPs */
 
+.usp-icons {
+  background: url('icon-bg.svg') no-repeat bottom right;
+  background-size: 100px;
 }
 
 /* Rounded Corner Styling */

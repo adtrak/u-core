@@ -1,0 +1,116 @@
+/* Carousels */
+
+/* Remove height 100% to ensure slides are equal in height */
+.swiper-slide {
+  height: initial;
+}
+
+.swiper-pagination {
+  color: black;
+  bottom: -60px !important;
+}
+
+.swiper-pagination-bullet {
+  height: 12px;
+  width: 12px;
+}
+.swiper-pagination-bullet-active {
+  background: #F9C8C1 !important;
+}
+
+/* Trending products */
+
+.trending-products-block .swiper-button-prev {
+  display: none;
+  top: -50px;
+  right: 65px;
+  position: absolute;
+  left: initial;
+}
+
+@media only screen and (min-width: 992px) {
+  .trending-products-block .swiper-button-prev {
+      display: block;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .trending-products-block .swiper-button-next {
+      display: block;
+  }
+}
+
+.trending-products-block .swiper-button-next {
+  top: -50px;
+  right: 10px;
+}
+
+.trending-products-block .swiper-button-next:after, .trending-products-block .swiper-button-prev:after {
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.trending-products-block .swiper-button-next:before, .trending-products-block .swiper-button-prev:before {
+  content: "";
+  background-color: #000;
+  height: 48px;
+  width: 48px;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+
+/* PDP Image swiper */
+
+.pdp-image-swiper  .swiper-button-prev::after,
+.pdp-image-swiper  .swiper-button-next::after {
+font-size: 16px;
+color: #fff;
+}
+
+.pdp-image-swiper .swiper-button-next:before, .pdp-image-swiper .swiper-button-prev:before {
+  content: "";
+  border: 2px #fff solid;
+  height: 47px;
+  width: 47px;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  transform: translate(-50%,-50%);
+}
+
+.pdp-image-swiper .swiper-button-next:after, .pdp-image-swiper .swiper-button-prev:after {
+  height: 10px;
+}
+
+.pdp-image-swiper .swiper-button-prev {
+  left: 30px;
+}
+
+.pdp-image-swiper .swiper-button-next {
+  right: 30px;
+}
+
+/* Testimonials Swiper */
+
+.swiper-testimonials-publications-pagination .swiper-pagination-bullet {
+  background: #fff !important;
+  opacity: 1;
+}
+
+.swiper-testimonials-publications-pagination .swiper-pagination-bullet-active {
+  background: #000 !important;
+}
+
+.swiper-testimonials-publications-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}

@@ -6,21 +6,21 @@
 
             {% for block in section.blocks %}
                 {% if block.type == 'usp' %}
-                    <div class="usp w-full border-b-2 border-b-midgrey py-10 text-grey">
-                        <span>
-                            {% comment %} {{ block.settings.icon }} {% endcomment %}
-                             
+                    <div class="usp w-full border-b-2 border-b-midgrey py-10 text-grey flex">
+                        <span class="usp-icons flex justify-center items-center w-full h-[100px] max-w-[100px] mr-4">
                             
-
-                            {% comment %} {% render block.settings.icon | append: "" %} {% endcomment %}
-
-                            
-
-                            {% assign snippet = block.settings.icon %}
-                            {% capture snippet_content %}{% render snippet %}{% endcapture %}
-                            
-                            {{ snippet_content }}
-                           
+                            {% case block.settings.icon %}
+                            {% when 'icon-shield' %}
+                                {% render 'icon-shield', class: "w-12 h-12" %}
+                            {% when 'icon-phone-hand' %}
+                                {% render 'icon-phone-hand', class: "w-12 h-12" %}
+                            {% when 'icon-size' %}
+                                {% render 'icon-size', class: "w-12 h-12" %}
+                            {% when 'icon-stars' %}
+                                {% render 'icon-stars', class: "w-12 h-12" %}
+                            {% else %}
+                                {% render 'icon-phone-hand', class: "w-12 h-12" %}
+                            {% endcase %}
                            
                         </span>
                         <span>

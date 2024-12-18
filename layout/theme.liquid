@@ -11,9 +11,11 @@
     {{ content_for_header }}
     <!-- Header hook for plugins -->
 
-
     {{ 'application.css' | asset_url | stylesheet_tag }}
     {{ 'application.js' | asset_url | script_tag }}
+
+    <link rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
     <link
       rel="stylesheet"
@@ -39,5 +41,6 @@
     </main>
 
     {% section 'footer' %}
+    
   </body>
 </html>
