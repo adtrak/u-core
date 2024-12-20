@@ -1003,6 +1003,14 @@ video {
   max-width: 28rem;
 }
 
+.max-w-full {
+  max-width: 100%;
+}
+
+.max-w-\[100vw\] {
+  max-width: 100vw;
+}
+
 .flex-1 {
   flex: 1 1 0%;
 }

@@ -18,15 +18,26 @@
     </div> {% endcomment %}
 
 
-    <div class="swiper">
-        <div class="swiper-wrapper">
+    <div class="swiper swiper-featured-products">
+        <div class="swiper-wrapper max-w-[100vw]">
             {% for product in section.settings.featured_collection.products limit: section.settings.number_of_products_to_show %}
-            {% render 'product-card', product_product: product %}
-          {% endfor %}
+                {% for variant in product.variants %}
+                <div class="swiper-slide">
+                    {% render 'product-card', product_product: product %}
+                </div>
+                {% endfor %}
+            {% endfor %}
+
+            {% for variant in product.variants %}
+                {{ variant.title }} ({{ variant.sku }})
+                {% for option in product.options %}
+                {{ option.name }}: {{ variant.options[forloop.index0] }}
+                {% endfor %}
+            {% endfor %}
         </div>
-        <div class="swiper-pagination"></div>
-        <div id="swiper-button-prev" class="hidden lg:block swiper-button-prev"></div>
-        <div id="swiper-button-next" class="hidden lg:block swiper-button-next"></div>
+
+        <div class="swiper-featured-products-scrollbar"></div>
+       
     </div>
 
 

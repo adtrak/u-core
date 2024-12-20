@@ -114,3 +114,36 @@ color: #fff;
   justify-content: center;
   margin-top: 25px;
 }
+
+.swiper-gallery {
+  @apply w-full h-full relative overflow-hidden;
+}
+.swiper-buckets {
+  @apply w-full h-full relative overflow-hidden;
+}
+.swiper-wrapper {
+  @apply flex w-full h-full;
+}
+.swiper-slide {
+  @apply flex-shrink-0 w-full h-full relative flex justify-center items-center;
+}
+/* Navigation buttons */
+.swiper-gallery-button-prev,
+.swiper-gallery-button-next {
+  @apply absolute top-1/2 -translate-y-1/2 z-10 cursor-pointer
+         w-10 h-10 bg-black/50 text-white flex items-center justify-center rounded-full;
+}
+.swiper-gallery-button-prev {
+  @apply left-10;
+}
+.swiper-gallery-button-next {
+  @apply right-10;
+}
+
+.swiper-scrollbar-drag {
+  height: 20px;
+}
+
+.swiper-featured-products-scrollbar {
+  opacity: 1!important;
+}
