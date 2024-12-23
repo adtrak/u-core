@@ -24,10 +24,21 @@
 
     <div class="card-text">
 
+      {% if include_colour == true %}
+
       <div class="flex flex-col p-4">
         <p class="text-gray-700 font-heading uppercase font-medium text-xl">{{ product_product.title }} - {{ current_color }}</p>
         <p class="text-midgrey font-heading ">{{ product_product.price | money }}</p>
       </div>
+
+    {% else %}
+
+      <div class="flex flex-col p-4">
+        <p class="text-gray-700 font-heading uppercase font-medium text-xl">{{ product_product.title }}</p>
+        <p class="text-midgrey font-heading ">{{ product_product.price | money }}</p>
+      </div>
+
+    {% endif %}
 
     </div>
   </a>
