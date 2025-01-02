@@ -108,21 +108,12 @@
         "featured_collection": "all",
         "number_of_products_to_show": 4
       }
-    },
-    "featured_collection_colours_UGjNjk": {
-      "type": "featured-collection-colours",
-      "settings": {
-        "title": "Products",
-        "featured_collection": "mens",
-        "number_of_products_to_show": 4
-      }
     }
   },
   "order": [
     "template_hero_YGwtBG",
     "template_usps_gYYMw7",
     "template_copy_feature_N8HfXb",
-    "featured-collection",
-    "featured_collection_colours_UGjNjk"
+    "featured-collection"
   ]
 }
