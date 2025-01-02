@@ -15,29 +15,21 @@
         "button_eATUiM": {
           "type": "button",
           "settings": {
-            "button_text": "Click Me",
-            "button_link": ""
+            "button_text": "Mens",
+            "button_link": "shopify://collections/mens"
           }
         },
         "button_VDnAHa": {
           "type": "button",
           "settings": {
-            "button_text": "Contact Text",
-            "button_link": "shopify://pages/contact"
-          }
-        },
-        "button_mnnt9w": {
-          "type": "button",
-          "settings": {
-            "button_text": "Contact Text Two",
-            "button_link": "shopify://pages/contact"
+            "button_text": "Womens",
+            "button_link": "shopify://collections/womens"
           }
         }
       },
       "block_order": [
         "button_eATUiM",
-        "button_VDnAHa",
-        "button_mnnt9w"
+        "button_VDnAHa"
       ],
       "settings": {
         "title": "Putting you at the centre",
