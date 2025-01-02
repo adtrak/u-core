@@ -1,6 +1,6 @@
 {% case media.media_type %}
     {% when 'image' %}
-        <img src="{{ media | img_url: 'large' }}" alt="{{ media.preview_image.alt }}" class="w-full h-full object-cover">
+        <img src="{{ media | img_url: '1024x' }}" alt="{{ media.preview_image.alt }}" class="w-full h-full object-cover">
     
     {% when 'external_video' %}
         {{ media | external_video_tag: class: 'w-full h-80 object-cover' }}
@@ -16,8 +16,10 @@
                         {% render 'icon-model-viewer' %}
                     </span>
                     <img 
-                        src="{{ media | img_url: 'large' }}" 
+                        src="{{ media | img_url: '1024x' }}" 
                         alt="{{ media.preview_image.alt }}"
+                        width="{{ media.preview_image.width }}"
+                        height="{{ media.preview_image.height }}"
                         class="w-full h-full object-cover"
                     >
                 </button>

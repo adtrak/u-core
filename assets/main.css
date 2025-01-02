@@ -117,3 +117,15 @@ h1 {
   z-index: 1;
 }
 
+.swiper:before {
+  content: "";
+  background: url('grey-shape.svg') no-repeat bottom right;
+  background-size: 216px 188px;
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+  width: 321px;
+  height: 285px;
+  z-index: 2;
+}

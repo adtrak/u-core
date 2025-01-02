@@ -1,5 +1,5 @@
 <div class="w-full card">
-  <a href="{{ product_product.url }}" class="relative block">
+  <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative block">
     <div class="card-image bg-lightgrey overflow-hidden h-full">
     
         {% if current_variant.image %}
