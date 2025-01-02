@@ -13,7 +13,55 @@
     {% assign telephone = section.settings.telephone %}
 {% endif %}
 
-<section class="bg-black font-semibold text-white">
+<section class="bg-yellow w-full py-7 flex items-center">
+    <span class="text-center w-full uppercase font-heading text-white text-xl">Putting you at the centre</span>
+</section>
+
+<section class="footer bg-black w-full py-24">
+    <footer class="container">
+        <!-- Footer Top -->
+        <div class="footer-top grid md:grid-cols-2 items text-center md:text-start">
+            <div class="footer-left flex flex-wrap">
+                <ul class="parent hidden md:flex flex-wrap w-full">
+                    {% for link in linklists.footer.links %}
+                    <li class="group/parent font-heading uppercase text-white flex pr-8 py-2">
+                        <a href="{{ link.url }}" class="relative hover:underline focus:underline">{{ link.title }} Hoodies</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="footer-right">
+                <ul class="parent hidden md:flex flex-wrap justify-end w-full">
+                    {% for link in linklists.footer-menu-right.links %}
+                    <li class="group/parent font-heading uppercase text-white flex pl-8 py-2">
+                        <a href="{{ link.url }}" class="relative hover:underline focus:underline">{{ link.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <!-- Footer Bottom -->
+        <div class="footer-bottom grid md:grid-cols-2 items text-center md:text-right">
+            <div class="footer-left flex flex-wrap">
+                <div class="block my-4">
+                    <a href="{{ routes.root_url }}" class="max-w-36">
+                      <img src="{{ 'logo.svg' | asset_url }}" alt="logo" height="100%" width="100%">
+                    </a>
+                    <p class="text-uppercase font-heading text-grey mt-6 uppercase">© UCORE. All Rights Reserved.</p>
+                </div>
+                
+            </div>
+            <div class="footer-right">
+                <ul class="parent hidden md:flex flex-wrap items-end w-full text-grey uppercase font-heading">
+                    
+                    <li class="block w-full"><a href="/pages/privacy-policy">Privacy Policy</a></li>
+                    <li class="block w-full"><a href="/pages/terms-and-conditions">Terms & Conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</section>
+{% comment %} <section class="bg-black font-semibold text-white">
     <footer class="container mx-auto px-1 py-5 md:px-[50px] md:pt-[70px] md:pb-[20px]">
         <div class="md:flex justify-between items-center">
             <div class="text-xl md:text-2xl">
@@ -57,7 +105,7 @@
             </ul>
         </div>
     </footer>
-</section>
+</section> {% endcomment %}
 
 {% schema %}
 {

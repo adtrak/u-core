@@ -1,5 +1,5 @@
 {% if template.name == 'product' %}
-<div class="hero-container mx-auto pt-52 pb-36 left-indent bg-black relative mb-[160px]">
+<div class="hero-container mx-auto pt-72 pb-0 left-indent bg-black relative mb-[160px]">
 {% else %}
 <div class="hero-container rounded mx-auto py-64 left-indent bg-black relative mb-[160px]">
 {% endif %}
@@ -18,7 +18,7 @@
         {% if collection.title %}
             <h1 class="text-white pb-2 text-6xl font-heading uppercase">{{ collection.title }}</h1>
         {% elsif product.title %}
-            <h1 class="text-white pb-2">{{ product.title }}</h1>
+            <h1 class="text-white pb-2 text-6xl font-heading uppercase">{{ product.title }}</h1>
         {% else %}
             <h1 class="text-white pb-2 text-6xl font-heading uppercase">{{ section.settings.title }}</h1>
         {% endif %}

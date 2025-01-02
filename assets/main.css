@@ -51,6 +51,13 @@ h1 {
   background-size: 100px;
 }
 
+/* Footer Styling */
+
+.footer {
+  background: url('bg-patternx2.png') no-repeat;
+  background-size: 100%;
+}
+
 /* Rounded Corner Styling */
 
 .hero-container.rounded:before,
@@ -109,3 +116,4 @@ h1 {
   height: 100%;
   z-index: 1;
 }
+

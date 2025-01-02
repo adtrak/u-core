@@ -14,3 +14,28 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("SwiperJS is not defined");
     }
 })
+
+// Product page image Swiper
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        const swiper = new Swiper('.pdp-image-swiper', {
+        direction: 'horizontal',
+        slidesPerView: 1,
+        loop: true,
+        pagination: {
+            el: '.pdp-image-swiper-pagination',
+            clickable: true,
+            type: 'bullets'
+        },
+        navigation: {
+            nextEl: '.pdp-image-swiper-button-next',
+            prevEl: '.pdp-image-swiper-button-prev',
+        },
+        autoplay: {
+            delay: 5000,
+          },
+        })
+    } catch (e) {
+        console.log("SwiperJS is not defined");
+    }
+})
