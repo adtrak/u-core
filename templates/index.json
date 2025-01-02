@@ -112,7 +112,7 @@
     "featured_collection_colours_UGjNjk": {
       "type": "featured-collection-colours",
       "settings": {
-        "title": "Featured Collection",
+        "title": "Featured",
         "featured_collection": "mens",
         "number_of_products_to_show": 4
       }
