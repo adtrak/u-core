@@ -3,12 +3,19 @@ document.addEventListener('DOMContentLoaded', function() {
     try {
         const swiper = new Swiper('.swiper-featured-products', {
         // direction: 'horizontal',
-        slidesPerView: 2,
+        slidesPerView: 1,
+        spaceBetween: 65,
         // loop: true,
         scrollbar: {
             el: ".swiper-featured-products-scrollbar",
             hide: true,
-          },
+        },
+        breakpoints: {
+            940: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            }
+        },
         })
     } catch (e) {
         console.log("SwiperJS is not defined");
@@ -33,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         autoplay: {
             delay: 5000,
-          },
+        },
         })
     } catch (e) {
         console.log("SwiperJS is not defined");

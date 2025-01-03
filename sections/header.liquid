@@ -21,6 +21,7 @@
         </a>
       </div>
 
+      <!-- Mobile Menu Icon -->
       <div class="-mr-2 -my-2 ml-3 md:hidden">
         <button
           x-on:click="mobileMenuOpen = true"
@@ -30,9 +31,9 @@
         </button>
       </div>
 
-      <div class="header-right flex">
+      <div class="header-right hidden md:flex">
 
-        <ul class="parent hidden md:flex space-x-2">
+        <ul class="parent flex space-x-2">
           {% for link in linklists.main-menu.links %}
             <li class="group/parent">
               {% render 'button', text: link.title, url: link.url, btn-style: "white" %}

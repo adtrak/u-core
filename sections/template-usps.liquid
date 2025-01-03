@@ -1,8 +1,10 @@
-<div class="usps-container outer-container bg-lightgrey relative w-full lg:mb-[160px]">
+<div class="usps-container outer-container relative w-full lg:mb-[160px]">
 
-    <div class="container flex">
+    <div class="containercustom relative flex">
    
-        <div class="usp-left left-indent py-72 flex flex-wrap lg:w-6/12">
+        <div class="usp-left lg:pr-12 relative left-indent py-72 flex flex-wrap lg:w-7/12">
+
+            <div class="bg-lightgrey stretch absolute top-0 right-0 h-full z-[-1]"></div>
 
             {% for block in section.blocks %}
                 {% if block.type == 'usp' %}
@@ -33,8 +35,8 @@
             
         </div>
 
-        <div class="usp-right absolute right-0 lg:w-5/12 h-full bg-white">
-            <div class="h-full mr-10">
+        <div class="usp-right relative lg:w-5/12">
+            <div class="h-full absolute left-0 w-full">
                 <picture>
                     <source media="(min-width:767px)" srcset="{{ section.settings.image | img_url: '960x' }}">
                     <img src="{{ section.settings.image | img_url: '802x1408' }}" class="object-cover h-full md:w-full" alt="{{ section.settings.alt }}" loading="eager" width="802" height="1408">

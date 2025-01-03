@@ -29,12 +29,14 @@
   }
 </style>
 
-<div class="product-outer" x-data="{ productModalOpen: false }">
+<div class="product-outer containercustom" x-data="{ productModalOpen: false }">
 
-  <div class="max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-3 mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-3 mx-auto">
 
-    <div class="product-left bg-lightgrey lg:p-12">
+    <div class="product-left p-6 pl-0 relative lg:p-12 lg:pl-0">
       <!-- Product Images -->
+
+      <div class="bg-lightgrey stretch absolute top-0 right-0 h-full"></div>
 
       <div class="swiper pdp-image-swiper swiper-initialized swiper-horizontal swiper-pointer-events" navigation="true">
         <div class="swiper-wrapper max-w-[100vw]">
