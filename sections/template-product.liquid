@@ -56,7 +56,7 @@
 
     </div>
 
-    <div class="product-right lg:p-12">
+    <div class="product-right pt-16 lg:p-12">
       {% form 'product', product, id: 'product-form', novalidate: 'novalidate' %}
         <input
           type="hidden"
@@ -65,29 +65,31 @@
 
         {% for block in section.blocks %}
           {% case block.type %}
-            {% when 'vendor' %}
-            <div class="my-3">
-              <span class="text-xs text-grey">{{ product.vendor }}</span>
-            </div>
-            {% when 'title' %}
-            <div class="my-3">
-              <h1 class="text-3xl text-grey">{{ product.title }}</h1>
-            </div>
-            {% when 'price' %}
-            <div class="my-3" id="price-{{ section.id }}">
-              <span class="text-base text-gray-500 line-through">{{ selected_variant.compare_at_price | money }}</span>
-              <span class="text-lg text-grey">{{ selected_variant.price | money }}</span>
+            
+              {% when 'vendor' %}
+              <div class="my-0">
+                <span class="text-xs text-grey uppercase">{{ product.vendor }}</span>
+              </div>
+              {% when 'title' %}
+              <div class="my-0">
+                <h1 class="text-3xl text-grey font-heading uppercase leading-10 mb-1">{{ product.title }}</h1>
+              </div>
+              {% when 'price' %}
+              <div class="my-0 mb-8" id="price-{{ section.id }}">
+                <span class="text-base text-gray-500 line-through">{{ selected_variant.compare_at_price | money }}</span>
+                <span class="text-lg text-grey">{{ selected_variant.price | money }}</span>
 
-              {% if selected_variant.price < selected_variant.compare_at_price %}
-                <span class="px-5 py-1 text-sm font-bold bg-red rounded-full text-white mx-4">Sale</span>
-              {% endif %}
-            </div>
+                {% if selected_variant.price < selected_variant.compare_at_price %}
+                  <span class="px-5 py-1 text-sm font-bold bg-red rounded-full text-white mx-4">Sale</span>
+                {% endif %}
+              </div>
+            
             {% when 'variant_selector' %}
             <div class="my-3">
               {% unless product.has_only_default_variant %}
                 <variant-selector data-url="{{ product.url }}" data-section="{{ section.id }}">
                   {% for option in product.options_with_values %}
-                    <label for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
+                    <label class="mb-4" for="Option-{{ section.id }}-{{ forloop.index0 }}">{{ option.name }}</label>
 
                     <div class="my-2">
                       <div class="flex flex-wrap gap-2">
@@ -116,7 +118,7 @@
                                   {% endif %}>
                                 </span>
                             {% else %}
-                              <span class="px-4 py-2 border cursor-pointer peer-checked:border-gray-400 peer-checked:border-2 hover:border-gray-400">
+                              <span class="w-24 h-24 border flex items-center justify-center peer-checked:border-2 peer-checked:border-gray-400 hover:border-gray-400">
                                 {{ value }}
                               </span>
                             {% endif %}
@@ -144,7 +146,7 @@
                   id="Quantity-{{ section.id }}"
                   value="1"
                   min="1"
-                  class="w-full border px-3 py-3">
+                  class="w-full border px-6 py-3 rounded-full">
               </div>
             </div>
             {% when 'description' %}
