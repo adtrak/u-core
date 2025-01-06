@@ -14,6 +14,20 @@
   }
 }
 
+.containerequal {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  width: 100%;
+  max-width: 1600px;
+
+  @media screen and (min-width: 1024px) {
+    padding-right: 4.5rem;
+    padding-left: 4.5rem;
+  }
+}
+
 .containercustom {
   margin-left: auto;
   margin-right: auto;
@@ -75,7 +89,7 @@ h1 {
 
 /* Copy Section */
 
-.copy-section {
+.copy-feature-section {
   position: relative;
 }
 
