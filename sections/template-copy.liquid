@@ -1,0 +1,53 @@
+<div class="mx-auto py-16 sm:py-64 sm:px-6 lg:px-8 mb-[160px] copy-section relative">
+    <div class="w-full lg:w-1/2">
+        <h1 class="text-white font-heading uppercase text-6xl mb-12">{{ section.settings.title }}</h1>
+        
+        {% if section.settings.body != blank %}
+            <div class="mb-8 font-light text-white copy lg:w-3/4">
+                {{ section.settings.body }}
+            </div>
+        {% endif %}
+
+    </div>
+
+    <div class="w-full lg:w-1/2">
+        <span class="relative max-w-[350px] lg:max-w-none">
+            <picture class="relative z-5">
+                <source media="(max-width: 992px)" srcset="{{ section.settings.copy_image | img_url: '802x1408' }}">
+                <source srcset="{{ section.settings.copy_image | img_url: '802x1408' }}">
+                <img src="{{ section.settings.copy_image | img_url: '802x1408' }}" class="rounded-[40px] relative z-5" loading="lazy" alt="" width="770" height="770">
+            </picture>
+        </span>
+    </div>
+    
+</div>
+
+{% schema %}
+{
+    "name": "Copy Section",
+    "presets": [
+        {
+            "name": "Copy Section"
+        }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "Title",
+            "label": "H1 Title"
+        },
+        {
+            "type": "html",
+            "id": "body",
+            "default": "Body text",
+            "label": "Body Text"
+        },
+        {
+            "type": "image_picker",
+            "id": "copy_image",
+            "label": "Copy Image"
+        }
+    ],
+}
+{% endschema %}

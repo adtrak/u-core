@@ -1,5 +1,19 @@
 /* Base Styling */
 
+.containerwide {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  width: 100%;
+  max-width: 1800px;
+
+  @media screen and (min-width: 1024px) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
 .containercustom {
   margin-left: auto;
   margin-right: auto;
@@ -75,8 +89,8 @@ h1 {
 /* Footer Styling */
 
 .footer {
-  background: url('bg-patternx2.png') no-repeat;
-  background-size: 100%;
+  background: url('bg-patternx2.png') no-repeat center;
+  background-size: cover;
 }
 
 /* Rounded Corner Styling */
