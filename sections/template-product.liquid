@@ -82,6 +82,9 @@
                 {% if selected_variant.price < selected_variant.compare_at_price %}
                   <span class="px-5 py-1 text-sm font-bold bg-red rounded-full text-white mx-4">Sale</span>
                 {% endif %}
+
+                <p>{{ product.metafields.custom.delivery_information }}</p>
+
               </div>
             
             {% when 'variant_selector' %}

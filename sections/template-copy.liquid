@@ -1,25 +1,45 @@
 <div class="mx-auto py-16 sm:py-16 sm:px-6 lg:px-8 mb-[160px] lg:flex relative containerequal">
-    <div class="w-full lg:w-1/2">
-        <h1 class="text-white font-heading uppercase text-6xl mb-12">{{ section.settings.title }}</h1>
-        
-        {% if section.settings.body != blank %}
-            <div class="mb-8 font-light text-black copy lg:w-3/4">
-                {{ section.settings.body }}
-            </div>
-        {% endif %}
+    {% if section.settings.image_position == 'right' %}
+        <div class="w-full lg:w-1/2">
+            <h1 class="text-black text-2xl font-bold font-heading uppercase pb-2">{{ section.settings.title }}</h1>
+            
+            {% if section.settings.body != blank %}
+                <div class="mb-8 font-light text-black copy lg:w-3/4">
+                    {{ section.settings.body }}
+                </div>
+            {% endif %}
+        </div>
 
-    </div>
+        <div class="w-full lg:w-1/2">
+            <span class="relative">
+                <picture class="relative z-5">
+                    <source srcset="{{ section.settings.copy_image | img_url: '600x800', crop: 'center' }}">
+                    <source srcset="{{ section.settings.copy_image | img_url: '600x800', crop: 'center' }}">
+                    <img src="{{ section.settings.copy_image | img_url: '600x800', crop: 'center' }}" class="relative" loading="lazy" alt="" width="770" height="770">
+                </picture>
+            </span>
+        </div>
+    {% else %}
+        <div class="w-full lg:w-1/2">
+            <span class="relative">
+                <picture class="relative z-5">
+                    <source srcset="{{ section.settings.copy_image | img_url: '600x800', crop: 'center' }}">
+                    <source srcset="{{ section.settings.copy_image | img_url: '600x800', crop: 'center' }}">
+                    <img src="{{ section.settings.copy_image | img_url: '600x800', crop: 'center' }}" class="relative" loading="lazy" alt="" width="770" height="770">
+                </picture>
+            </span>
+        </div>
 
-    <div class="w-full lg:w-1/2">
-        <span class="relative max-w-[350px] lg:max-w-none">
-            <picture class="relative z-5">
-                <source media="(max-width: 992px)" srcset="{{ section.settings.copy_image | img_url: '802x1408' }}">
-                <source srcset="{{ section.settings.copy_image | img_url: '802x1408' }}">
-                <img src="{{ section.settings.copy_image | img_url: '802x1408' }}" class="rounded-[40px] relative z-5" loading="lazy" alt="" width="770" height="770">
-            </picture>
-        </span>
-    </div>
-    
+        <div class="w-full lg:w-1/2">
+            <h1 class="text-black text-2xl font-bold font-heading uppercase pb-2">{{ section.settings.title }}</h1>
+            
+            {% if section.settings.body != blank %}
+                <div class="mb-8 font-light text-black copy lg:w-3/4">
+                    {{ section.settings.body }}
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
 </div>
 
 {% schema %}
@@ -47,6 +67,28 @@
             "type": "image_picker",
             "id": "copy_image",
             "label": "Copy Image"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_image",
+            "label": "Show Image",
+            "default": true
+        },
+        {
+            "type": "select",
+            "id": "image_position",
+            "label": "Image Position",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": "Image Left"
+              },
+              {
+                "value": "right",
+                "label": "Image Right"
+              }
+            ]
         }
     ],
 }

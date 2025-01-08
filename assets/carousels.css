@@ -23,6 +23,10 @@
   padding: 20px 0 10px 0;
 }
 
+.swiper-scrollbar-drag {
+  background: #D5DE24;
+}
+
 /* Trending products */
 
 .trending-products-block .swiper-button-prev {
