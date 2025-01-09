@@ -1,7 +1,7 @@
 {% if template.name == 'product' %}
-<div class="hero-container mx-auto pt-44 lg:pt-72 pb-0 left-indent bg-black relative lg:mb-[160px]">
+<div class="hero-container mx-auto pt-44 lg:pt-72 pb-0 left-indent bg-black relative lg:mb-32 lg:mb-[160px]">
 {% else %}
-<div class="hero-container rounded mx-auto py-64 left-indent bg-black relative mb-[160px]">
+<div class="hero-container rounded mx-auto py-64 left-indent bg-black relative mb-32 lg:mb-36">
 {% endif %}
 
     {% if section.settings.hero_video %}
@@ -14,22 +14,22 @@
         </div>
     {% endif %} 
 
-    <div class="hero-content containercustom relative z-20 font-heading">
+    <div class="hero-content containercustom relative z-20 font-heading heading">
         {% if collection.title %}
-            <h1 class="text-white pb-2 text-6xl font-heading uppercase">{{ collection.title }}</h1>
+            <p class="text-white pb-2 text-6xl font-heading font-huge font-huge uppercase">{{ collection.title }}</p>
         {% elsif product.title %}
-            <h1 class="text-white pb-2 text-6xl font-heading uppercase">{{ product.title }}</h1>
+            <p class="text-white pb-2 text-6xl font-heading font-huge font-huge uppercase">{{ product.title }}</p>
         {% else %}
-            <h1 class="text-white pb-2 text-6xl font-heading uppercase">{{ section.settings.title }}</h1>
+            <p class="text-white pb-2 text-6xl font-heading font-huge font-huge uppercase">{{ section.settings.title }}</p>
         {% endif %}
 
 
         {% if collection.title %}
-            <span class="text-yellow uppercase text-3xl">{{  section.settings.sub_title }}</span>
+            <span class="text-yellow uppercase text-3xl font-heading">{{  section.settings.sub_title }}</span>
         {% elsif product.title %}
             
         {% else %}
-            <span class="text-yellow uppercase text-3xl">{{  section.settings.sub_title }}</span>
+            <span class="text-yellow uppercase text-3xl font-heading">{{  section.settings.sub_title }}</span>
         {% endif %}
         
         <div class="mt-16 flex gap-4">

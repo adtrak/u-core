@@ -23,6 +23,7 @@
   padding: 20px 0 10px 0;
 }
 
+
 .swiper-scrollbar-drag {
   background: #D5DE24;
 }
@@ -156,5 +157,9 @@ color: #000;
 }
 
 .swiper-featured-products-scrollbar {
+  background: #F1F1F2;
+  border-radius: 30px;
+  margin-top: 40px;
   opacity: 1!important;
+  margin-right: 2rem;
 }
