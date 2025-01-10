@@ -21,7 +21,8 @@
         "type": "footer",
         "settings": {
           "mail": "test@test.com",
-          "telephone": ""
+          "telephone": "",
+          "footer_image": "shopify://shop_images/footer-image.jpg"
         }
       }
     },
