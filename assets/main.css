@@ -3,8 +3,8 @@
 .containerwide {
   margin-left: auto;
   margin-right: auto;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   width: 100%;
   max-width: 1800px;
 
@@ -70,6 +70,20 @@
   @media screen and (min-width: 1024px) {
     font-size: 4.1rem;
     line-height: 4.5rem;
+  }
+}
+
+.font-medium {
+  font-size: 1.5rem;
+  line-height: 2.2rem;
+  font-family: normalidad-wide, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1.4rem;
+    line-height: 2.5rem;
   }
 }
 

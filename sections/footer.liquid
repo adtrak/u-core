@@ -13,6 +13,20 @@
     {% assign telephone = section.settings.telephone %}
 {% endif %}
 
+<span class="relative">
+    <picture class="block lg:hidden relative z-5 w-full">
+        <source srcset="{{ section.settings.footer_image | img_url: '600x300', crop: 'center' }}">
+        <source srcset="{{ section.settings.footer_image | img_url: '600x300', crop: 'center' }}">
+        <img src="{{ section.settings.footer_image | img_url: '600x300', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1200" height="770">
+    </picture>
+
+    <picture class="hidden lg:block relative z-5 w-full">
+        <source srcset="{{ section.settings.footer_image | img_url: '1400x800', crop: 'center' }}">
+        <source srcset="{{ section.settings.footer_image | img_url: '1400x800', crop: 'center' }}">
+        <img src="{{ section.settings.footer_image | img_url: '1400x800', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1200" height="770">
+    </picture>
+</span>
+
 <section class="bg-yellow w-full py-7 flex items-center">
     <span class="text-center w-full uppercase font-heading font-big font-bold text-white text-xl">Putting you at the centre</span>
 </section>
@@ -52,8 +66,7 @@
                 
             </div>
             <div class="footer-right">
-                <ul class="parent hidden md:flex flex-wrap items-end w-full text-grey uppercase font-heading font-big">
-                    
+                <ul class="parent hidden md:flex flex-wrap items-end w-full text-grey uppercase font-heading">
                     <li class="block w-full"><a href="/pages/privacy-policy">Privacy Policy</a></li>
                     <li class="block w-full"><a href="/pages/terms-and-conditions">Terms & Conditions</a></li>
                 </ul>
@@ -120,7 +133,12 @@
             "type": "text",
             "id": "telephone",
             "label": "Telephone"
-        }
+        },
+        {
+            "type": "image_picker",
+            "id": "footer_image",
+            "label": "Footer Image"
+        },
     ],
     "blocks": [
             {
