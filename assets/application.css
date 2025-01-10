@@ -2038,6 +2038,14 @@ video {
   .lg\:pt-72 {
     padding-top: 18rem;
   }
+
+  .lg\:text-3xl {
+    font-size: 1.953rem;
+  }
+
+  .lg\:text-6xl {
+    font-size: 4.1rem;
+  }
 }
 
 @media (min-width: 1280px) {
