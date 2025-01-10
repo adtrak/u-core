@@ -13,19 +13,21 @@
     {% assign telephone = section.settings.telephone %}
 {% endif %}
 
-<span class="relative">
+<section class="w-full bg-black">
+<span class="relative mx-auto containerequal my-0 py-0">
     <picture class="block lg:hidden relative z-5 w-full">
-        <source srcset="{{ section.settings.footer_image | img_url: '600x300', crop: 'center' }}">
-        <source srcset="{{ section.settings.footer_image | img_url: '600x300', crop: 'center' }}">
-        <img src="{{ section.settings.footer_image | img_url: '600x300', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1200" height="770">
+        <source media="(max-width: 767px)" srcset="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'right' }}" type="image/webp">
+        <source media="(max-width: 767px)" srcset="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'right' }}" type="image/jpeg">
+        <img src="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'right' }}" class="relative" loading="lazy" alt="" width="1024" height="800">
     </picture>
 
-    <picture class="hidden lg:block relative z-5 w-full">
-        <source srcset="{{ section.settings.footer_image | img_url: '1400x800', crop: 'center' }}">
-        <source srcset="{{ section.settings.footer_image | img_url: '1400x800', crop: 'center' }}">
-        <img src="{{ section.settings.footer_image | img_url: '1400x800', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1200" height="770">
+    <picture class="hidden lg:block relative z-5 containerwide">
+        <source media="(min-width: 768px)" srcset="{{ section.settings.footer_image.src | img_url: '1800x450', crop: 'center' }}" type="image/webp">
+        <source media="(min-width: 768px)" srcset="{{ section.settings.footer_image.src | img_url: '1800x450', crop: 'center' }}" type="image/jpeg">
+        <img src="{{ section.settings.footer_image.src | img_url: '1800x450', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1800" height="350">
     </picture>
 </span>
+</section>
 
 <section class="bg-yellow w-full py-7 flex items-center">
     <span class="text-center w-full uppercase font-heading font-big font-bold text-white text-xl">Putting you at the centre</span>
@@ -138,7 +140,7 @@
             "type": "image_picker",
             "id": "footer_image",
             "label": "Footer Image"
-        },
+        }
     ],
     "blocks": [
             {
