@@ -1,20 +1,24 @@
 <div class="w-full card">
   <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative block">
-    <div class="card-image bg-lightgrey overflow-hidden h-full">
+    <div class="card-image relative bg-lightgrey overflow-hidden h-full">
     
         {% if current_variant.image %}
-          <div class="w-full overflow-hidden aspect-[4/3] pr-6 pb-6">
-            <img
-              class="w-full h-full object-cover"
-              src="{{ current_variant.image | img_url: 'large' }}"
-              alt="{{ current_variant.image.alt | default: current_variant.title }}">
+          <div class="w-full overflow-hidden aspect-[4/3]">
+            <div class="relative w-full h-full pr-6 pb-6">
+              <img
+                class="w-full h-full object-cover"
+                src="{{ current_variant.image | img_url: 'large' }}"
+                alt="{{ current_variant.image.alt | default: current_variant.title }}">
+            </div>
           </div>
         {% elsif product_product.featured_image %}
-          <div class="w-full overflow-hidden aspect-[4/3] pr-6 pb-6">
-            <img
-              class="w-full h-full object-cover"
-              src="{{ product_product.featured_image | img_url: 'large' }}"
-              alt="{{ product_product.featured_image.alt }}">
+          <div class="w-full overflow-hidden aspect-[4/3]">
+            <div class="relative w-full h-full pr-6 pb-6">
+              <img
+                class="w-full h-full object-cover"
+                src="{{ product_product.featured_image | img_url: 'large' }}"
+                alt="{{ product_product.featured_image.alt }}">
+            </div>
           </div>
         {% else %}
           {{ 'product-1' | placeholder_svg_tag: 'w-full object-cover bg-gray-100' }}

@@ -222,7 +222,7 @@
   z-index: 2;
 }
 
-.card-image:before {
+.card-image .img:before {
   content: "";
   background: url('card-shape.svg') no-repeat bottom right;
   background-size: 130px 113px;
