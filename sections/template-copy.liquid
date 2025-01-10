@@ -1,3 +1,12 @@
+<!-- Image for mobile -->
+<span class="relative">
+    <picture class="block lg:hidden relative z-5 w-full">
+        <source srcset="{{ section.settings.copy_image | img_url: '600x400', crop: 'center' }}">
+        <source srcset="{{ section.settings.copy_image | img_url: '600x400', crop: 'center' }}">
+        <img src="{{ section.settings.copy_image | img_url: '600x400', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1200" height="770">
+    </picture>
+</span>
+
 <div class="mx-auto mb-32 lg:mb-36 grid grid-cols-1 lg:grid-cols-2 gap-24 relative containerequal">
     {% if section.settings.image_position == 'right' %}
         <div class="w-full">
@@ -12,14 +21,6 @@
 
         <div class="w-full">
             <span class="relative">
-                <span class="relative">
-                    <picture class="block lg:hidden relative z-5 w-full">
-                        <source srcset="{{ section.settings.copy_image | img_url: '600x400', crop: 'center' }}">
-                        <source srcset="{{ section.settings.copy_image | img_url: '600x400', crop: 'center' }}">
-                        <img src="{{ section.settings.copy_image | img_url: '600x400', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1200" height="770">
-                    </picture>
-                </span>
-
                 <picture class="hidden lg:block relative z-5">
                     <source srcset="{{ section.settings.copy_image | img_url: '600x800', crop: 'center' }}">
                     <source srcset="{{ section.settings.copy_image | img_url: '600x800', crop: 'center' }}">
@@ -33,14 +34,6 @@
         
         <div class="w-full">
             <span class="relative">
-                <span class="relative">
-                    <picture class="block lg:hidden relative z-5 w-full">
-                        <source srcset="{{ section.settings.copy_image | img_url: '600x400', crop: 'center' }}">
-                        <source srcset="{{ section.settings.copy_image | img_url: '600x400', crop: 'center' }}">
-                        <img src="{{ section.settings.copy_image | img_url: '600x400', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1200" height="770">
-                    </picture>
-                </span>
-
                 <picture class="hidden lg:block relative z-5">
                     <source srcset="{{ section.settings.copy_image | img_url: '600x800', crop: 'center' }}">
                     <source srcset="{{ section.settings.copy_image | img_url: '600x800', crop: 'center' }}">
