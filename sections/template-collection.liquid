@@ -7,31 +7,39 @@
   
   
   {% paginate collection.products by section.settings.number_of_products_per_page %}
+
+    <div class="containercustomright mb-12 lg:mb-36">
+
+      <h1 class="text-grey font-heading font-huge font-bold font-huge uppercase text-6xl mb-12">{{ collection.title }}</h1>
+  
+      <div class="stretchright flex flex-col items-center my-8">
     
-    <h1 class="text-5xl font-heading font-big font-bold pb-6 font-semibold text-darkgrey">{{ collection.title }}</h1> 
-
-    <div class="swiper swiper-featured-products">
-      <div class="swiper-wrapper max-w-[100vw]">
-          {% for product in collection.products limit: section.settings.number_of_products_to_show %}
-            {% assign shown_colors = '' %}
-            {% for variant in product.variants %}
-                {% assign current_color = variant.options[0] %}
-                {% unless shown_colors contains current_color %}
-                    <div class="swiper-slide">
-                        {% render 'product-card', 
-                            product_product: product,
-                            current_variant: variant,
-                            current_color: current_color,
-                            include_colour: true %}
-                    </div>
-                    {% assign shown_colors = shown_colors | append: current_color | append: ',' %}
-                {% endunless %}
+        <div class="swiper swiper-featured-products">
+          <div class="swiper-wrapper max-w-[100vw]">
+              {% for product in collection.products limit: section.settings.number_of_products_to_show %}
+                {% assign shown_colors = '' %}
+                {% for variant in product.variants %}
+                    {% assign current_color = variant.options[0] %}
+                    {% unless shown_colors contains current_color %}
+                        <div class="swiper-slide">
+                            {% render 'product-card', 
+                                product_product: product,
+                                current_variant: variant,
+                                current_color: current_color,
+                                include_colour: true %}
+                        </div>
+                        {% assign shown_colors = shown_colors | append: current_color | append: ',' %}
+                    {% endunless %}
+                {% endfor %}
             {% endfor %}
-        {% endfor %}
+          </div>
+
+          <div class="swiper-featured-products-scrollbar"></div>
+
+        </div>
+      
       </div>
-
-      <div class="swiper-featured-products-scrollbar"></div>
-
+    
     </div>
   
     {% render 'pagination', pagination: paginate %}
