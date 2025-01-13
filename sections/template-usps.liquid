@@ -6,9 +6,10 @@
 
             <div class="bg-lightgrey stretch absolute top-0 right-0 h-full z-[-1]"></div>
 
+            {% assign block_count = 0 %}
             {% for block in section.blocks %}
                 {% if block.type == 'usp' %}
-                    <div class="usp w-full {% unless forloop.last %}border-b-2 border-b-midgrey{% endunless %} py-10 text-grey flex">
+                    <div class="usp w-full {% unless forloop.last %}border-b-2 border-b-midgrey{% endunless %} py-10 text-grey flex {% if forloop.index > 4 %}hidden js-extra-usp{% endif %}">
                         <span class="usp-icons flex justify-center items-center w-full h-[100px] max-w-[100px] mr-4">
                             
                             {% case block.settings.icon %}
@@ -20,6 +21,10 @@
                                 {% render 'icon-size', class: "w-12 h-12" %}
                             {% when 'icon-stars' %}
                                 {% render 'icon-stars', class: "w-12 h-12" %}
+                            {% when 'icon-lock' %}
+                                {% render 'icon-lock', class: "w-12 h-12" %}
+                            {% when 'icon-heart' %}
+                                {% render 'icon-heart', class: "w-12 h-12" %}
                             {% else %}
                                 {% render 'icon-phone-hand', class: "w-12 h-12" %}
                             {% endcase %}
@@ -30,9 +35,15 @@
                             <p>{{ block.settings.usp_sub_heading }}</p>
                         </span>
                     </div>
+                    {% assign block_count = block_count | plus: 1 %}
                 {% endif %}
             {% endfor %}
-            
+
+            {% if block_count > 4 %}
+                <div class="w-full text-center mt-8">
+                    <button class="js-see-more-btn bg-primary text-grey px-6 py-3 rounded">See More</button>
+                </div>
+            {% endif %}
         </div>
 
         <div class="usp-right relative lg:w-5/12">

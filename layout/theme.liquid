@@ -45,5 +45,36 @@
 
     {% section 'footer' %}
     
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const seeMoreBtn = document.querySelector('.js-see-more-btn');
+        const extraUsps = document.querySelectorAll('.js-extra-usp');
+
+        if (seeMoreBtn) {
+            seeMoreBtn.addEventListener('click', function() {
+                const isShowing = seeMoreBtn.textContent === 'See More';
+                seeMoreBtn.textContent = isShowing ? 'See Less' : 'See More';
+
+                if (isShowing) {
+                    // Show items with staggered delay
+                    extraUsps.forEach((usp, index) => {
+                        usp.classList.remove('hidden');
+                        setTimeout(() => {
+                            usp.classList.add('show');
+                        }, index * 150); // 150ms delay between each item
+                    });
+                } else {
+                    // Hide items with staggered delay
+                    extraUsps.forEach((usp, index) => {
+                        usp.classList.remove('show');
+                        setTimeout(() => {
+                            usp.classList.add('hidden');
+                        }, 300); // Wait for fade out to complete
+                    });
+                }
+            });
+        }
+    });
+    </script>
   </body>
 </html>

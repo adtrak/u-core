@@ -101,6 +101,19 @@
   }
 }
 
+.js-extra-usp {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.js-extra-usp.show {
+  opacity: 1;
+}
+
+.js-see-more-btn {
+  
+}
+
 /* Copy Section Styling */
 
 .copy {
