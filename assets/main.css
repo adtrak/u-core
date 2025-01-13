@@ -75,7 +75,7 @@
 
 .font-medium {
   font-size: 1.5rem;
-  line-height: 2.2rem;
+  line-height: 1.8rem;
   font-family: normalidad-wide, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
@@ -83,13 +83,13 @@
 
   @media screen and (min-width: 1024px) {
     font-size: 1.4rem;
-    line-height: 2.5rem;
+    line-height: 1.8rem;
   }
 }
 
 .font-big {
   font-size: 1.7rem;
-  line-height: 2.2rem;
+  line-height: 2.1rem;
   font-family: normalidad-wide, sans-serif;
   text-transform: uppercase;
   font-weight: bold;
@@ -97,7 +97,7 @@
 
   @media screen and (min-width: 1024px) {
     font-size: 1.7rem;
-    line-height: 2.5rem;
+    line-height: 2.1rem;
   }
 }
 
