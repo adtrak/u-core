@@ -48,6 +48,14 @@
     "template_usps_gYYMw7": {
       "type": "template-usps",
       "blocks": {
+        "usp_4X9Nfx": {
+          "type": "usp",
+          "settings": {
+            "usp_heading": "Patent-Pending Smart Pocket",
+            "usp_sub_heading": "Our innovative central front pocket is custom-engineered to securely cradle your smartphone.",
+            "icon": "icon-size"
+          }
+        },
         "usp_hYbmwr": {
           "type": "usp",
           "settings": {
@@ -64,14 +72,6 @@
             "icon": "icon-shield"
           }
         },
-        "usp_4X9Nfx": {
-          "type": "usp",
-          "settings": {
-            "usp_heading": "Patent-Pending Smart Pocket",
-            "usp_sub_heading": "Our innovative central front pocket is custom-engineered to securely cradle your smartphone.",
-            "icon": "icon-size"
-          }
-        },
         "usp_MUPiPX": {
           "type": "usp",
           "settings": {
@@ -83,16 +83,16 @@
         "usp_VWxH97": {
           "type": "usp",
           "settings": {
-            "usp_heading": "Heading",
-            "usp_sub_heading": "Sub Heading",
+            "usp_heading": "Sleek & Stylish",
+            "usp_sub_heading": "Combining a modern streetwear design with high-performance features.",
             "icon": "icon-phone-hand"
           }
         }
       },
       "block_order": [
+        "usp_4X9Nfx",
         "usp_hYbmwr",
         "usp_MPC6hB",
-        "usp_4X9Nfx",
         "usp_MUPiPX",
         "usp_VWxH97"
       ],
