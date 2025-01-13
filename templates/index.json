@@ -95,6 +95,14 @@
             "usp_sub_heading": "The pocket includes a hidden port for your headphones or charging cable, so you can stay powered up and tuned in.",
             "icon": "icon-phone-hand"
           }
+        },
+        "usp_gpyK9A": {
+          "type": "usp",
+          "settings": {
+            "usp_heading": "Peace of Mind",
+            "usp_sub_heading": "Your phone is always safeguarded to keep it out of the reach of prying hands.",
+            "icon": "icon-phone-hand"
+          }
         }
       },
       "block_order": [
@@ -103,7 +111,8 @@
         "usp_MPC6hB",
         "usp_MUPiPX",
         "usp_VWxH97",
-        "usp_jamkwK"
+        "usp_jamkwK",
+        "usp_gpyK9A"
       ],
       "settings": {
         "title": "Title",
