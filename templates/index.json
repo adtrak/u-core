@@ -87,6 +87,14 @@
             "usp_sub_heading": "Combining a modern streetwear design with high-performance features.",
             "icon": "icon-phone-hand"
           }
+        },
+        "usp_jamkwK": {
+          "type": "usp",
+          "settings": {
+            "usp_heading": "Built for Tech Lovers",
+            "usp_sub_heading": "The pocket includes a hidden port for your headphones or charging cable, so you can stay powered up and tuned in.",
+            "icon": "icon-phone-hand"
+          }
         }
       },
       "block_order": [
@@ -94,7 +102,8 @@
         "usp_hYbmwr",
         "usp_MPC6hB",
         "usp_MUPiPX",
-        "usp_VWxH97"
+        "usp_VWxH97",
+        "usp_jamkwK"
       ],
       "settings": {
         "title": "Title",
