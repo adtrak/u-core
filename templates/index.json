@@ -75,9 +75,17 @@
         "usp_MUPiPX": {
           "type": "usp",
           "settings": {
-            "usp_heading": "Quality Material",
-            "usp_sub_heading": "High quality and breathable materials made from a heavy weight jersey cotton.",
+            "usp_heading": "Peace of Mind",
+            "usp_sub_heading": "Your phone is always safeguarded to keep it out of the reach of prying hands.",
             "icon": "icon-stars"
+          }
+        },
+        "usp_VWxH97": {
+          "type": "usp",
+          "settings": {
+            "usp_heading": "Heading",
+            "usp_sub_heading": "Sub Heading",
+            "icon": "icon-phone-hand"
           }
         }
       },
@@ -85,7 +93,8 @@
         "usp_hYbmwr",
         "usp_MPC6hB",
         "usp_4X9Nfx",
-        "usp_MUPiPX"
+        "usp_MUPiPX",
+        "usp_VWxH97"
       ],
       "settings": {
         "title": "Title",
