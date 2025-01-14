@@ -677,6 +677,18 @@ video {
   top: 5rem;
 }
 
+.top-16 {
+  top: 4rem;
+}
+
+.top-36 {
+  top: 9rem;
+}
+
+.top-64 {
+  top: 16rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -756,6 +768,11 @@ video {
 .my-8 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+}
+
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .-mr-2 {
@@ -1474,6 +1491,26 @@ video {
   padding-bottom: 4px;
 }
 
+.py-32 {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.py-48 {
+  padding-top: 12rem;
+  padding-bottom: 12rem;
+}
+
+.py-44 {
+  padding-top: 11rem;
+  padding-bottom: 11rem;
+}
+
+.py-36 {
+  padding-top: 9rem;
+  padding-bottom: 9rem;
+}
+
 .pb-0 {
   padding-bottom: 0px;
 }
@@ -1536,6 +1573,34 @@ video {
 
 .pt-44 {
   padding-top: 11rem;
+}
+
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
+.pb-36 {
+  padding-bottom: 9rem;
+}
+
+.pt-36 {
+  padding-top: 9rem;
+}
+
+.pt-52 {
+  padding-top: 13rem;
+}
+
+.pt-64 {
+  padding-top: 16rem;
+}
+
+.pt-24 {
+  padding-top: 6rem;
+}
+
+.pt-32 {
+  padding-top: 8rem;
 }
 
 .text-left {
@@ -1763,8 +1828,16 @@ video {
 }
 
 @media (min-width: 600px) {
+  .sm\:block {
+    display: block;
+  }
+
   .sm\:inline {
     display: inline;
+  }
+
+  .sm\:hidden {
+    display: none;
   }
 
   .sm\:grid-cols-2 {
@@ -1822,6 +1895,10 @@ video {
 
   .md\:mt-auto {
     margin-top: auto;
+  }
+
+  .md\:block {
+    display: block;
   }
 
   .md\:flex {
@@ -1951,6 +2028,10 @@ video {
     margin-bottom: 160px;
   }
 
+  .lg\:mb-16 {
+    margin-bottom: 4rem;
+  }
+
   .lg\:block {
     display: block;
   }
@@ -1961,6 +2042,22 @@ video {
 
   .lg\:h-80 {
     height: 20rem;
+  }
+
+  .lg\:h-\[900px\] {
+    height: 900px;
+  }
+
+  .lg\:h-\[500px\] {
+    height: 500px;
+  }
+
+  .lg\:h-\[700px\] {
+    height: 700px;
+  }
+
+  .lg\:h-\[600px\] {
+    height: 600px;
   }
 
   .lg\:w-3\/4 {
@@ -2027,6 +2124,11 @@ video {
     padding-bottom: 16rem;
   }
 
+  .lg\:py-32 {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
   .lg\:pl-0 {
     padding-left: 0px;
   }
@@ -2037,6 +2139,14 @@ video {
 
   .lg\:pt-72 {
     padding-top: 18rem;
+  }
+
+  .lg\:pt-64 {
+    padding-top: 16rem;
+  }
+
+  .lg\:pt-\[150px\] {
+    padding-top: 150px;
   }
 
   .lg\:text-3xl {

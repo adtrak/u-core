@@ -1,20 +1,21 @@
 {% if template.name == 'product' %}
-<div class="hero-container mx-auto pt-44 lg:pt-72 pb-0 left-indent bg-black relative lg:mb-32 lg:mb-[160px]">
+<div class="hero-container mx-auto pt-44 lg:pt-72 pb-0 left-indent bg-black relative lg:mb-[160px]">
 {% elsif template.name == 'collection' %}
-<div class="hero-container mx-auto pt-44 lg:pt-72 pb-0 left-indent bg-black relative lg:mb-32">
+<div class="hero-container lg:h-[600px] flex items-center pt-36 lg:pt-[150px] rounded mx-auto left-indent bg-black relative object-cover lg:mb-36" {% if section.settings.hero_image %}style="background-image: url('{{ section.settings.hero_image | img_url: '1920x1080' }}'); background-color: rgba(0,0,0,0.3); background-blend-mode: multiply;"{% endif %}>
 {% else %}
-<div class="hero-container rounded mx-auto py-52 pb-40 lg:py-64 left-indent bg-black relative mb-32 lg:mb-36">
+<div class="hero-container h-screen flex items-center pt-36 lg:pt-[150px] rounded mx-auto left-indent bg-black relative lg:mb-36">
 {% endif %}
 
     {% if section.settings.hero_video %}
         <div class="absolute inset-0 overflow-hidden">
-          <video autoplay muted loop playsinline class="w-full h-full object-cover">
+          <video autoplay muted loop playsinline class="w-full h-full object-cover hero-video">
             {% comment %} <source src="{{ section.settings.hero_video }}" type="video/mp4"> {% endcomment %}
             <source src="{{ 'mens.mp4' | asset_url }}" type="video/mp4">
             Your browser does not support the video tag.
           </video>
         </div>
     {% endif %} 
+    
 
     <div class="hero-content containercustom relative z-20 font-heading heading">
         {% if collection.title %}
@@ -45,7 +46,7 @@
         </div>
 
         {% unless product %}
-            <div class="mt-16 ml-2">
+            <div class="my-16 ml-2">
                 {% render 'icon-arrow-down', icon-colour: "white" %}
             </div>
         {% endunless %}
