@@ -1,13 +1,13 @@
 <!-- Image for mobile -->
 <span class="relative">
-    <picture class="block lg:hidden relative z-5 w-full">
-        <source srcset="{{ section.settings.copy_image | img_url: '600x400', crop: 'center' }}">
-        <source srcset="{{ section.settings.copy_image | img_url: '600x400', crop: 'center' }}">
-        <img src="{{ section.settings.copy_image | img_url: '600x400', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1200" height="770">
+    <picture class="block lg:hidden relative z-5 w-full mb-24 lg:mb-0">
+        <source srcset="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}">
+        <source srcset="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}">
+        <img src="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1200" height="770">
     </picture>
 </span>
 
-<div class="mx-auto mb-32 lg:mb-36 grid grid-cols-1 lg:grid-cols-2 gap-24 relative containerequal">
+<div class="mx-auto mb-32 lg:mb-36 grid grid-cols-1 lg:grid-cols-2 lg:gap-24 relative containerequal">
     {% if section.settings.image_position == 'right' %}
         <div class="w-full">
             <h1 class="font-heading font-big text-grey pb-4">{{ section.settings.title }}</h1>

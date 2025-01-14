@@ -31,8 +31,8 @@
       {% if include_colour == true %}
 
       <div class="flex flex-col p-4">
-        <p class="text-gray-700 font-heading font-big uppercase font-medium text-black">{{ product_product.title }} - {{ current_color }}</p>
-        <p class="text-midgrey font-heading font-big">{{ product_product.price | money }}</p>
+        <p class="text-gray-700 font-heading font-medium uppercase text-black items-center">{{ product_product.title }} - {{ current_color }}</p>
+        <p class="text-midgrey font-heading">{{ product_product.price | money }}</p>
       </div>
 
     {% else %}

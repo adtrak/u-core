@@ -38,7 +38,7 @@
         <!-- Footer Top -->
         <div class="footer-top grid md:grid-cols-2 items text-center md:text-start">
             <div class="footer-left flex flex-wrap">
-                <ul class="parent hidden md:flex flex-wrap w-full">
+                <ul class="parent block md:flex flex-wrap w-full">
                     {% for link in linklists.footer.links %}
                     <li class="group/parent font-heading font-bold uppercase text-white flex pr-8 py-2">
                         <a href="{{ link.url }}" class="relative hover:underline focus:underline">{{ link.title }} Hoodies</a>
@@ -47,9 +47,9 @@
                 </ul>
             </div>
             <div class="footer-right">
-                <ul class="parent hidden md:flex flex-wrap justify-end w-full">
+                <ul class="parent block md:flex flex-wrap justify-end w-full">
                     {% for link in linklists.footer-menu-right.links %}
-                    <li class="group/parent font-heading font-bold uppercase text-white flex pl-8 py-2">
+                    <li class="group/parent font-heading font-bold uppercase text-white flex lg:pl-8 py-2">
                         <a href="{{ link.url }}" class="relative hover:underline focus:underline">{{ link.title }}</a>
                     </li>
                     {% endfor %}
@@ -57,18 +57,18 @@
             </div>
         </div>
         <!-- Footer Bottom -->
-        <div class="footer-bottom grid md:grid-cols-2 items text-center md:text-right">
-            <div class="footer-left flex flex-wrap">
-                <div class="block my-4">
-                    <a href="{{ routes.root_url }}" class="max-w-36">
+        <div class="footer-bottom grid md:grid-cols-2 items text-center md:text-right mt-12">
+            <div class="footer-left flex items-center flex-wrap">
+                <div class="flex items-center md:items-start w-full flex-wrap">
+                    <a href="{{ routes.root_url }}" class="mx-auto md:mx-0">
                       <img src="{{ 'logo.svg' | asset_url }}" alt="logo" height="100%" width="100%">
                     </a>
-                    <p class="text-uppercase font-heading font-bold text-grey mt-6 uppercase">© UCORE. All Rights Reserved.</p>
+                    <p class="text-uppercase font-heading font-bold w-full text-grey mt-6 uppercase md:text-left">© UCORE. All Rights Reserved.</p>
                 </div>
                 
             </div>
-            <div class="footer-right">
-                <ul class="parent hidden md:flex flex-wrap items-end w-full text-grey uppercase font-heading">
+            <div class="footer-right block md:flex flex-wrap items-end w-full">
+                <ul class="parent  text-grey uppercase font-heading w-full">
                     <li class="block w-full"><a href="/pages/privacy-policy">Privacy Policy</a></li>
                     <li class="block w-full"><a href="/pages/terms-and-conditions">Terms & Conditions</a></li>
                 </ul>
