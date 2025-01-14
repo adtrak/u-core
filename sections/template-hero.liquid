@@ -1,5 +1,7 @@
 {% if template.name == 'product' %}
 <div class="hero-container mx-auto pt-44 lg:pt-72 pb-0 left-indent bg-black relative lg:mb-32 lg:mb-[160px]">
+{% elsif template.name == 'collection' %}
+<div class="hero-container mx-auto pt-44 lg:pt-72 pb-0 left-indent bg-black relative lg:mb-32">
 {% else %}
 <div class="hero-container rounded mx-auto py-52 pb-40 lg:py-64 left-indent bg-black relative mb-32 lg:mb-36">
 {% endif %}
@@ -72,6 +74,11 @@
       "id": "sub_title",
       "default": "Sub Title",
       "label": "Sub Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
     },
     {
       "type": "video",

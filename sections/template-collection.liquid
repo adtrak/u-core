@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ 'carousels.css' | asset_url }}" />
 
 <div class="px-4 py-8">
-  <a href="{{ routes.collections_url }}" class="text-base text-gray-500 hover:underline text-center block my-4">Go back to collections</a>
+  {% comment %} <a href="{{ routes.collections_url }}" class="text-base text-gray-500 hover:underline text-center block my-4">Go back to collections</a> {% endcomment %}
   
   
   {% paginate collection.products by section.settings.number_of_products_per_page %}
