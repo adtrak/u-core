@@ -14,8 +14,8 @@
 {% endif %}
 
 <section class="w-full bg-black">
-<span class="relative mx-auto containerequal my-0 py-0">
-    <picture class="block lg:hidden relative z-5 w-full">
+<span class="relative block mx-auto containerequal my-0 py-0">
+    <picture class="block lg:hidden relative z-5 w-full object-cover">
         <source media="(max-width: 767px)" srcset="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'right' }}" type="image/webp">
         <source media="(max-width: 767px)" srcset="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'right' }}" type="image/jpeg">
         <img src="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'right' }}" class="relative" loading="lazy" alt="" width="1024" height="800">

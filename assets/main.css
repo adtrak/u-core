@@ -80,11 +80,14 @@
   text-transform: uppercase;
   font-weight: bold;
 
-
   @media screen and (min-width: 1024px) {
     font-size: 1.4rem;
     line-height: 1.8rem;
   }
+}
+
+.font-light {
+  font-weight: normal;
 }
 
 .font-big {
