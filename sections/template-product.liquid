@@ -207,20 +207,16 @@
             </div>
 
             {% when 'checkout_buttons' %}
-            <div class="my-3 bg-dark-blue" id="add-to-cart-button-{{ section.id }}">
-              <button
-                type="submit"
-                name="add"
-                class="w-full px-6 py-4 bg-gray-900 text-black hover:bg-gray-700 rounded-sm my-2"
-                {% if selected_variant.available == false %}
-                disabled
-                {% endif %}>
-                {% if selected_variant.available == false %}
-                  Sold out
-                {% else %}
-                  Add to cart
-                {% endif %}
-              </button>
+            <div class="my-12" id="add-to-cart-button-{{ section.id }}">
+              
+              {% if selected_variant.available == false %}
+                <p class="mx-auto block text-center">Sold out</p>
+              {% else %}
+                <button type="submit" name="checkout" {% if selected_variant.available == false %}disabled{% endif %} class="relative flex items-center font-heading font-light bg-white border-yellow border-2 text-black text-[13px] text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide uppercase group transition w-full">
+                  <span class="leading-none mx-auto ">Checkout</span>
+                </button>
+              {% endif %}
+
             </div>
 
           {% else %}
