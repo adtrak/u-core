@@ -1310,6 +1310,30 @@ video {
   border-radius: 0.125rem;
 }
 
+.rounded-2xl {
+  border-radius: 1rem;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
+
+.rounded-\[60px\] {
+  border-radius: 60px;
+}
+
+.rounded-\[50px\] {
+  border-radius: 50px;
+}
+
+.rounded-\[45px\] {
+  border-radius: 45px;
+}
+
 .border {
   border-width: 1px;
 }
@@ -1432,6 +1456,14 @@ video {
 
 .p-6 {
   padding: 1.5rem;
+}
+
+.p-12 {
+  padding: 3rem;
+}
+
+.p-11 {
+  padding: 2.75rem;
 }
 
 .px-1 {
@@ -1699,6 +1731,10 @@ video {
 
 .pr-1 {
   padding-right: 0.25rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
 }
 
 .text-left {

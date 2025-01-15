@@ -13,7 +13,7 @@
   x-data="{ mobileMenuOpen: false }"
   x-cloak>
   <div class="mx-auto containerwide">
-    <div class="flex lg:justify-center justify-between items-center py-6 px-8 lg:px-12 mt-6 lg:justify-start md:space-x-10 border-white border-2 rounded-full">
+    <div class="flex lg:justify-center justify-between items-center py-6 px-8 lg:px-12 mt-6 md:space-x-10 border-white border-2 rounded-full">
       <!-- STORE NAME / STORE LOGO -->
       <div class="flex justify-start lg:flex-1 truncate">
         <a href="{{ routes.root_url }}" class="max-w-[200px]">
@@ -23,25 +23,19 @@
 
       <!-- Mobile Menu Icon -->
       <div class="flex md:hidden items-center justify-end md:flex-1 space-x-2 pl-6">
+        <a href="{{ routes.cart_url }}" class="bg-black whitespace-nowrap text-base text-white p-2 rounded-full hover:text-gray-900">
+          {% render 'icon-shopping-bag' icon-colour: "white" %}
+        </a>
+
         <button
           x-on:click="mobileMenuOpen = true"
           type="button"
           class="bg-black whitespace-nowrap text-base text-white p-2 rounded-full hover:text-gray-900">
           {% render 'icon-menu', icon-colour: "white" %}
         </button>
-
-        {% comment %} <button
-          id="openSearch"
-          type="button"
-          class="bg-black whitespace-nowrap text-base text-white p-2 rounded-full hover:text-gray-900">
-          {% render 'icon-search', icon-colour: "white" %}
-        </button> {% endcomment %}
-
-        <a href="{{ routes.cart_url }}" class="bg-black whitespace-nowrap text-base text-white p-2 rounded-full hover:text-gray-900">
-          {% render 'icon-shopping-bag' icon-colour: "white" %}
-        </a>
       </div>
 
+      <!-- Main page navigation desktop -->
       <div class="header-right hidden md:flex">
 
         <ul class="parent flex space-x-2">
@@ -86,22 +80,22 @@
 
       </div>
 
-      <!-- MOBILE MENU CONTAINER -->
-      <div x-show="mobileMenuOpen" class="absolute z-10 top-0 inset-x-0 p-2 transform origin-top-left md:hidden">
-        <div class="shadow-lg rounded-lg ring-1 ring-black ring-opacity-5 bg-white w-full">
-          <div class="p-5 divide-y-2 divide-gray-50">
+      <!-- MOBILE HIDDEN MENU CONTAINER -->
+      <div x-show="mobileMenuOpen" class="absolute z-10 top-0 inset-x-0 p-6 transform origin-top-left md:hidden mx-auto containerwide">
+        <div class="shadow-lg rounded-[45px] border-white border-2 ring-1 ring-black ring-opacity-5 bg-white w-full">
+          <div class="py-6 px-8 divide-y-2 divide-gray-50 ">
 
             <!-- MOBILE MENU HEADER TITLE PLUS CLOSE BUTTON -->
 
-            <div class="flex items-center justify-between pb-3">
+            <div class="flex items-center justify-between pb-6">
               <div>
-                <h1 class="text-lg text-gray-500">{{ section.settings.mobile_menu_title }}</h1>
+                <h1 class="text-lg font-heading font-big text-gray-500">{{ section.settings.mobile_menu_title }}</h1>
               </div>
-              <div class="-mr-2">
+              <div class="ml-2">
                 <button
                   x-on:click="mobileMenuOpen = false"
                   type="button"
-                  class="bg-white rounded-md p-2 text-gray-500">
+                  class="bg-black p-2 text-white rounded-full">
                   {% render 'icon-close' %}
                 </button>
               </div>
@@ -110,10 +104,10 @@
             
 
             <!-- NAVIGATION LINKS FOR MOBILE MENU -->
-            <div class="pt-3">
+            <div class="pt-6">
               <ul class="menu-drawer__menu list-menu" role="list">
                 {%- for link in section.settings.menu.links -%}
-                  <li>
+                  <li class="uppercase mb-2 font-heading">
                     {%- if link.links != blank -%}
                       <details id="Details-menu-drawer-menu-item-{{ forloop.index }}" class="ml-2">
                         <summary class="{% if link.child_active %}active{% endif %}">
@@ -178,33 +172,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="w-full absolute top-0 bg-white border hidden" id="searchbar">
-    <button
-      type="button"
-      class="absolute top-0 right-0 mr-5 mt-5 text-gray-500"
-      id="closeSearch">
-      {% render 'icon-close' %}
-    </button>
-    <div class="h-40 flex justify-center items-center">
-      <form
-        action="{{ routes.search_url }}"
-        method="get"
-        class="flex-auto max-w-[400px]">
-        <div class="relative text-gray-500 border">
-          <input
-            type="search"
-            name="q"
-            placeholder="Search"
-            class="w-full bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
-
-            <button type="submit" class="absolute right-0 top-0 mt-2 mr-2 md:mr-5">
-              {% render 'icon-search' %}
-            </button>
-        </div>
-      </form>
     </div>
   </div>
 </div>
