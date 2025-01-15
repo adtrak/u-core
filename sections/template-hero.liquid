@@ -3,7 +3,7 @@
 {% elsif template.name == 'collection' %}
 <div class="hero-container lg:h-[600px] flex items-center pt-48 pb-10 lg:pt-[250px] rounded mx-auto left-indent bg-black relative object-cover mb-24 lg:mb-36" {% if section.settings.hero_image %}style="background-image: url('{{ section.settings.hero_image | img_url: '1920x1080' }}'); background-color: rgba(0,0,0,0.4); background-blend-mode: multiply;"{% endif %}>
 {% elsif template.name == 'cart' %}
-<div class="hero-container lg:h-[600px] flex items-center pt-48 pb-10 lg:pt-[250px] rounded mx-auto left-indent bg-black relative object-cover mb-24 lg:mb-36" {% if section.settings.hero_image %}style="background-image: url('{{ section.settings.hero_image | img_url: '1920x1080' }}'); background-color: rgba(0,0,0,0.4); background-blend-mode: multiply;"{% endif %}>
+<div class="hero-container lg:h-[600px] flex items-center pt-48 pb-10 lg:pt-[250px] mx-auto left-indent bg-black relative object-cover mb-24 lg:mb-36" {% if section.settings.hero_image %}style="background-image: url('{{ section.settings.hero_image | img_url: '1920x1080' }}'); background-color: rgba(0,0,0,0.4); background-blend-mode: multiply;"{% endif %}>
 {% else %}
 <div class="hero-container h-screen flex items-center pt-36 lg:pt-[150px] rounded mx-auto left-indent bg-black relative mb-24 lg:mb-36">
 {% endif %}

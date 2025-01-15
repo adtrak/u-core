@@ -207,11 +207,11 @@
             </div>
 
             {% when 'checkout_buttons' %}
-            <div class="my-3 bg-dark-blue">
+            <div class="my-3 bg-dark-blue" id="add-to-cart-button-{{ section.id }}">
               <button
                 type="submit"
                 name="add"
-                class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-700 rounded-sm my-2"
+                class="w-full px-6 py-4 bg-gray-900 text-black hover:bg-gray-700 rounded-sm my-2"
                 {% if selected_variant.available == false %}
                 disabled
                 {% endif %}>
@@ -280,6 +280,7 @@
         this.updateURL();
         this.updateFormID();
         this.updatePrice();
+        this.updateAddToCartButton();
       }
     }
 
@@ -348,6 +349,21 @@
 
 
       });
+    }
+
+    updateAddToCartButton() {
+      const buttonContainer = document.getElementById(`add-to-cart-button-${this.dataset.section}`);
+      
+      fetch(`${this.dataset.url}?variant=${this.currentVariant.id}&section_id=${this.dataset.section}`)
+        .then((response) => response.text())
+        .then((responseText) => {
+          const html = new DOMParser().parseFromString(responseText, 'text/html');
+          const newButtonContainer = html.getElementById(`add-to-cart-button-${this.dataset.section}`);
+          
+          if (buttonContainer && newButtonContainer) {
+            buttonContainer.innerHTML = newButtonContainer.innerHTML;
+          }
+        });
     }
   }
 
