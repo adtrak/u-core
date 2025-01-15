@@ -1,11 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "template": {
-            "type": "template-page"
-        },
-        "contact-form": {
-            "type": "contact-form"
-        }
+  "sections": {
+    "template_hero_TcAcDN": {
+      "type": "template-hero",
+      "settings": {
+        "title": "Contact Us",
+        "sub_title": "Get in touch today",
+        "hero_image": "shopify://shop_images/DSC01011.jpg"
+      }
     },
-    "order": ["template", "contact-form"]
+    "template": {
+      "type": "template-page",
+      "settings": {}
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "settings": {
+        "title": ""
+      }
+    }
+  },
+  "order": [
+    "template_hero_TcAcDN",
+    "template",
+    "contact-form"
+  ]
 }
