@@ -21,12 +21,6 @@
       "type": "template-page",
       "settings": {}
     },
-    "contact-form": {
-      "type": "contact-form",
-      "settings": {
-        "title": ""
-      }
-    },
     "template_copy_t6h3At": {
       "type": "template-copy",
       "settings": {
@@ -36,12 +30,18 @@
         "show_image": true,
         "image_position": "left"
       }
+    },
+    "contact-form": {
+      "type": "contact-form",
+      "settings": {
+        "title": ""
+      }
     }
   },
   "order": [
     "template_hero_TcAcDN",
     "template",
-    "contact-form",
-    "template_copy_t6h3At"
+    "template_copy_t6h3At",
+    "contact-form"
   ]
 }
