@@ -9,6 +9,14 @@
  */
 {
   "sections": {
+    "template_hero_7bcFfP": {
+      "type": "template-hero",
+      "settings": {
+        "title": "Your Cart",
+        "sub_title": "",
+        "hero_image": "shopify://shop_images/footer-image.jpg"
+      }
+    },
     "template": {
       "type": "template-cart",
       "blocks": {
@@ -31,13 +39,6 @@
         "checkout-button"
       ],
       "settings": {}
-    },
-    "template_hero_7bcFfP": {
-      "type": "template-hero",
-      "settings": {
-        "title": "Title",
-        "sub_title": "Sub Title"
-      }
     }
   },
   "order": [
