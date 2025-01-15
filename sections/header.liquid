@@ -40,10 +40,10 @@
 
         <ul class="parent flex space-x-2">
           {% for link in linklists.main-menu.links %}
-            <li class="group/parent">
-              {% render 'button', text: link.title, url: link.url, btn-style: "white" %}
+            <li class="group/parent relative">
+              {% render 'button', text: link.title, url: link.url, btn-style: "white", extra-class: "relative z-10" %}
               {% if link.links != blank %}
-                <ul class="child hidden group/parent group-hover/parent:block absolute">
+                <ul class="child hidden group/parent group-hover/parent:block absolute top-0 p-6 pt-16 bg-white rounded-3xl">
                   {% for child_link in link.links %}
                     <li class="group/child">
                       <a href="{{ child_link.url }}" class="relative">{{ child_link.title }}</a>
@@ -81,7 +81,7 @@
       </div>
 
       <!-- MOBILE HIDDEN MENU CONTAINER -->
-      <div x-show="mobileMenuOpen" class="absolute z-10 top-0 inset-x-0 p-6 transform origin-top-left md:hidden mx-auto containerwide">
+      <div x-show="mobileMenuOpen" class="absolute top-0 inset-x-0 p-6 transform origin-top-left md:hidden mx-auto containerwide z-50">
         <div class="shadow-lg rounded-[45px] border-white border-2 ring-1 ring-black ring-opacity-5 bg-white w-full">
           <div class="py-6 px-8 divide-y-2 divide-gray-50 ">
 
@@ -114,8 +114,8 @@
                           {{ link.title | escape }}
                         </summary>
                         <div id="link-{{ link.title | escape }}" tabindex="-1">
-                          <div class="submenu">
-                            <button aria-expanded="true">
+                          <div class="submenu my-2 pl-4 border-l-2 border-grey overflow-auto">
+                            <button class="uppercase my-2" aria-expanded="true">
                               {{ link.title | escape }}
                             </button>
                             <ul role="list" tabindex="-1">
@@ -124,7 +124,7 @@
                                   {%- if childlink.links == blank -%}
                                     <a
                                       href="{{ childlink.url }}"
-                                      class="{% if childlink.current %}active{% endif %}"
+                                      class="{% if childlink.current %}active{% endif %} block uppercase my-2"
                                       {% if childlink.current %}
                                       aria-current="page"
                                       {% endif %}>{{ childlink.title | escape }}</a>

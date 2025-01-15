@@ -14,6 +14,20 @@
   }
 }
 
+.containersuperwide {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  width: 100%;
+  max-width: 1800px;
+
+  @media screen and (min-width: 1024px) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
+
 .containerequal {
   margin-left: auto;
   margin-right: auto;
