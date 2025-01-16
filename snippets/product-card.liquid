@@ -7,7 +7,8 @@
             <div class="relative w-full h-full pr-6 pb-6">
               <img
                 class="w-full h-full object-cover"
-                src="{{ current_variant.image | img_url: 'large' }}"
+                style="object-position: center -50px;"
+                src="{{ current_variant.image | img_url: '1024x1024' }}"
                 alt="{{ current_variant.image.alt | default: current_variant.title }}">
             </div>
           </div>
@@ -16,7 +17,8 @@
             <div class="relative w-full h-full pr-6 pb-6">
               <img
                 class="w-full h-full object-cover"
-                src="{{ product_product.featured_image | img_url: 'large' }}"
+                style="object-position: center -50px;"
+                src="{{ product_product.featured_image | img_url: '1024x1024' }}"
                 alt="{{ product_product.featured_image.alt }}">
             </div>
           </div>
