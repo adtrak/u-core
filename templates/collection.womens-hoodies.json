@@ -32,11 +32,20 @@
         "show_image": true,
         "image_position": "left"
       }
+    },
+    "featured_collection_colours_nzPBnL": {
+      "type": "featured-collection-colours",
+      "settings": {
+        "title": "Womens Hoodies",
+        "featured_collection": "womens-hoodies",
+        "number_of_products_to_show": 8
+      }
     }
   },
   "order": [
     "template_hero_LaRNEn",
     "template",
-    "template_copy_6qEKzY"
+    "template_copy_6qEKzY",
+    "featured_collection_colours_nzPBnL"
   ]
 }
