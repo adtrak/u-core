@@ -14,7 +14,7 @@
       "settings": {
         "title": "Contact Us",
         "sub_title": "Get in touch today",
-        "hero_image": "shopify://shop_images/DSC01011.jpg"
+        "hero_image": "shopify://shop_images/Screenshot_2025-01-16_at_16.14.58.png"
       }
     },
     "template": {
@@ -30,18 +30,11 @@
         "show_image": true,
         "image_position": "left"
       }
-    },
-    "contact-form": {
-      "type": "contact-form",
-      "settings": {
-        "title": ""
-      }
     }
   },
   "order": [
     "template_hero_TcAcDN",
     "template",
-    "template_copy_t6h3At",
-    "contact-form"
+    "template_copy_t6h3At"
   ]
 }
