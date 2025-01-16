@@ -67,12 +67,12 @@
 
         <!-- CART BUTTON / ACCOUNT LINKS IF ENABLED -->
         <div class="hidden md:flex items-center justify-end md:flex-1 space-x-2 pl-6">
-          <button
+          {% comment %} <button
             id="openSearch"
             type="button"
             class="bg-black whitespace-nowrap text-base text-white p-2 rounded-full hover:text-gray-900">
             {% render 'icon-search', icon-colour: "white" %}
-          </button>
+          </button> {% endcomment %}
           <a href="{{ routes.cart_url }}" class="bg-black whitespace-nowrap text-base text-white p-2 rounded-full hover:text-gray-900">
             {% render 'icon-shopping-bag' icon-colour: "white" %}
           </a>
