@@ -32,11 +32,20 @@
         "show_image": true,
         "image_position": "left"
       }
+    },
+    "template_copy_feature_Vm96bC": {
+      "type": "template-copy-feature",
+      "settings": {
+        "title": "Women's Fashion",
+        "body": "<p>Not only is our women’s clothing range extremely practical, but style isn’t compromised.</p>\n\n<p>Our hoodies, sweatshirts and t-shirts make for great women’s fashion products, due to their stunning aesthetic that features clean lines, smart designs and a great look. The unique pocket technology is also seamlessly integrated into the design so your phone will be kept safe while still looking good.</p>\n\n<p>Shop our ladies’ clothes online today or contact Ucore to find out more. </p>",
+        "copy_video": "shopify://files/videos/U Core Runner V1 091024.mp4"
+      }
     }
   },
   "order": [
     "template_hero_LaRNEn",
     "template",
-    "template_copy_6qEKzY"
+    "template_copy_6qEKzY",
+    "template_copy_feature_Vm96bC"
   ]
 }
