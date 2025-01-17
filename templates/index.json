@@ -37,6 +37,14 @@
         "hero_video": "shopify://files/videos/U Core Runner V1 091024.mp4"
       }
     },
+    "featured_collection_colours_bL8qqB": {
+      "type": "featured-collection-colours",
+      "settings": {
+        "title": "Trending Products",
+        "featured_collection": "trending",
+        "number_of_products_to_show": 7
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -137,22 +145,14 @@
         "body": "<p>Not only will you never miss a phone call, but our innovative phone pocket provides a wide range of other benefits.</p>\n\n<p>Suitable as sportswear, activewear and technical outerwear, the use of hands-free technology makes Ucore’s clothing ideal for a variety of environments where holding your phone may not be practical. This could include the gym, at the shops, doing DIY, at music events, football matches and much more. With your phone’s microphone even closer to your mouth, there is no need for earpods either.</p>\n\n<p>Discover the freedom of Ucore clothing and order online today.</p>",
         "copy_video": "shopify://files/videos/U Core Runner V1 091024.mp4"
       }
-    },
-    "featured_collection_colours_bL8qqB": {
-      "type": "featured-collection-colours",
-      "settings": {
-        "title": "Trending Products",
-        "featured_collection": "trending",
-        "number_of_products_to_show": 7
-      }
     }
   },
   "order": [
     "template_hero_YGwtBG",
-    "featured-collection",
+    "featured_collection_colours_bL8qqB",
     "template_usps_gYYMw7",
     "template_copy_MgKqwe",
     "template_copy_feature_N8HfXb",
-    "featured_collection_colours_bL8qqB"
+    "featured-collection"
   ]
 }
