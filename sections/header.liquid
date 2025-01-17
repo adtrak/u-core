@@ -115,9 +115,9 @@
                         </summary>
                         <div id="link-{{ link.title | escape }}" tabindex="-1">
                           <div class="submenu my-2 pl-4 border-l-2 border-grey overflow-auto">
-                            <button class="uppercase my-2" aria-expanded="true">
+                            <a class="uppercase my-2" aria-expanded="true" href="{{ link.url }}">
                               {{ link.title | escape }}
-                            </button>
+                            </a>
                             <ul role="list" tabindex="-1">
                               {%- for childlink in link.links -%}
                                 <li>
