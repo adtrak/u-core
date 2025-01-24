@@ -42,7 +42,7 @@
         <div class="swiper-wrapper max-w-[100vw]">
           {% for media in product.media %}
             <div class="swiper-slide">
-              {% render 'product-media', media: media %}
+              {% render 'product-media', media: media, data-media-id: media.id %}
             </div>
           {% endfor %}
         </div>
@@ -108,7 +108,7 @@
                   x-transition:leave-end="opacity-0 transform -translate-y-2" 
                   class="p-4"
                 >
-                  <p class="text-sm text-gray-600">{{ product.description }}</p>
+                  <div class="text-sm text-gray-600">{{ product.description | raw }}</div>
                 </div>
               </div>
             
@@ -271,6 +271,11 @@
     onVariantChange() {
       this.getSelectedOptions();
       this.getSelectedVariant();
+      if (window.pdpSwiper) {
+        window.pdpSwiper.update(); // Force Swiper to refresh slides
+      }
+      this.scrollToVariantImage();
+
 
       if (this.currentVariant) {
         this.updateURL();
@@ -279,6 +284,22 @@
         this.updateAddToCartButton();
       }
     }
+
+    scrollToVariantImage() {
+      if (!this.currentVariant || !this.currentVariant.featured_media) return;
+    
+      const mediaID = this.currentVariant.featured_media.id;
+      const slides = document.querySelectorAll('.swiper-slide');
+    
+      let targetIndex = Array.from(slides).findIndex(slide => {
+        const img = slide.querySelector('img, video');
+        return img && img.dataset.mediaId == mediaID; // Ensure media has data-media-id
+      });
+    
+      if (targetIndex !== -1 && window.pdpSwiper) {
+        window.pdpSwiper.slideTo(targetIndex);
+      }
+    }    
 
     getSelectedOptions() {
       this.options = Array.from(
@@ -367,24 +388,63 @@
 </script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    try {
-      const swiper = new Swiper('.swiper', {
-        direction: 'horizontal',
-
-        pagination: {
-          el: '.swiper-pagination'
-        },
-
-        navigation: {
-          prevEl: '.swiper-button-prev',
-          nextEl: '.swiper-button-next'
-        }
-      })
-    } catch (e) {
-      console.log("SwiperJS is not defined");
+  document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(() => {
+      try {
+        window.pdpSwiper = new Swiper('.pdp-image-swiper', {
+          direction: 'horizontal',
+          pagination: {
+            el: '.swiper-pagination'
+          },
+          navigation: {
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next'
+          }
+        });
+  
+        // Check for variant in URL and scroll to its image
+        scrollToVariantFromURL();
+      } catch (e) {
+        console.log('SwiperJS is not defined');
+      }
+    }, 100);
+  });
+  
+  // Function to check URL for variant and scroll to its image
+  function scrollToVariantFromURL() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const variantId = urlParams.get('variant');
+  
+    if (!variantId) return; // No variant in URL, exit early
+  
+    // Find variant JSON data
+    const variantDataElement = document.querySelector('[type="application/json"]');
+    if (!variantDataElement) return;
+  
+    const variantData = JSON.parse(variantDataElement.textContent);
+    const selectedVariant = variantData.find(v => v.id == variantId);
+  
+    if (selectedVariant && selectedVariant.featured_media) {
+      const mediaID = selectedVariant.featured_media.id;
+      const slides = document.querySelectorAll('.swiper-slide');
+  
+      let targetIndex = Array.from(slides).findIndex(slide => {
+        const img = slide.querySelector('[data-media-id]');
+        return img && img.dataset.mediaId == mediaID;
+      });
+  
+      if (targetIndex !== -1 && window.pdpSwiper) {
+        window.pdpSwiper.slideTo(targetIndex);
+  
+        // 🛠 Force Swiper to update pagination
+        setTimeout(() => {
+          window.pdpSwiper.update(); // Refresh Swiper
+        }, 100);
+      }
     }
-  })
+  }
+  
+  
 </script>
 
 {% schema %}
