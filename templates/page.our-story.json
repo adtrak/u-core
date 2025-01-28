@@ -30,11 +30,20 @@
         "show_image": true,
         "image_position": "left"
       }
+    },
+    "template_copy_feature_3RXGed": {
+      "type": "template-copy-feature",
+      "settings": {
+        "title": "How Ucore was created",
+        "body": "<p>We had our “eureka” moment while enjoying a major sporting event at the Tottenham Hotspur Stadium. Surrounded by the roar of a crowd, we noticed that phone calls could be missed amidst the noise. This sparked an idea: modern clothing needed a smarter way to integrate mobile phones seamlessly. Determined to solve the problem, we set out to design a garment that redefines functionality in activewear.</p>\n\n<p>The thought suddenly dawned that there are two ways that a phone alerts a person: the first is through the ringtone, while the other is through vibration. From here, we began developing a garment that featured unique phone holder pockets located on the front of hoodies, sweatshirts and t-shirts. This is the optimum place to detect vibration so that people in loud or noisy environments can feel the phone if they can not hear the phone.</p>\n\n<p>As well as being the best place to detect vibration, it was found that consumers also really appreciate the feeling of increased security from damage or theft with the phone being located centrally.</p>\n\n<p>The pocket ensures all modern smartphones can seamlessly fit into the pockets, while not compromising on the stunning aesthetics of the clothing. As soon as you receive an urgent call, you’ll be able to easily access your phone and answer it whether you’re playing sports, running, hitting the gym or other environments where it’s hard to hear your phone.</p>\n\n<p>Learn more about the Ucore journey, and get in touch with our team today.   </p>",
+        "copy_video": "shopify://files/videos/U Core Runner V1 091024.mp4"
+      }
     }
   },
   "order": [
     "template",
     "template_hero_m3TLxA",
-    "template_copy_T37wD3"
+    "template_copy_T37wD3",
+    "template_copy_feature_3RXGed"
   ]
 }
