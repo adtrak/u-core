@@ -28,6 +28,7 @@
         "body": "<p>At Ucore, we can deliver all of our quality products to customers across the UK, and we also ship to mainland Europe and the USA.</p>\n\n<p>If you have any questions about returns or exchanges, contact Ucore today. </p>",
         "copy_image": "shopify://shop_images/DSC00328.jpg",
         "show_image": true,
+        "short_image": true,
         "image_position": "left"
       }
     }
