@@ -38,9 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
             nextEl: '.pdp-image-swiper-button-next',
             prevEl: '.pdp-image-swiper-button-prev',
         },
-        autoplay: {
-            delay: 5000,
-        },
         })
     } catch (e) {
         console.log("SwiperJS is not defined");
