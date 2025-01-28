@@ -20,10 +20,21 @@
         "sub_title": "Your questions answered",
         "hero_image": "shopify://shop_images/DSC0563.png"
       }
+    },
+    "template_copy_WNetb9": {
+      "type": "template-copy",
+      "settings": {
+        "title": "Frequently Asked Questions",
+        "body": "<p>To help you better understand our brand and product range, the Ucore team has put together some of our most frequently asked questions.</p>\n\n<p>If your question is not answered below, feel free to get in touch with our friendly team.</p>",
+        "copy_image": "shopify://shop_images/DSC03490.jpg",
+        "show_image": true,
+        "image_position": "left"
+      }
     }
   },
   "order": [
     "template",
-    "template_hero_nTG8EV"
+    "template_hero_nTG8EV",
+    "template_copy_WNetb9"
   ]
 }
