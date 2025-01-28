@@ -101,7 +101,7 @@
     "featured_collection_colours_gNNTaN": {
       "type": "featured-collection-colours",
       "settings": {
-        "title": "Featured Collection Colours",
+        "title": "Treding",
         "featured_collection": "trending",
         "number_of_products_to_show": 9
       }
