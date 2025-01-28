@@ -31,11 +31,38 @@
         "short_image": true,
         "image_position": "left"
       }
+    },
+    "template_faqs_hhQqXp": {
+      "type": "template-faqs",
+      "blocks": {
+        "faq_JzyLDg": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "Question",
+            "faq_answer": "Answer"
+          }
+        },
+        "faq_XPqw3T": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "Question",
+            "faq_answer": "Answer"
+          }
+        }
+      },
+      "block_order": [
+        "faq_JzyLDg",
+        "faq_XPqw3T"
+      ],
+      "settings": {
+        "title": "Title"
+      }
     }
   },
   "order": [
     "template",
     "template_hero_nTG8EV",
-    "template_copy_WNetb9"
+    "template_copy_WNetb9",
+    "template_faqs_hhQqXp"
   ]
 }
