@@ -28,7 +28,8 @@
         "body": "<p>We hope you’ll love your Ucore products as soon as they arrive, but if you need to return them, please do so within 28 days. They must be returned in the same condition, and feature the swing tags they are delivered with.</p>\n\n<p>If you have any questions about returns or exchanges, contact Ucore today. </p>",
         "copy_image": "shopify://shop_images/DSC00328.jpg",
         "show_image": true,
-        "image_position": "left"
+        "short_image": false,
+        "image_position": "right"
       }
     }
   },
