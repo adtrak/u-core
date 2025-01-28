@@ -29,7 +29,7 @@
         "copy_image": "shopify://shop_images/DSC00328.jpg",
         "show_image": true,
         "short_image": true,
-        "image_position": "left"
+        "image_position": "right"
       }
     }
   },
