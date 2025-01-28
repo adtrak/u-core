@@ -62,13 +62,21 @@
             "faq_question": "Where in the world does Ucore ship to?",
             "faq_answer": "All of our products can be shipped across the UK, to mainland Europe and to the USA. "
           }
+        },
+        "faq_9MXnTj": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "How long will my order take to arrive?",
+            "faq_answer": "Orders will arrive within one to three days depending on when the order has been placed."
+          }
         }
       },
       "block_order": [
         "faq_JzyLDg",
         "faq_XPqw3T",
         "faq_kcJMWY",
-        "faq_nPGPrD"
+        "faq_nPGPrD",
+        "faq_9MXnTj"
       ],
       "settings": {
         "title": "Title"
