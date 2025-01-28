@@ -48,11 +48,27 @@
             "faq_question": "What size phones does the Ucore pocket hold?",
             "faq_answer": "All of Ucore’s products come with pocket technology that can fit any smart mobile phone with a standard protector case."
           }
+        },
+        "faq_kcJMWY": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "Do you have a size guide?",
+            "faq_answer": "Yes, you can view our size guide linked on our products."
+          }
+        },
+        "faq_nPGPrD": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "Where in the world does Ucore ship to?",
+            "faq_answer": "All of our products can be shipped across the UK, to mainland Europe and to the USA. "
+          }
         }
       },
       "block_order": [
         "faq_JzyLDg",
-        "faq_XPqw3T"
+        "faq_XPqw3T",
+        "faq_kcJMWY",
+        "faq_nPGPrD"
       ],
       "settings": {
         "title": "Title"
