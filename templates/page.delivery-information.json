@@ -31,11 +31,20 @@
         "short_image": true,
         "image_position": "right"
       }
+    },
+    "featured_collection_colours_nKVyji": {
+      "type": "featured-collection-colours",
+      "settings": {
+        "title": "Trending",
+        "featured_collection": "trending",
+        "number_of_products_to_show": 9
+      }
     }
   },
   "order": [
     "template",
     "template_hero_m3TLxA",
-    "template_copy_T37wD3"
+    "template_copy_T37wD3",
+    "featured_collection_colours_nKVyji"
   ]
 }
