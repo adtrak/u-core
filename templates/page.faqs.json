@@ -12,9 +12,18 @@
     "template": {
       "type": "template-page",
       "settings": {}
+    },
+    "template_hero_nTG8EV": {
+      "type": "template-hero",
+      "settings": {
+        "title": "FAQs",
+        "sub_title": "Your questions answered",
+        "hero_image": "shopify://shop_images/DSC0563.png"
+      }
     }
   },
   "order": [
-    "template"
+    "template",
+    "template_hero_nTG8EV"
   ]
 }
