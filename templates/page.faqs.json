@@ -76,6 +76,13 @@
             "faq_question": "What is your returns and refund policy?",
             "faq_answer": "All items must be returned within 28 days with swing tags and in a saleable condition. "
           }
+        },
+        "faq_HWpipn": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "Can Ucore make custom clothing with the Ucore pocket on?",
+            "faq_answer": "No. The pocket is specific to our range of garments."
+          }
         }
       },
       "block_order": [
@@ -84,7 +91,8 @@
         "faq_kcJMWY",
         "faq_nPGPrD",
         "faq_9MXnTj",
-        "faq_fTHPnQ"
+        "faq_fTHPnQ",
+        "faq_HWpipn"
       ],
       "settings": {
         "title": "Title"
