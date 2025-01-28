@@ -69,6 +69,13 @@
             "faq_question": "How long will my order take to arrive?",
             "faq_answer": "Orders will arrive within one to three days depending on when the order has been placed."
           }
+        },
+        "faq_fTHPnQ": {
+          "type": "faq",
+          "settings": {
+            "faq_question": "What is your returns and refund policy?",
+            "faq_answer": "All items must be returned within 28 days with swing tags and in a saleable condition. "
+          }
         }
       },
       "block_order": [
@@ -76,7 +83,8 @@
         "faq_XPqw3T",
         "faq_kcJMWY",
         "faq_nPGPrD",
-        "faq_9MXnTj"
+        "faq_9MXnTj",
+        "faq_fTHPnQ"
       ],
       "settings": {
         "title": "Title"
