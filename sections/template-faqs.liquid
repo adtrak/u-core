@@ -1,4 +1,69 @@
-<div class="flex flex-col items-center my-8">
-    <h1 class="text-3xl font-medium my-8 md:my-16">{{ page.title }} FAQs</h1>
-    <div class="max-w-6xl mx-auto px-4">{{ page.content }}</div>
-</div>  
+<div class="usps-container outer-container relative w-full mb-24 lg:mb-36">
+
+    <div class="containercustom relative flex">
+   
+        <div class="usp-left lg:pr-12 relative left-indent py-24 lg:py-40 flex flex-wrap lg:w-7/12">
+
+            <div class="bg-lightgrey stretch absolute top-0 right-0 h-full z-[-1]"></div>
+
+            {% for block in section.blocks %}
+                {% if block.type == 'faq' %}
+                    <div class="usp w-full border-b-2 border-b-midgrey py-10 text-grey flex">
+                        <span>
+                            <p class="font-heading font-big pb-2 text-grey">{{ block.settings.usp_heading }}</p>
+                            <p>{{ block.settings.faq_question }}</p>
+                        </span>
+                    </div>
+                    
+                {% endif %}
+            {% endfor %}
+ 
+        </div>å
+
+    </div>
+    
+</div>
+
+{% schema %}
+{
+  "name": "FAQ Section",
+  "presets": [
+    {
+      "name": "FAQs"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Title",
+      "label": "H1 Title"
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "USP Image"
+    }, 
+  ],
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+            "type": "text",
+            "id": "faq_question",
+            "label": "FAQ Question",
+            "default": "Question"
+        },
+        {
+            "type": "text",
+            "id": "faq_answer",
+            "label": "FAQ Answer",
+            "default": "Answer"
+        },
+      ]
+    }
+  ]
+}
+{% endschema %}
