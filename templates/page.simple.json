@@ -9,12 +9,30 @@
  */
 {
   "sections": {
+    "template_hero_iVazHm": {
+      "type": "template-hero",
+      "settings": {
+        "title": "Our Story",
+        "sub_title": "How Ucore was born",
+        "hero_image": "shopify://shop_images/DSC03490.jpg"
+      }
+    },
     "template": {
       "type": "template-page",
       "settings": {}
+    },
+    "template_copy_feature_9rytNX": {
+      "type": "template-copy-feature",
+      "settings": {
+        "title": "Our story",
+        "body": "<p>At Ucore, we recognise just how essential mobile phones are when it comes to staying connected.\nHowever, you’re typically required to hold the phone to answer calls and, if you’re expecting an important call, you’ll constantly be checking your device. </p>\n\n<p>Understanding how frustrating it can be to miss urgent calls, the Ucore team created an innovative solution.</p>\n\n<p>Our stylish hoodies feature a central pocket on the garment’s upper torso where mobile phones can be safely stored when playing sports, hitting the gym or just as you’re going about your daily life.   \nDue to its sensitive location, as soon as a call connects to your phone, you’ll feel the vibrations and be able to promptly answer - meaning you don’t need to worry about missing any important messages. </p>",
+        "copy_video": "shopify://files/videos/U Core Runner V1 091024.mp4"
+      }
     }
   },
   "order": [
-    "template"
+    "template_hero_iVazHm",
+    "template",
+    "template_copy_feature_9rytNX"
   ]
 }
