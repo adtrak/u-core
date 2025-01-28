@@ -97,12 +97,21 @@
       "settings": {
         "title": "Title"
       }
+    },
+    "featured_collection_colours_gNNTaN": {
+      "type": "featured-collection-colours",
+      "settings": {
+        "title": "Featured Collection Colours",
+        "featured_collection": "trending",
+        "number_of_products_to_show": 9
+      }
     }
   },
   "order": [
     "template",
     "template_hero_nTG8EV",
     "template_copy_WNetb9",
-    "template_faqs_hhQqXp"
+    "template_faqs_hhQqXp",
+    "featured_collection_colours_gNNTaN"
   ]
 }
