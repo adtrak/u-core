@@ -31,7 +31,7 @@
     <div class="card-text">
 
       {% if include_colour == true %}
-      <div class="flex justify-between items-center p-4">
+      <div class="flex justify-between items-center p-4 flex-wrap md:flexno-wrap">
         <div class="flex flex-col p-4">
           <p class="text-gray-700 font-heading font-medium uppercase text-black items-center mb-1">{{ product_product.title }} - {{ current_color }}</p>
           <p class="text-midgrey font-heading">{{ product_product.price | money }}</p>
@@ -44,7 +44,7 @@
 
     {% else %}
 
-      <div class="flex justify-between items-center p-4">
+      <div class="flex justify-between items-center p-4 flex-wrap md:flexno-wrap">
         <div class="flex flex-col">
           <p class="text-gray-700 font-heading font-medium uppercase text-black items-center mb-1">{{ product_product.title }}</p>
           <p class="text-midgrey font-heading">{{ product_product.price | money }}</p>
