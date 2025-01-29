@@ -1,4 +1,4 @@
-<div class="w-full card">
+<div class="w-full card group hover:scale-[1.02] transition-all">
   <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative block">
     <div class="card-image relative bg-lightgrey overflow-hidden h-full">
     
@@ -31,21 +31,26 @@
     <div class="card-text">
 
       {% if include_colour == true %}
+      <div class="flex justify-between items-center p-4">
+        <div class="flex flex-col p-4">
+          <p class="text-gray-700 font-heading font-medium uppercase text-black items-center mb-1">{{ product_product.title }} - {{ current_color }}</p>
+          <p class="text-midgrey font-heading">{{ product_product.price | money }}</p>
+        </div>
 
-      <div class="flex flex-col p-4">
-        <p class="text-gray-700 font-heading font-medium uppercase text-black items-center">{{ product_product.title }} - {{ current_color }}</p>
-        <p class="text-midgrey font-heading">{{ product_product.price | money }}</p>
+        <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group transition">
+          <span class="leading-none mx-auto">Buy Now</span>
+        </a>
       </div>
 
     {% else %}
 
       <div class="flex justify-between items-center p-4">
         <div class="flex flex-col">
-          <p class="text-gray-700 font-heading font-medium uppercase text-black items-center">{{ product_product.title }}</p>
+          <p class="text-gray-700 font-heading font-medium uppercase text-black items-center mb-1">{{ product_product.title }}</p>
           <p class="text-midgrey font-heading">{{ product_product.price | money }}</p>
         </div>
         
-        <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group transition">
+        <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group-hover:text-grey group-hover:bg-lightgrey transition">
             <span class="leading-none mx-auto">Buy Now</span>
         </a>
       
