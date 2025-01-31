@@ -28,13 +28,46 @@
         "body": "If you need any more information on any of our great products, feel free to get in touch with the friendly Ucore team today.\nSimply give us a call or complete the online form, we look forward to hearing from you.",
         "copy_image": "shopify://shop_images/DSC01659.jpg",
         "show_image": true,
-        "image_position": "left"
+        "short_image": false,
+        "image_position": "left",
+        "contact_title": "",
+        "contact_content": "",
+        "contact_mail": "",
+        "contact_telephone": "",
+        "contact_insta_handle": ""
       }
+    },
+    "173832250630ea7398": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_hMT7P3": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "330263",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#FFFFFF",
+            "links_color": "#1878B9",
+            "errors_color": "#E02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_hMT7P3"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "template_hero_TcAcDN",
     "template",
-    "template_copy_t6h3At"
+    "template_copy_t6h3At",
+    "173832250630ea7398"
   ]
 }
