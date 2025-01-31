@@ -87,7 +87,9 @@
             {% endif %}
 
             {% if template == 'page.contact' %}
-                {% render 'contact-form' %}
+                <div id="custom-form-wrapper" class="p-6 bg-gray-100 rounded-lg">
+                    {{ shop.metafields.shopify_forms[330263] }}
+                </div>
             {% endif %}
         </div>
     {% endif %}
