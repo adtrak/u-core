@@ -1,0 +1,35 @@
+<div class="mx-auto">
+    <div class="w-full">
+      <div id="custom-form-wrapper" class="p-6 bg-gray-100 rounded-lg">
+        {% for block in section.blocks %}
+          {% render block %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  
+  {% schema %}
+  {
+    "name": "Custom Contact Form",
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "copy_image",
+            "label": "Copy Image"
+        },
+    ],
+    "blocks": [
+      {
+        "type": "shopify_form",
+        "name": "Shopify Form",
+        "limit": 1
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Contact Form"
+      }
+    ]
+  }
+  {% endschema %}
+  
