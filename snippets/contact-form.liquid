@@ -1,5 +1,5 @@
-{% assign mail = "" %}
-{% assign telephone = "" %}
+{% assign mail = section.settings.contact_mail | default: shop.email %}
+{% assign telephone = section.settings.contact_telephone | default: shop.phone %}
 
 {% if section.settings.mail == "" %}
     {% assign mail = shop.email %}
@@ -25,56 +25,47 @@
         <div class="w-full">
             <div>
                 {% form 'contact' %}
-                    {% if form.errors %}
-                        <div class="border p-5">
-                            <div class="flex flex-row items-center w-full my-3">
-                                <div class="text-red-500">
-                                    {% render 'icon-failed' %}
-                                </div>
-                                <div class="text-sm font-medium ml-3">
-                                    Oh no! Your message is not sent
-                                </div>
-                            </div>
-                            <ul class="px-4 mb-3 ml-7 list-decimal">
-                                {% for error in form.errors %}
-                                    <li>
-                                        <span>{{ form.errors.messages[error] }}</span>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    {% elsif form.posted_successfully? %}
-                        <div class="flex flex-row items-center w-full my-3 p-5">
-                            <div class="text-green-500">
-                                {% render 'icon-success' %}
-                            </div>
-                            <div class="text-sm font-medium ml-3">Your message is sent successfully</div>
+                    {% if form.posted_successfully? %}
+                        <div class="success-message">
+                            <p>Thanks for contacting us! We'll get back to you soon.</p>
                         </div>
                     {% endif %}
 
+                    {% if form.errors %}
+                        <div class="error-message">
+                            {{ form.errors | default_errors }}
+                        </div>
+                    {% endif %}
 
                     <div class="mx-auto flex-1">
                         <div class="flex mb-3">
                             <div class="pr-3 md:w-1/2">
-                                <label class="uppercase text-xs text-grey font-heading" for="contact_name">Name</label>
-                                <input class="border py-3 px-4 mb-3 text-gray-700 w-full" type="text" name="contact[name]" id="contact_name">
+                                <label class="uppercase text-xs text-grey font-heading" for="ContactFormName">Name</label>
+                                <input class="border py-3 px-4 mb-3 text-gray-700 w-full" type="text" name="contact[name]" id="ContactFormName">
                             </div>
                             <div class="pr-3 md:w-1/2">
-                                <label class="uppercase text-xs text-grey font-heading" for="contact_email">Email address</label>
-                                <input class="border py-3 px-4 mb-3 text-gray-700 w-full" type="email" name="contact[email]" id="contact_email">
+                                <label class="uppercase text-xs text-grey font-heading" for="ContactFormEmail">Email</label>
+                                <input class="border py-3 px-4 mb-3 text-gray-700 w-full" type="email" name="contact[email]" id="ContactFormEmail" required>
                             </div>
                         </div>
             
                         <div class="flex mb-3">
                             <div class="w-full pr-3">
-                                <label class="uppercase text-xs text-grey font-heading" for="contact_message">Message</label>
-                                <textarea class="border py-3 px-4 mb-3 text-gray-700 w-full" name="contact[body]" id="contact_message"></textarea>
+                                <label class="uppercase text-xs text-grey font-heading" for="ContactFormPhone">Phone Number</label>
+                                <input class="border py-3 px-4 mb-3 text-gray-700 w-full" type="tel" name="contact[phone]" id="ContactFormPhone">
+                            </div>
+                        </div>
+            
+                        <div class="flex mb-3">
+                            <div class="w-full pr-3">
+                                <label class="uppercase text-xs text-grey font-heading" for="ContactFormMessage">Message</label>
+                                <textarea class="border py-3 px-4 mb-3 text-gray-700 w-full" name="contact[body]" id="ContactFormMessage" required></textarea>
                             </div>
                         </div>
             
                         <div class="flex px-1 mb-3">
                             <div class="w-full px-3">
-                                <input type="submit" class="relative flex items-center font-heading font-light bg-white border-yellow border-2 text-black text-[13px] text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide uppercase group transition mx-auto" value="Submit message">
+                                <button type="submit" class="relative flex items-center font-heading font-light bg-white border-yellow border-2 text-black text-[13px] text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide uppercase group transition mx-auto">Send Message</button>
                             </div>
                         </div>
                     </div>       
@@ -83,3 +74,14 @@
         </div>
     </div>
 </section>
+
+{% if section.settings.contact_mail != blank or section.settings.contact_telephone != blank %}
+    <div class="contact-details">
+        {% if section.settings.contact_mail != blank %}
+            <p>Email: <a href="mailto:{{ mail }}">{{ mail }}</a></p>
+        {% endif %}
+        {% if section.settings.contact_telephone != blank %}
+            <p>Phone: <a href="tel:{{ telephone }}">{{ telephone }}</a></p>
+        {% endif %}
+    </div>
+{% endif %}
