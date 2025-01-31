@@ -208,14 +208,28 @@
 
             {% when 'checkout_buttons' %}
             <div class="my-12" id="add-to-cart-button-{{ section.id }}">
-              
-              {% if selected_variant.available == false %}
-                <p class="mx-auto block text-center">Sold out</p>
+
+              {% if selected_variant.inventory_quantity <= 0 %}
+                <div class="my-12 bg-lightgrey p-4">
+                  <p>The following product / variant is currently out of stock, but you can pre-order by continuing through the checkout!</p>
+                </div>
+
+                <button type="submit" name="checkout" {% if selected_variant.available == false %}disabled{% endif %} class="relative flex items-center font-heading font-light bg-white border-yellow border-2 text-black text-[13px] text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide uppercase group transition w-full">
+                  <span class="leading-none mx-auto ">Pre-Order</span>
+                </button>
               {% else %}
                 <button type="submit" name="checkout" {% if selected_variant.available == false %}disabled{% endif %} class="relative flex items-center font-heading font-light bg-white border-yellow border-2 text-black text-[13px] text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide uppercase group transition w-full">
                   <span class="leading-none mx-auto ">Checkout</span>
                 </button>
               {% endif %}
+              
+              {% comment %} {% if selected_variant.available == false %}
+                <p class="mx-auto block text-center">Sold out</p>
+              {% else %}
+                <button type="submit" name="checkout" {% if selected_variant.available == false %}disabled{% endif %} class="relative flex items-center font-heading font-light bg-white border-yellow border-2 text-black text-[13px] text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide uppercase group transition w-full">
+                  <span class="leading-none mx-auto ">Checkout</span>
+                </button>
+              {% endif %} {% endcomment %}
 
             </div>
 

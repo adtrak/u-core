@@ -37,9 +37,15 @@
           <p class="text-midgrey font-heading">{{ product_product.price | money }}</p>
         </div>
 
-        <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group transition">
-          <span class="leading-none mx-auto">Buy Now</span>
-        </a>
+        {% if current_variant.inventory_quantity <= 0 %}
+          <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group transition">
+            <span class="leading-none mx-auto">Pre-Order</span>
+          </a>
+        {% else %}
+          <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group transition">
+            <span class="leading-none mx-auto">Buy Now</span>
+          </a>
+        {% endif %}
       </div>
 
     {% else %}
@@ -50,9 +56,15 @@
           <p class="text-midgrey font-heading">{{ product_product.price | money }}</p>
         </div>
         
-        <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group-hover:text-grey group-hover:bg-lightgrey transition">
+        {% if current_variant.inventory_quantity <= 0 %}
+          <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group-hover:text-grey group-hover:bg-lightgrey transition">
+              <span class="leading-none mx-auto">Pre-Order</span>
+          </a>
+        {% else %}
+          <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group-hover:text-grey group-hover:bg-lightgrey transition">
             <span class="leading-none mx-auto">Buy Now</span>
-        </a>
+          </a>
+        {% endif %}
       
       </div>
 
