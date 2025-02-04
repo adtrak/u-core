@@ -1,0 +1,48 @@
+<div class="mb-24 lg:mb-36">
+
+    <div class="containercustom bg-lightgrey">
+
+        <h1 class="text-grey font-heading font-huge font-bold font-huge uppercase text-6xl mb-12">{{ section.settings.heading }}</h1>
+
+        <div>{{ section.settings.content }}</div>
+
+        <a href="{{ section.settings.collection.url }}">{{ section.settings.link_text }}</a>
+
+    </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Promotion",
+  "presets": [
+    {
+      "name": "Promotion"
+    }
+  ],
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Heading",
+      "label": "Heading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "content",
+      "default": "Content",
+      "label": "Content"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection Link"
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "USP Image"
+    }, 
+  ],
+}
+{% endschema %}
