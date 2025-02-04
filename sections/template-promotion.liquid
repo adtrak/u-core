@@ -1,16 +1,22 @@
-<div class="mb-24 lg:mb-36">
 
-    <div class="containercustom bg-lightgrey">
+<div class="mx-auto py-56 pt-32 lg:py-56 lg:pt-40 sm:px-0 lg:px-8 mb-32 lg:mb-36 bg-lightgrey copy-feature-section relative">
 
-        <h1 class="text-grey font-heading font-huge font-bold font-huge uppercase text-6xl mb-12">{{ section.settings.heading }}</h1>
+    <div class="containercustom">
 
-        <div>{{ section.settings.content }}</div>
+        <div class="copy lg:w-3/4">
+            
+            <h1 class="text-grey font-heading font-huge font-bold font-huge uppercase text-6xl mb-12">{{ section.settings.heading }}</h1>
 
-        <a href="{{ section.settings.collection.url }}">{{ section.settings.link_text }}</a>
+            <p>{{ section.settings.content }}</p>
 
+            <span class="inline-block">
+                {% render 'button', text: section.settings.collection.title, url: section.settings.collection.url, btn-style: "white" %}
+            </span>
+        </div>
     </div>
-
 </div>
+
+
 
 {% schema %}
 {
@@ -37,11 +43,6 @@
       "type": "collection",
       "id": "collection",
       "label": "Collection Link"
-    },
-    {
-        "type": "image_picker",
-        "id": "image",
-        "label": "USP Image"
     }, 
   ],
 }
