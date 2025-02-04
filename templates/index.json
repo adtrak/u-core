@@ -37,6 +37,14 @@
         "hero_video": "shopify://files/videos/U Core Runner V1 091024.mp4"
       }
     },
+    "template_promotion_J8YKGY": {
+      "type": "template-promotion",
+      "settings": {
+        "heading": "Promotion title",
+        "content": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim tellus id nisi molestie elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam commodo, magna et fringilla blandit, metus tellus gravida augue, sit amet laoreet arcu justo eu ante.",
+        "collection": "example-promotion"
+      }
+    },
     "featured_collection_colours_bL8qqB": {
       "type": "featured-collection-colours",
       "settings": {
@@ -151,23 +159,15 @@
         "featured_collection": "all",
         "number_of_products_to_show": 4
       }
-    },
-    "template_promotion_J8YKGY": {
-      "type": "template-promotion",
-      "settings": {
-        "heading": "Promotion title",
-        "content": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim tellus id nisi molestie elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam commodo, magna et fringilla blandit, metus tellus gravida augue, sit amet laoreet arcu justo eu ante.",
-        "collection": "mens"
-      }
     }
   },
   "order": [
     "template_hero_YGwtBG",
+    "template_promotion_J8YKGY",
     "featured_collection_colours_bL8qqB",
     "template_usps_gYYMw7",
     "template_copy_MgKqwe",
     "template_copy_feature_N8HfXb",
-    "featured-collection",
-    "template_promotion_J8YKGY"
+    "featured-collection"
   ]
 }
