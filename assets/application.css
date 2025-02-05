@@ -1577,6 +1577,10 @@ video {
   padding-top: 1rem;
 }
 
+.pb-12 {
+  padding-bottom: 3rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2043,6 +2047,14 @@ video {
 @media (min-width: 1024px) {
   .lg\:mb-36 {
     margin-bottom: 9rem;
+  }
+
+  .lg\:mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .lg\:mb-48 {
+    margin-bottom: 12rem;
   }
 
   .lg\:block {
