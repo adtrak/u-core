@@ -43,7 +43,7 @@
         "image": "shopify://shop_images/DSC02702.jpg",
         "icon": "icon-rosette",
         "heading": "Promotion title",
-        "content": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim tellus id nisi molestie elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam commodo, magna et fringilla blandit, metus tellus gravida augue, sit amet laoreet arcu justo eu ante.",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim tellus id nisi molestie elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
         "collection": "example-promotion"
       }
     },
