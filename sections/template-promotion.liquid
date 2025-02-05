@@ -4,6 +4,29 @@
     <div class="containercustom">
 
         <div class="copy lg:w-3/4">
+
+            <span class="usp-icons flex justify-center items-center w-full h-[100px] max-w-[100px] mr-4">
+                            
+                {% case block.settings.icon %}
+                {% when 'icon-shield' %}
+                    {% render 'icon-shield', class: "w-12 h-12" %}
+                {% when 'icon-phone-hand' %}
+                    {% render 'icon-phone-hand', class: "w-12 h-12" %}
+                {% when 'icon-size' %}
+                    {% render 'icon-size', class: "w-12 h-12" %}
+                {% when 'icon-stars' %}
+                    {% render 'icon-stars', class: "w-12 h-12" %}
+                {% when 'icon-lock' %}
+                    {% render 'icon-lock', class: "w-12 h-12" %}
+                {% when 'icon-heart' %}
+                    {% render 'icon-heart', class: "w-12 h-12" %}
+                {% when 'icon-rosette' %}
+                    {% render 'icon-rosette', class: "w-12 h-12" %}
+                {% else %}
+                    {% render 'icon-phone-hand', class: "w-12 h-12" %}
+                {% endcase %}
+               
+            </span>
             
             <h1 class="text-grey font-heading font-huge font-bold font-huge uppercase text-6xl mb-12">{{ section.settings.heading }}</h1>
 
@@ -27,6 +50,41 @@
     }
   ],
   "settings": [
+    {
+        "type": "select",
+        "id": "icon",
+        "label": "Icon",
+        "options": [
+            {
+                "value": "icon-phone-hand",
+                "label": "Phone in hand",
+            },
+            {
+                "value": "icon-shield",
+                "label": "Shield",
+            },
+            {
+                "value": "icon-size",
+                "label": "Size Icon",
+            },
+            {
+                "value": "icon-stars",
+                "label": "Stars",
+            },
+            {
+                "value": "icon-heart",
+                "label": "Heart",
+            },
+            {
+                "value": "icon-lock",
+                "label": "Lock",
+            },
+            {
+                "value": "icon-rosette",
+                "label": "Sales Rosette",
+            }
+        ]
+    },
     {
       "type": "text",
       "id": "heading",

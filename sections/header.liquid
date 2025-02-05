@@ -43,12 +43,12 @@
             <li class="group/parent relative">
               {% render 'button', text: link.title, url: link.url, btn-style: "white", extra-class: "relative z-10" %}
               {% if link.links != blank %}
-                <ul class="child hidden group/parent group-hover/parent:block absolute top-0 p-6 pt-16 bg-white rounded-3xl">
+                <ul class="child hidden group/parent group-hover/parent:block absolute top-0 p-6 pt-16 bg-white rounded-3xl w-full">
                   {% for child_link in link.links %}
-                    <li class="group/child">
-                      <a href="{{ child_link.url }}" class="relative">{{ child_link.title }}</a>
+                    <li class="group/child w-full">
+                      <a href="{{ child_link.url }}" class="relative w-full block">{{ child_link.title }}</a>
                       {% if child_link.links != blank %}
-                        <ul class="grandchild hidden group-hover/child:block absolute right-0">
+                        <ul class="grandchild hidden group-hover/child:block absolute right-0 w-full">
                           {% for grandchild_link in child_link.links %}
                             <li>
                               <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
