@@ -3,11 +3,11 @@
 
     <div class="containercustom">
 
-        <div class="copy lg:w-3/4">
+        <div class="copy w-full lg:w-7/12">
 
-            <span class="usp-icons flex justify-center items-center w-full h-[100px] max-w-[100px] mr-4">
+            <span class="usp-icons flex justify-center items-center w-full h-[100px] max-w-[100px] mb-2">
                             
-                {% case block.settings.icon %}
+                {% case section.settings.icon %}
                 {% when 'icon-shield' %}
                     {% render 'icon-shield', class: "w-12 h-12" %}
                 {% when 'icon-phone-hand' %}
@@ -36,6 +36,17 @@
                 {% render 'button', text: section.settings.collection.title, url: section.settings.collection.url, btn-style: "white" %}
             </span>
         </div>
+
+
+        <div class="promotions-right relative w-full lg:w-5/12">
+            <div class="h-full absolute left-0 w-full">
+                <picture>
+                    <source media="(min-width:767px)" srcset="{{ section.settings.image | img_url: '1200x1800' }}">
+                    <img src="{{ section.settings.image | img_url: '1200x1800' }}" class="object-cover h-full md:w-full" alt="{{ section.settings.alt }}" loading="eager" width="1000" height="1400">
+                </picture> 
+            </div>
+        </div>
+
     </div>
 </div>
 
@@ -51,37 +62,42 @@
   ],
   "settings": [
     {
+        "type": "image_picker",
+        "id": "image",
+        "label": "USP Image"
+    },
+    {
         "type": "select",
         "id": "icon",
         "label": "Icon",
         "options": [
             {
                 "value": "icon-phone-hand",
-                "label": "Phone in hand",
+                "label": "Phone in hand"
             },
             {
                 "value": "icon-shield",
-                "label": "Shield",
+                "label": "Shield"
             },
             {
                 "value": "icon-size",
-                "label": "Size Icon",
+                "label": "Size Icon"
             },
             {
                 "value": "icon-stars",
-                "label": "Stars",
+                "label": "Stars"
             },
             {
                 "value": "icon-heart",
-                "label": "Heart",
+                "label": "Heart"
             },
             {
                 "value": "icon-lock",
-                "label": "Lock",
+                "label": "Lock"
             },
             {
                 "value": "icon-rosette",
-                "label": "Sales Rosette",
+                "label": "Sales Rosette"
             }
         ]
     },
