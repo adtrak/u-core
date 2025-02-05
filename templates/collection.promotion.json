@@ -30,7 +30,7 @@
         "body": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis enim vel odio congue varius. Fusce ipsum leo, imperdiet et purus ac, tincidunt tempus ex. In vel finibus lectus, sed fringilla ligula. Donec cursus ullamcorper risus luctus convallis. Praesent tincidunt rutrum sapien. Nullam non velit eget dui ultricies eleifend. Cras ipsum odio, porttitor euismod enim id, eleifend tristique eros. Vestibulum a erat vitae tellus posuere posuere sit amet sed nibh. Aenean id risus nibh. Sed est ligula, varius eget euismod eget, ultricies non neque. Ut tincidunt metus vel magna iaculis viverra. Praesent velit sapien, tristique sed dolor nec, bibendum vehicula odio.</p>",
         "copy_image": "shopify://shop_images/DSC01369.jpg",
         "show_image": true,
-        "short_image": false,
+        "short_image": true,
         "image_position": "left",
         "contact_title": "",
         "contact_content": "",
