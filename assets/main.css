@@ -1,3 +1,35 @@
+/* Fade in text styles */
+
+.fade-in-text {
+  opacity: 1; /* Ensure container remains visible */
+  display: inline-block;
+  white-space: pre-wrap; /* Ensures correct spacing */
+}
+
+.fade-in-text span {
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px);
+  display: inline-block;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-text.visible span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fade in div styles */
+
+.fade-in-container {
+  opacity: 0; /* Start hidden */
+  display: block;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-container.visible {
+  opacity: 1;
+}
+
 /* Base Styling */
 
 .containerwide {
