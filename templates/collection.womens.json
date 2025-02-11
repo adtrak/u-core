@@ -14,7 +14,7 @@
       "settings": {
         "title": "Womens",
         "sub_title": "Combining function and fashion",
-        "hero_image": "shopify://shop_images/DSC02136.jpg"
+        "hero_image": "shopify://shop_images/DSC01994.jpg"
       }
     },
     "template": {
@@ -28,17 +28,22 @@
       "settings": {
         "title": "Womens Clothing",
         "body": "<p>Say goodbye to rummaging through your bag or fumbling for your phone thanks to the range of women’s clothing from Ucore.\n</p>\n\n<p>Including hoodies, sweatshirts and t-shirts, our range features a combination of women’s sportswear and women’s activewear which make it easier to keep your phone safe and secure when working out or performing day-to-day activities.\n</p>\n\n<p>This is because the products include innovative patent-pending pocket technology that is located centrally on each garment, making it easier to feel the phone should it vibrate and ensuring its security. \n</p>\n\n<h2>Women's Clothes with Pockets</h2>\n<p>The innovative pocket technology that features across our women’s clothing range creates a pocket that all modern phones can seamlessly slip into. This means that whether you’re out for a run, hitting the gym, playing sports or simply going about your day, your phone will be kept secure and close to you.\n</p>\n\n<p>When you get a call, the phone’s vibrations can be felt, meaning you don’t need to worry about missing anything urgent. Plus, if you’re in a loud environment like a sporting event or concert, you won’t need to worry about listening out for your phone as the vibration will be felt. \n</p>",
-        "copy_image": "shopify://shop_images/DSC02465_f7e54348-78d3-408a-8962-b04e265f204b.jpg",
+        "copy_image": "shopify://shop_images/DSC08343.jpg",
         "show_image": true,
-        "image_position": "left"
+        "short_image": false,
+        "image_position": "left",
+        "contact_title": "",
+        "contact_content": "",
+        "contact_mail": "",
+        "contact_telephone": "",
+        "contact_insta_handle": ""
       }
     },
     "template_copy_feature_Vm96bC": {
       "type": "template-copy-feature",
       "settings": {
         "title": "Women's Fashion",
-        "body": "<p>Not only is our women’s clothing range extremely practical, but style isn’t compromised.</p>\n\n<p>Our hoodies, sweatshirts and t-shirts make for great women’s fashion products, due to their stunning aesthetic that features clean lines, smart designs and a great look. The unique pocket technology is also seamlessly integrated into the design so your phone will be kept safe while still looking good.</p>\n\n<p>Shop our ladies’ clothes online today or contact Ucore to find out more. </p>",
-        "copy_video": "shopify://files/videos/U Core Runner V1 091024.mp4"
+        "body": "<p>Not only is our women’s clothing range extremely practical, but style isn’t compromised.</p>\n\n<p>Our hoodies, sweatshirts and t-shirts make for great women’s fashion products, due to their stunning aesthetic that features clean lines, smart designs and a great look. The unique pocket technology is also seamlessly integrated into the design so your phone will be kept safe while still looking good.</p>\n\n<p>Shop our ladies’ clothes online today or contact Ucore to find out more. </p>"
       }
     }
   },
