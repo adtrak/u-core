@@ -1,0 +1,41 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "template": {
+      "type": "template-page",
+      "settings": {}
+    },
+    "template_hero_m3TLxA": {
+      "type": "template-hero",
+      "settings": {
+        "title": "Returns & Exchanges",
+        "sub_title": "How to return your products",
+        "hero_image": "shopify://shop_images/DSC02136.jpg"
+      }
+    },
+    "template_copy_T37wD3": {
+      "type": "template-copy",
+      "settings": {
+        "title": "Returns & Exchanges",
+        "body": "<p>We hope you’ll love your Ucore products as soon as they arrive, but if you need to return them, please do so within 28 days. They must be returned in the same condition, and feature the swing tags they are delivered with.</p>\n\n<p>If you have any questions about returns or exchanges, contact Ucore today. </p>",
+        "copy_image": "shopify://shop_images/DSC00328.jpg",
+        "show_image": true,
+        "short_image": true,
+        "image_position": "right"
+      }
+    }
+  },
+  "order": [
+    "template",
+    "template_hero_m3TLxA",
+    "template_copy_T37wD3"
+  ]
+}
