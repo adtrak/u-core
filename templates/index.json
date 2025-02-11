@@ -40,6 +40,7 @@
     "template_promotion_J8YKGY": {
       "type": "template-promotion",
       "settings": {
+        "image": "shopify://shop_images/DSC00328.jpg",
         "icon": "icon-rosette",
         "heading": "Promotion title",
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim tellus id nisi molestie elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
@@ -125,7 +126,8 @@
       ],
       "settings": {
         "title": "Title",
-        "sub_title": "Sub Title"
+        "sub_title": "Sub Title",
+        "image": "shopify://shop_images/DSC01369.jpg"
       }
     },
     "template_copy_MgKqwe": {
