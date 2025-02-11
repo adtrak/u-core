@@ -14,7 +14,7 @@
       "settings": {
         "title": "Mens Hoodies",
         "sub_title": "Experience the freedom of Ucore",
-        "hero_image": "shopify://shop_images/DSC00632.jpg"
+        "hero_image": "shopify://shop_images/DSC00169-2.jpg"
       }
     },
     "template": {
@@ -39,7 +39,13 @@
         "body": "<p>With the Ucore range of men’s hoodies, you’re sure to look great and can experience the freedom of exercise without ever having to worry about missing a thing from your mobile phone.</p>\n\n<p>Unique to your normal men’s hoodie, products from Ucore feature innovative pocket technology that provides a secure and convenient place for your mobile phone to be stored.</p>\n\n<p>With the pocket located in the centre of the garment on the upper torso, when you wear our hoodies and someone calls you, you’ll feel the vibrations more directly and will be able to answer straight away.</p>\n\n<h2>Men's Hoodies with Pockets</h2>\n<p>A hoodie with a pocket gives you an extra sense of freedom.</p>\n\n<p>As well as meaning that you’re more likely to notice your phone ringing than if it’s in a trouser pocket, our innovative design also allows you to keep your phone safe as you jog, take to the treadmill, take care of some DIY or simply relax in the pub with your friends. </p>\n\n<p>The elasticated fabric of the pocket keeps all modern smartphones secure. Plus, you can experience the freedom of being able to quickly and easily access your phone when you need it. Hands-free conversation is also made simple, as your phone’s microphone will be much closer to your mouth for clearer conversation without earpods.</p>\n\n<p>Explore the Ucore hoodies range and order online today.</p>",
         "copy_image": "shopify://shop_images/DSC03490.jpg",
         "show_image": true,
-        "image_position": "left"
+        "short_image": false,
+        "image_position": "left",
+        "contact_title": "",
+        "contact_content": "",
+        "contact_mail": "",
+        "contact_telephone": "",
+        "contact_insta_handle": ""
       }
     }
   },
