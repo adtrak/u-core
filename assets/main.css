@@ -205,6 +205,22 @@ form-embed {
   display: none!important;
 }
 
+.product-description p {
+  margin-bottom: 15px;
+  line-height: 27px;
+  font-size: 0.8rem;
+}
+
+.product-description h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.product-description ul {
+  margin-bottom: 10px;
+  list-style: inside; 
+}
+
 /* Hero Styling */
 
 .hero-container.rounded {

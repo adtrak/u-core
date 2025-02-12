@@ -108,7 +108,7 @@
                   x-transition:leave-end="opacity-0 transform -translate-y-2" 
                   class="p-4"
                 >
-                  <div class="text-sm text-gray-600">{{ product.description | raw }}</div>
+                  <div class="text-sm text-gray-600 product-description">{{ product.description }}</div>
                 </div>
               </div>
             
@@ -133,9 +133,9 @@
                   x-transition:leave="transition ease-in duration-200" 
                   x-transition:leave-start="opacity-100 transform translate-y-0" 
                   x-transition:leave-end="opacity-0 transform -translate-y-2" 
-                  class="p-4"
+                  class="p-4 product-description"
                 >
-                  <p class="text-sm text-gray-600">{{ product.metafields.custom.delivery_information.value }}</p>
+                  <p class="text-gray-600">{{ product.metafields.custom.delivery_information.value }}</p>
                 </div>
               </div>
             {% endif %}

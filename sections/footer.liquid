@@ -16,9 +16,9 @@
 <section class="w-full bg-black">
 <span class="relative block mx-auto my-0 py-0">
     <picture class="block lg:hidden relative z-5 w-full object-cover">
-        <source media="(max-width: 767px)" srcset="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'right' }}" type="image/webp">
-        <source media="(max-width: 767px)" srcset="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'right' }}" type="image/jpeg">
-        <img src="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'right' }}" class="relative" loading="lazy" alt="" width="1024" height="800">
+        <source media="(max-width: 767px)" srcset="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'center' }}" type="image/webp">
+        <source media="(max-width: 767px)" srcset="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'center' }}" type="image/jpeg">
+        <img src="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1024" height="800">
     </picture>
 
     <picture class="hidden lg:block relative z-5 mx-auto">
@@ -70,7 +70,7 @@
             <div class="footer-right block md:flex flex-wrap items-end w-full">
                 <ul class="parent  text-grey uppercase font-heading w-full">
                     <li class="block w-full"><a href="/pages/privacy-policy">Privacy Policy</a></li>
-                    <li class="block w-full"><a href="/pages/terms-and-conditions">Terms & Conditions</a></li>
+                    <li class="block w-full"><a href="/pages/terms-conditions">Terms & Conditions</a></li>
                 </ul>
             </div>
         </div>
