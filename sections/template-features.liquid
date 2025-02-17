@@ -2,10 +2,14 @@
 
     <div class="containercustom relative">
 
-        <h1 class="fade-in-text w-full text-grey font-heading font-huge font-bold uppercase text-6xl mb-12 visible">{{ section.settings.title }}</h1>
-        <p class="block">{{ section.settings.sub_title }}</p>
+        {% if section.settings.title %}
+            <h1 class="fade-in-text w-full text-grey font-heading font-huge font-bold uppercase text-6xl mb-6 visible">{{ section.settings.title }}</h1>
+        {% endif %}
+        {% if section.settings.sub_title %}
+            <p class="block mb-12">{{ section.settings.sub_title }}</p>
+        {% endif %}
    
-        <div class="w-full flex gap-4 lg:gap-24">
+        <div class="w-full flex gap-4 xl:gap-24 flex-wrap lg:flex-nowrap">
 
             
             {% for block in section.blocks %}
@@ -31,7 +35,7 @@
                         
                                 <div class="flex justify-between items-center py-4 flex-wrap md:flex-no-wrap">
                                     <div class="flex flex-col py-4">
-                                        <p class="text-gray-700 font-heading font-medium uppercase text-black items-center mb-4">{{ block.settings.feature_heading }}</p>
+                                        <p class="text-gray-700 font-heading font-medium uppercase text-black items-center mb-2">{{ block.settings.feature_heading }}</p>
                                         <p class="text-midgrey">{{ block.settings.feature_sub_heading }}</p>
                                     </div>
                                 </div>
