@@ -37,6 +37,25 @@
         "hero_video": "shopify://files/videos/hero.mp4"
       }
     },
+    "template_features_gLX79e": {
+      "type": "template-features",
+      "blocks": {
+        "feature_4MEBwT": {
+          "type": "Feature",
+          "settings": {
+            "feature_heading": "Phone Pocket",
+            "feature_sub_heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "feature_4MEBwT"
+      ],
+      "settings": {
+        "title": "Title",
+        "sub_title": "Sub Title"
+      }
+    },
     "template_promotion_J8YKGY": {
       "type": "template-promotion",
       "settings": {
@@ -165,6 +184,7 @@
   },
   "order": [
     "template_hero_YGwtBG",
+    "template_features_gLX79e",
     "template_promotion_J8YKGY",
     "featured_collection_colours_bL8qqB",
     "template_usps_gYYMw7",
