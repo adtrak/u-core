@@ -40,15 +40,25 @@
     "template_features_gLX79e": {
       "type": "template-features",
       "blocks": {
+        "feature_bAVcM6": {
+          "type": "Feature",
+          "settings": {
+            "feature_heading": "Cable Slot, for charging/headphones",
+            "feature_sub_heading": "",
+            "image": "shopify://shop_images/DSC08455.jpg"
+          }
+        },
         "feature_4MEBwT": {
           "type": "Feature",
           "settings": {
             "feature_heading": "Phone Pocket",
-            "feature_sub_heading": ""
+            "feature_sub_heading": "",
+            "image": "shopify://shop_images/DSC00165-2.jpg"
           }
         }
       },
       "block_order": [
+        "feature_bAVcM6",
         "feature_4MEBwT"
       ],
       "settings": {
