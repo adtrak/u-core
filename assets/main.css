@@ -242,7 +242,8 @@ form-embed {
   z-index: 20;
 }
 
-.card .card-image {
+.card .card-image,
+.card .feature-card-image {
   position: relative;
 }
 
@@ -335,6 +336,25 @@ form-embed {
     width: 100%;
     height: 100%;
     background-size: 287px 249px;
+  }
+}
+
+.feature-card-image:before {
+  content: "";
+  background: url('feature-card-shape.svg') no-repeat bottom right;
+  background-size: 130px 113px;
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  right: -2px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  @media screen and (min-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    background-size: 170px 146px;
   }
 }
 
