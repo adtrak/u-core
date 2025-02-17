@@ -40,6 +40,14 @@
     "template_features_gLX79e": {
       "type": "template-features",
       "blocks": {
+        "feature_rb6tYn": {
+          "type": "Feature",
+          "settings": {
+            "feature_heading": "Reinforced Structure, to support the phone",
+            "feature_sub_heading": "Sub Heading",
+            "image": "shopify://shop_images/DSC03456.jpg"
+          }
+        },
         "feature_bAVcM6": {
           "type": "Feature",
           "settings": {
@@ -58,6 +66,7 @@
         }
       },
       "block_order": [
+        "feature_rb6tYn",
         "feature_bAVcM6",
         "feature_4MEBwT"
       ],
