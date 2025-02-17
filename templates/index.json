@@ -40,22 +40,6 @@
     "template_features_gLX79e": {
       "type": "template-features",
       "blocks": {
-        "feature_R88czH": {
-          "type": "feature",
-          "settings": {
-            "feature_heading": "Reinforced Structure, to support the phone",
-            "feature_sub_heading": "Sub Heading",
-            "image": "shopify://shop_images/DSC00237-2.jpg"
-          }
-        },
-        "feature_rr8bpU": {
-          "type": "feature",
-          "settings": {
-            "feature_heading": "Cable Slot, for charging/headphones",
-            "feature_sub_heading": "",
-            "image": "shopify://shop_images/DSC00163-2.jpg"
-          }
-        },
         "feature_MQeRVM": {
           "type": "feature",
           "settings": {
@@ -63,12 +47,28 @@
             "feature_sub_heading": "",
             "image": "shopify://shop_images/DSC08134_White_copy.jpg"
           }
+        },
+        "feature_rr8bpU": {
+          "type": "feature",
+          "settings": {
+            "feature_heading": "Cable Slot, for charging/headphones",
+            "feature_sub_heading": "",
+            "image": "shopify://shop_images/DSC08474.jpg"
+          }
+        },
+        "feature_R88czH": {
+          "type": "feature",
+          "settings": {
+            "feature_heading": "Reinforced Structure, to support the phone",
+            "feature_sub_heading": "Sub Heading",
+            "image": "shopify://shop_images/DSC00237-2.jpg"
+          }
         }
       },
       "block_order": [
-        "feature_R88czH",
+        "feature_MQeRVM",
         "feature_rr8bpU",
-        "feature_MQeRVM"
+        "feature_R88czH"
       ],
       "settings": {
         "title": "Title",
