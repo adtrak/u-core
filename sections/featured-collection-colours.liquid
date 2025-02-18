@@ -16,7 +16,8 @@
                             {% assign selected_colors = block.settings.colors | split: ',' %}
                             {% for variant in product.variants %}
                                 {% assign current_color = variant.options[0] | downcase %}
-                                {% if selected_colors contains current_color %}
+                                {% assign current_size = variant.options[1] | downcase %}
+                                {% if selected_colors contains current_color and current_size == 'm' %}
                                     <div class="swiper-slide">
                                         {% render 'product-card', 
                                             product_product: product,
