@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
         spaceBetween: 65,
         // loop: true,
         scrollbar: {
-            el: ".swiper-featured-products-scrollbar",
-            hide: true,
+            el: '.swiper-featured-products-scrollbar',
+            draggable: true,
+            hide: false
         },
         breakpoints: {
             940: {

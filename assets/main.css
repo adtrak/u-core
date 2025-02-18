@@ -375,6 +375,11 @@ form-embed {
   z-index: 2;
 }
 
+.swiper-horizontal>.swiper-scrollbar {
+  height: 21px!important;
+  position: relative!important;
+}
+
 .stretch {
   width: calc(100% + 4rem);
   left: 50%;
