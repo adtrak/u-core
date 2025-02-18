@@ -88,6 +88,13 @@
     "featured_collection_colours_bL8qqB": {
       "type": "featured-collection-colours",
       "blocks": {
+        "product_E4EHfj": {
+          "type": "product",
+          "settings": {
+            "product": "womens-hoodie",
+            "colors": "pink"
+          }
+        },
         "product_FdMd8W": {
           "type": "product",
           "settings": {
@@ -97,6 +104,7 @@
         }
       },
       "block_order": [
+        "product_E4EHfj",
         "product_FdMd8W"
       ],
       "settings": {
