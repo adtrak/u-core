@@ -13,17 +13,20 @@
                 {% for product in section.settings.featured_collection.products limit: section.settings.number_of_products_to_show %}
                     {% assign shown_colors = '' %}
                     {% for variant in product.variants %}
-                        {% assign current_color = variant.options[0] %}
-                        {% unless shown_colors contains current_color %}
-                            <div class="swiper-slide">
-                                {% render 'product-card', 
-                                    product_product: product,
-                                    current_variant: variant,
-                                    current_color: current_color,
-                                    include_colour: true %}
-                            </div>
-                            {% assign shown_colors = shown_colors | append: current_color | append: ',' %}
-                        {% endunless %}
+                        {% assign current_color = variant.options[0] | downcase %}
+                        {% assign color_setting = 'color_' | append: current_color %}
+                        {% if section.settings[color_setting] %}
+                            {% unless shown_colors contains current_color %}
+                                <div class="swiper-slide">
+                                    {% render 'product-card', 
+                                        product_product: product,
+                                        current_variant: variant,
+                                        current_color: current_color,
+                                        include_colour: true %}
+                                </div>
+                                {% assign shown_colors = shown_colors | append: current_color | append: ',' %}
+                            {% endunless %}
+                        {% endif %}
                     {% endfor %}
                 {% endfor %}
             </div>
@@ -58,7 +61,30 @@
             "max": 12,
             "default": 4,
             "label": "Number of products to show"
+        },
+        {
+            "type": "header",
+            "content": "Color Selection"
+        },
+        {
+            "type": "checkbox",
+            "id": "color_black",
+            "label": "Black",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "color_white",
+            "label": "White",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "color_grey",
+            "label": "Grey",
+            "default": true
         }
+        // Add more colors as needed
     ],
     "presets": [
         {
