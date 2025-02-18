@@ -90,7 +90,10 @@
       "settings": {
         "title": "Trending Products",
         "featured_collection": "trending",
-        "number_of_products_to_show": 7
+        "number_of_products_to_show": 7,
+        "color_black": true,
+        "color_white": false,
+        "color_grey": false
       }
     },
     "template_usps_gYYMw7": {
