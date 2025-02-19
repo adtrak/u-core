@@ -1270,6 +1270,10 @@ video {
   border-radius: 0.125rem;
 }
 
+.rounded-\[30px\] {
+  border-radius: 30px;
+}
+
 .border {
   border-width: 1px;
 }
