@@ -19,7 +19,6 @@
     },
     "template": {
       "type": "template-collection",
-      "disabled": true,
       "settings": {
         "number_of_products_per_page": 6
       }
