@@ -23,6 +23,14 @@
         "number_of_products_per_page": 6
       }
     },
+    "featured_collection_all_colours_ciqw8e": {
+      "type": "featured-collection-all-colours",
+      "settings": {
+        "title": "Example Promotion",
+        "featured_collection": "example-promotion",
+        "number_of_products_to_show": 5
+      }
+    },
     "template_copy_6qEKzY": {
       "type": "template-copy",
       "settings": {
@@ -43,6 +51,7 @@
   "order": [
     "template_hero_LaRNEn",
     "template",
+    "featured_collection_all_colours_ciqw8e",
     "template_copy_6qEKzY"
   ]
 }
