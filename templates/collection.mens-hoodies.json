@@ -24,6 +24,14 @@
         "number_of_products_per_page": 6
       }
     },
+    "featured_collection_all_colours_CCnqij": {
+      "type": "featured-collection-all-colours",
+      "settings": {
+        "title": "Featured Collection Colours",
+        "featured_collection": "mens-hoodies",
+        "number_of_products_to_show": 6
+      }
+    },
     "featured_collection_colours_f8qamA": {
       "type": "featured-collection-colours",
       "settings": {
@@ -52,6 +60,7 @@
   "order": [
     "template_hero_LaRNEn",
     "template",
+    "featured_collection_all_colours_CCnqij",
     "featured_collection_colours_f8qamA",
     "template_copy_6qEKzY"
   ]
