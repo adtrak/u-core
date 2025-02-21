@@ -110,7 +110,14 @@
           "type": "product",
           "settings": {
             "product": "mens-hoodie",
-            "colors": "white, black"
+            "colors": "white"
+          }
+        },
+        "product_RV8BFT": {
+          "type": "product",
+          "settings": {
+            "product": "mens-hoodie",
+            "colors": "black"
           }
         },
         "product_ffxNH9": {
@@ -123,6 +130,7 @@
       },
       "block_order": [
         "product_HFHBK9",
+        "product_RV8BFT",
         "product_ffxNH9"
       ],
       "settings": {
