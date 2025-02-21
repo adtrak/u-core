@@ -4,7 +4,7 @@
         
         {% if section.settings.body != blank %}
             <div class="mb-8 font-light fade-in-container text-white copy lg:w-3/4">
-                {{ section.settings.body }}
+                {{ section.settings.body | richtext }}
             </div>
         {% endif %}
 
