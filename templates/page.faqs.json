@@ -106,6 +106,13 @@
     "featured_collection_colours_gNNTaN": {
       "type": "featured-collection-colours",
       "blocks": {
+        "product_HFHBK9": {
+          "type": "product",
+          "settings": {
+            "product": "mens-hoodie",
+            "colors": "white, black"
+          }
+        },
         "product_ffxNH9": {
           "type": "product",
           "settings": {
@@ -115,6 +122,7 @@
         }
       },
       "block_order": [
+        "product_HFHBK9",
         "product_ffxNH9"
       ],
       "settings": {
