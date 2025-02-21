@@ -27,6 +27,11 @@
   .product--information {
     height: fit-content;
   }
+
+  /* Hide all variant galleries by default except the selected variant */
+  .pdp-image-swiper:not(.variant-gallery-{{ selected_variant.id }}) {
+    display: none !important;
+  }
 </style>
 
 <div class="product-outer containercustom" x-data="{ productModalOpen: false }">
@@ -38,17 +43,62 @@
 
       <div class="bg-lightgrey stretch absolute top-0 right-0 h-full"></div>
 
-      <div class="swiper pdp-image-swiper swiper-initialized swiper-horizontal swiper-pointer-events" navigation="true">
-        <div class="swiper-wrapper max-w-[100vw]">
-          {% for media in product.media %}
-            <div class="swiper-slide">
-              {% render 'product-media', media: media, data-media-id: media.id %}
+      {% assign color_option_index = -1 %}
+      {% for option in product.options_with_values %}
+        {% if option.name contains 'Color' or option.name contains 'Colour' %}
+          {% assign color_option_index = forloop.index0 %}
+          {% break %}
+        {% endif %}
+      {% endfor %}
+
+      {% if color_option_index >= 0 %}
+        {% assign unique_colors = "" | split: "" %}
+        {% for variant in product.variants %}
+          {% assign color = variant.options[color_option_index] %}
+          {% unless unique_colors contains color %}
+            {% assign unique_colors = unique_colors | push: color %}
+            
+            <div class="swiper pdp-image-swiper variant-gallery-{{ variant.id }} {% unless selected_variant.options[color_option_index] == color %}hidden{% endunless %}" data-color="{{ color | escape }}">
+              <div class="swiper-wrapper max-w-[100vw]">
+                {% comment %} First add the variant's featured media {% endcomment %}
+                {% for v in product.variants %}
+                  {% if v.options[color_option_index] == color and v.featured_media %}
+                    <div class="swiper-slide">
+                      {% render 'product-media', media: v.featured_media, data-media-id: v.featured_media.id %}
+                    </div>
+                    {% break %}
+                  {% endif %}
+                {% endfor %}
+
+                {% comment %} Then add all images with matching color in filename {% endcomment %}
+                {% assign color_handle = color | handleize %}
+                {% for media in product.media %}
+                  {% assign media_filename = media.src | split: '/' | last | handleize %}
+                  {% if media_filename contains color_handle and media.id != v.featured_media.id %}
+                    <div class="swiper-slide">
+                      {% render 'product-media', media: media, data-media-id: media.id %}
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div class="swiper-button-prev pdp-image-swiper-button-prev absolute top-1/2 left-0 transform -translate-y-1/2"></div>
+              <div class="swiper-button-next pdp-image-swiper-button-next absolute top-1/2 left-0 transform -translate-y-1/2"></div>
             </div>
-          {% endfor %}
+          {% endunless %}
+        {% endfor %}
+      {% else %}
+        <div class="swiper pdp-image-swiper">
+          <div class="swiper-wrapper max-w-[100vw]">
+            {% for media in product.media %}
+              <div class="swiper-slide">
+                {% render 'product-media', media: media, data-media-id: media.id %}
+              </div>
+            {% endfor %}
+          </div>
+          <div class="swiper-button-prev pdp-image-swiper-button-prev absolute top-1/2 left-0 transform -translate-y-1/2"></div>
+          <div class="swiper-button-next pdp-image-swiper-button-next absolute top-1/2 left-0 transform -translate-y-1/2"></div>
         </div>
-        <div class="swiper-button-prev pdp-image-swiper-button-prev absolute top-1/2 left-0 transform -translate-y-1/2"></div>
-        <div class="swiper-button-next pdp-image-swiper-button-next absolute top-1/2 left-0 transform -translate-y-1/2"></div>
-      </div>
+      {% endif %}
 
       <div class="swiper-dots">
         <div class="pdp-image-swiper-pagination swiper-pagination flex justify-center"></div>
@@ -257,45 +307,80 @@
     }
   </style>
 
-  <!-- <div id="productModelModal">
-  <div x-show="productModalOpen" class="w-full h-full z-50 items-center fixed inset-0">
-  <div class="relative w-full h-full bg-white">
-  <div class="relative">
-  <div class="flex justify-between items-start p-5 border-b">
-  <h2 class="text-xl font-bold text-gray-700">3D Model Preview</h2>
-  <button x-on:click="productModalOpen = false" class="text-gray-400 bg-transparent hover:text-gray-700 rounded text-sm p-2 ml-auto inline-flex items-center">
-  {% render 'icon-close' %}
-  </button>
-  </div>
-
-  <div id="body" class="media block relative" style="padding-top: min(calc(100vh - 5rem), 100%);">
-
-  </div>
-  </div>
-  </div>
-  </div>
-  </div> --></div>
+</div>
 <script>
   class VariantSelector extends HTMLElement {
     constructor() {
       super();
       this.addEventListener("change", this.onVariantChange);
+      // Add URL change listener
+      window.addEventListener('popstate', () => this.handleUrlChange());
+    }
+
+    handleUrlChange() {
+      // Remove the CSS rule immediately when URL changes
+      const styleElements = document.querySelectorAll('style');
+      styleElements.forEach(style => {
+        if (style.textContent.includes('.pdp-image-swiper:not(.variant-gallery-')) {
+          style.textContent = style.textContent.replace(
+            /\.pdp-image-swiper:not\(\.variant-gallery-[^\)]+\)\s*\{\s*display:\s*none\s*!important;\s*\}/g,
+            ''
+          );
+        }
+      });
     }
 
     onVariantChange() {
       this.getSelectedOptions();
       this.getSelectedVariant();
-      if (window.pdpSwiper) {
-        window.pdpSwiper.update(); // Force Swiper to refresh slides
-      }
-      this.scrollToVariantImage();
-
-
+      this.updateGallery();
+      
       if (this.currentVariant) {
         this.updateURL();
         this.updateFormID();
         this.updatePrice();
         this.updateAddToCartButton();
+      }
+    }
+
+    updateGallery() {
+      if (!this.currentVariant) return;
+      
+      // Only update gallery if this is a color option change
+      const colorOption = Array.from(this.querySelectorAll('label')).find(label => 
+        label.textContent.toLowerCase().includes('color') || 
+        label.textContent.toLowerCase().includes('colour')
+      );
+      
+      if (!colorOption) return;
+      
+      // Hide all galleries
+      document.querySelectorAll('.pdp-image-swiper').forEach(gallery => {
+        gallery.classList.add('hidden');
+      });
+      
+      // Show current variant gallery
+      const currentGallery = document.querySelector(`.variant-gallery-${this.currentVariant.id}`);
+      if (currentGallery) {
+        currentGallery.classList.remove('hidden');
+        
+        // Initialize or update Swiper for this gallery if needed
+        if (!window.variantSwipers) window.variantSwipers = {};
+        
+        if (!window.variantSwipers[this.currentVariant.id]) {
+          window.variantSwipers[this.currentVariant.id] = new Swiper(`.variant-gallery-${this.currentVariant.id}`, {
+            direction: 'horizontal',
+            pagination: {
+              el: '.swiper-pagination'
+            },
+            navigation: {
+              prevEl: '.swiper-button-prev',
+              nextEl: '.swiper-button-next'
+            }
+          });
+        } else {
+          window.variantSwipers[this.currentVariant.id].update();
+        }
       }
     }
 
@@ -341,16 +426,12 @@
     }
 
     updateURL() {
-      if (!this.currentVariant) 
-        return;
+      if (!this.currentVariant) return;
       
+      // Remove the CSS rule
+      this.handleUrlChange();
 
-
-      window.history.replaceState({}, '', `${
-        this.dataset.url
-      }?variant=${
-        this.currentVariant.id
-      }`);
+      window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
     }
 
     updateFormID() {
@@ -405,19 +486,22 @@
   document.addEventListener('DOMContentLoaded', function () {
     setTimeout(() => {
       try {
-        window.pdpSwiper = new Swiper('.pdp-image-swiper', {
-          direction: 'horizontal',
-          pagination: {
-            el: '.swiper-pagination'
-          },
-          navigation: {
-            prevEl: '.swiper-button-prev',
-            nextEl: '.swiper-button-next'
-          }
-        });
-  
-        // Check for variant in URL and scroll to its image
-        scrollToVariantFromURL();
+        // Initialize Swiper for the initially selected variant
+        const selectedVariantId = document.querySelector('input[name="id"]').value;
+        const initialGallery = document.querySelector(`.variant-gallery-${selectedVariantId}`);
+        if (initialGallery) {
+          window.variantSwipers = {};
+          window.variantSwipers[selectedVariantId] = new Swiper(`.variant-gallery-${selectedVariantId}`, {
+            direction: 'horizontal',
+            pagination: {
+              el: '.swiper-pagination'
+            },
+            navigation: {
+              prevEl: '.swiper-button-prev',
+              nextEl: '.swiper-button-next'
+            }
+          });
+        }
       } catch (e) {
         console.log('SwiperJS is not defined');
       }
@@ -459,6 +543,14 @@
   }
   
   
+</script>
+
+<script type="application/json" id="debug-data">
+  {
+    "product_media": {{ product.media | json }},
+    "variants": {{ product.variants | json }},
+    "options": {{ product.options_with_values | json }}
+  }
 </script>
 
 {% schema %}
