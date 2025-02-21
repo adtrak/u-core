@@ -47,6 +47,34 @@
     },
     "featured_collection_colours_BRwec4": {
       "type": "featured-collection-colours",
+      "blocks": {
+        "product_QnBera": {
+          "type": "product",
+          "settings": {
+            "product": "womens-hoodie",
+            "colors": "dusky pink"
+          }
+        },
+        "product_P3kGkq": {
+          "type": "product",
+          "settings": {
+            "product": "mens-hoodie",
+            "colors": "black"
+          }
+        },
+        "product_wUqa8F": {
+          "type": "product",
+          "settings": {
+            "product": "mens-hoodie",
+            "colors": "white"
+          }
+        }
+      },
+      "block_order": [
+        "product_QnBera",
+        "product_P3kGkq",
+        "product_wUqa8F"
+      ],
       "settings": {
         "title": "Trending",
         "featured_collection": "trending",
