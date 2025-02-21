@@ -223,6 +223,12 @@ form-embed {
   list-style: inside; 
 }
 
+._textHeading_2aowh_35 {
+  font-family: 'normalidad-wide', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
 /* Hero Styling */
 
 .hero-container.rounded {
