@@ -105,6 +105,18 @@
     },
     "featured_collection_colours_gNNTaN": {
       "type": "featured-collection-colours",
+      "blocks": {
+        "product_ffxNH9": {
+          "type": "product",
+          "settings": {
+            "product": "womens-hoodie",
+            "colors": "dusky pink"
+          }
+        }
+      },
+      "block_order": [
+        "product_ffxNH9"
+      ],
       "settings": {
         "title": "Trending",
         "featured_collection": "trending",
