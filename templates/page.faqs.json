@@ -18,7 +18,7 @@
       "settings": {
         "title": "FAQs",
         "sub_title": "Your questions answered",
-        "hero_image": "shopify://shop_images/DSC02347.jpg"
+        "hero_image": "shopify://shop_images/DSC00240-2.jpg"
       }
     },
     "template_copy_WNetb9": {
@@ -105,6 +105,34 @@
     },
     "featured_collection_colours_gNNTaN": {
       "type": "featured-collection-colours",
+      "blocks": {
+        "product_HFHBK9": {
+          "type": "product",
+          "settings": {
+            "product": "mens-hoodie",
+            "colors": "white"
+          }
+        },
+        "product_RV8BFT": {
+          "type": "product",
+          "settings": {
+            "product": "mens-hoodie",
+            "colors": "black"
+          }
+        },
+        "product_ffxNH9": {
+          "type": "product",
+          "settings": {
+            "product": "womens-hoodie",
+            "colors": "dusky pink"
+          }
+        }
+      },
+      "block_order": [
+        "product_HFHBK9",
+        "product_RV8BFT",
+        "product_ffxNH9"
+      ],
       "settings": {
         "title": "Trending",
         "featured_collection": "trending",
