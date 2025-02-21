@@ -22,18 +22,18 @@
     
 
     <div class="hero-content containercustom relative font-heading heading">
-        {% if collection.title %}
-            <p class="text-white pb-2 font-heading font-huge uppercase fade-in-text block">{{ collection.title }}</p>
-        {% elsif product.title %}
-            <p class="text-white pb-2 font-heading font-huge uppercase fade-in-text block">{{ product.title }}</p>
+        {% if collection.settings.title %}
+            <p class="text-white pb-2 font-heading font-huge uppercase fade-in-text block">{{ collection.settings.title }}</p>
+        {% elsif product.settings.title %}
+            <p class="text-white pb-2 font-heading font-huge uppercase fade-in-text block">{{ product.settings.title }}</p>
         {% else %}
             <p class="text-white pb-2 font-heading font-huge uppercase fade-in-text block">{{ section.settings.title }}</p>
         {% endif %}
 
 
-        {% if collection.title %}
+        {% if collection.settings.sub_title %}
             <span class="text-yellow uppercase text-xl lg:text-3xl font-heading block w-full">{{  section.settings.sub_title }}</span>
-        {% elsif product.title %}
+        {% elsif product.settings.sub_title %}
             
         {% else %}
             <span class="text-yellow uppercase text-xl lg:text-3xl font-heading block w-full">{{  section.settings.sub_title }}</span>
