@@ -58,14 +58,17 @@
           {% unless unique_colors contains color %}
             {% assign unique_colors = unique_colors | push: color %}
             
-            <div class="swiper pdp-image-swiper variant-gallery-{{ variant.id }} {% unless selected_variant.options[color_option_index] == color %}hidden{% endunless %}" data-color="{{ color | escape }}">
-              <div class="swiper-wrapper max-w-[100vw]">
+            <div class="swiper pdp-image-swiper variant-gallery-{{ variant.id }} {% unless selected_variant.options[color_option_index] == color %}hidden{% endunless %}" data-color="{{ color | escape }}" style="opacity: 0">
+              <div class="swiper-wrapper max-w-[100vw]" data-initial-variant="{{ selected_variant.id }}">
                 {% comment %} First add the variant's featured media {% endcomment %}
+                {% assign featured_media_shown = false %}
                 {% for v in product.variants %}
                   {% if v.options[color_option_index] == color and v.featured_media %}
-                    <div class="swiper-slide">
+                    <div class="swiper-slide" data-featured="true">
                       {% render 'product-media', media: v.featured_media, data-media-id: v.featured_media.id %}
                     </div>
+                    {% assign featured_media_shown = true %}
+                    {% assign featured_media_id = v.featured_media.id %}
                     {% break %}
                   {% endif %}
                 {% endfor %}
@@ -74,7 +77,7 @@
                 {% assign color_handle = color | handleize %}
                 {% for media in product.media %}
                   {% assign media_filename = media.src | split: '/' | last | handleize %}
-                  {% if media_filename contains color_handle and media.id != v.featured_media.id %}
+                  {% if media_filename contains color_handle and media.id != featured_media_id %}
                     <div class="swiper-slide">
                       {% render 'product-media', media: media, data-media-id: media.id %}
                     </div>
@@ -484,65 +487,60 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    setTimeout(() => {
-      try {
-        // Initialize Swiper for the initially selected variant
-        const selectedVariantId = document.querySelector('input[name="id"]').value;
-        const initialGallery = document.querySelector(`.variant-gallery-${selectedVariantId}`);
-        if (initialGallery) {
-          window.variantSwipers = {};
-          window.variantSwipers[selectedVariantId] = new Swiper(`.variant-gallery-${selectedVariantId}`, {
-            direction: 'horizontal',
-            pagination: {
-              el: '.swiper-pagination'
-            },
-            navigation: {
-              prevEl: '.swiper-button-prev',
-              nextEl: '.swiper-button-next'
+    function initializeSwiper(variantId) {
+      const gallery = document.querySelector(`.variant-gallery-${variantId}`);
+      if (!gallery) return;
+
+      // Destroy existing swiper if it exists
+      if (window.variantSwipers?.[variantId]) {
+        window.variantSwipers[variantId].destroy(true, true);
+      }
+
+      // Create new Swiper instance
+      window.variantSwipers = window.variantSwipers || {};
+      window.variantSwipers[variantId] = new Swiper(gallery, {
+        direction: 'horizontal',
+        initialSlide: 0,
+        allowTouchMove: true,
+        pagination: {
+          el: '.swiper-pagination'
+        },
+        navigation: {
+          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next'
+        },
+        on: {
+          beforeInit: function() {
+            // Ensure we're starting with slide 0
+            const wrapper = gallery.querySelector('.swiper-wrapper');
+            if (wrapper) {
+              wrapper.style.transform = 'translate3d(0px, 0px, 0px)';
             }
-          });
+          },
+          init: function() {
+            // Show gallery after initialization
+            gallery.style.opacity = '1';
+            gallery.style.transition = 'opacity 0.3s ease';
+            // Force to first slide
+            this.slideTo(0, 0);
+          }
         }
-      } catch (e) {
-        console.log('SwiperJS is not defined');
-      }
-    }, 100);
-  });
-  
-  // Function to check URL for variant and scroll to its image
-  function scrollToVariantFromURL() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const variantId = urlParams.get('variant');
-  
-    if (!variantId) return; // No variant in URL, exit early
-  
-    // Find variant JSON data
-    const variantDataElement = document.querySelector('[type="application/json"]');
-    if (!variantDataElement) return;
-  
-    const variantData = JSON.parse(variantDataElement.textContent);
-    const selectedVariant = variantData.find(v => v.id == variantId);
-  
-    if (selectedVariant && selectedVariant.featured_media) {
-      const mediaID = selectedVariant.featured_media.id;
-      const slides = document.querySelectorAll('.swiper-slide');
-  
-      let targetIndex = Array.from(slides).findIndex(slide => {
-        const img = slide.querySelector('[data-media-id]');
-        return img && img.dataset.mediaId == mediaID;
       });
-  
-      if (targetIndex !== -1 && window.pdpSwiper) {
-        window.pdpSwiper.slideTo(targetIndex);
-  
-        // 🛠 Force Swiper to update pagination
-        setTimeout(() => {
-          window.pdpSwiper.update(); // Refresh Swiper
-        }, 100);
-      }
     }
-  }
-  
-  
+
+    // Initialize for the first variant
+    const selectedVariantId = document.querySelector('input[name="id"]').value;
+    initializeSwiper(selectedVariantId);
+
+    // Handle variant changes
+    const variantSelector = document.querySelector('variant-selector');
+    if (variantSelector) {
+      variantSelector.addEventListener('change', function() {
+        const newVariantId = document.querySelector('input[name="id"]').value;
+        initializeSwiper(newVariantId);
+      });
+    }
+  });
 </script>
 
 <script type="application/json" id="debug-data">
