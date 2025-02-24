@@ -24,17 +24,12 @@
     "template_size_guide_MH4gUD": {
       "type": "template-size-guide",
       "settings": {
-        "title": "Title",
-        "body": "<p>Body text</p>",
+        "title": "Mens Hoodie",
+        "body": "<p>Size guide for our men's hoodie.</p>",
         "copy_image": "shopify://shop_images/DSC00151-2.jpg",
         "show_image": true,
         "short_image": false,
-        "image_position": "left",
-        "contact_title": "",
-        "contact_content": "",
-        "contact_mail": "",
-        "contact_telephone": "",
-        "contact_insta_handle": ""
+        "contact_title": ""
       }
     }
   },
