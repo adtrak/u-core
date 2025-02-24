@@ -26,9 +26,16 @@
       "settings": {
         "title": "Mens Hoodie",
         "body": "<p>Size guide for our men's hoodie.</p>",
-        "copy_image": "shopify://shop_images/DSC00151-2.jpg",
-        "show_image": true,
-        "short_image": false,
+        "size_type": "mens",
+        "contact_title": ""
+      }
+    },
+    "template_size_guide_Nebiaj": {
+      "type": "template-size-guide",
+      "settings": {
+        "title": "Womens Hoodie",
+        "body": "<p>Size guide for our women's hoodie.</p>",
+        "size_type": "womens",
         "contact_title": ""
       }
     }
@@ -36,6 +43,7 @@
   "order": [
     "template",
     "template_hero_m3TLxA",
-    "template_size_guide_MH4gUD"
+    "template_size_guide_MH4gUD",
+    "template_size_guide_Nebiaj"
   ]
 }
