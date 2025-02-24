@@ -244,15 +244,13 @@
               {% endunless %}
             </div>
 
-            <div class="block my-4">
-              <span class="p-4 bg-lightgrey inline-block rounded-full">Size Guide</span>
-            </div>
-
             {% when 'quantity' %}
-            <div class="my-3">
-              <label for="Quantity-{{ section.id }}">Quantity</label>
+            <div class="my-3 flex items-center">
+              
 
-              <div class="my-2">
+              <label class="mr-2" for="Quantity-{{ section.id }}">Quantity</label>
+
+              <div class="my-2 mr-4">
                 <input
                   type="number"
                   name="quantity"
@@ -261,6 +259,10 @@
                   min="1"
                   class="w-full border px-6 py-3 rounded-full">
               </div>
+
+              <a href="{{ '/pages/size-guides' | url }}" class="relative w-32 flex items-center bg-lightgrey border-darkgrey border text-black hover:text-grey hover:bg-white font-heading font-light text-[11px] rounded-[40px] py-[10px] px-[25px] text-center tracking-wide uppercase group transition">
+                <span class="leading-none mx-auto">Size Guide</span>
+              </a>
             </div>
 
             {% when 'checkout_buttons' %}
