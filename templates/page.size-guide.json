@@ -21,15 +21,14 @@
         "hero_image": "shopify://shop_images/mens-black-4.jpg"
       }
     },
-    "template_copy_T37wD3": {
-      "type": "template-copy",
+    "template_size_guide_MH4gUD": {
+      "type": "template-size-guide",
       "settings": {
-        "title": "Size Guides",
-        "body": "",
-        "copy_image": "shopify://shop_images/DSC00328.jpg",
-        "show_image": false,
-        "short_image": true,
-        "image_position": "right",
+        "title": "Title",
+        "body": "<p>Body text</p>",
+        "show_image": true,
+        "short_image": false,
+        "image_position": "left",
         "contact_title": "",
         "contact_content": "",
         "contact_mail": "",
@@ -41,6 +40,6 @@
   "order": [
     "template",
     "template_hero_m3TLxA",
-    "template_copy_T37wD3"
+    "template_size_guide_MH4gUD"
   ]
 }
