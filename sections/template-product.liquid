@@ -244,6 +244,10 @@
               {% endunless %}
             </div>
 
+            <div class="block my-4">
+              <span class="p-4 bg-lightgrey inline-block rounded-full">Size Guide</span>
+            </div>
+
             {% when 'quantity' %}
             <div class="my-3">
               <label for="Quantity-{{ section.id }}">Quantity</label>
@@ -276,14 +280,6 @@
                 </button>
               {% endif %}
               
-              {% comment %} {% if selected_variant.available == false %}
-                <p class="mx-auto block text-center">Sold out</p>
-              {% else %}
-                <button type="submit" name="checkout" {% if selected_variant.available == false %}disabled{% endif %} class="relative flex items-center font-heading font-light bg-white border-yellow border-2 text-black text-[13px] text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide uppercase group transition w-full">
-                  <span class="leading-none mx-auto ">Checkout</span>
-                </button>
-              {% endif %} {% endcomment %}
-
             </div>
 
           {% else %}

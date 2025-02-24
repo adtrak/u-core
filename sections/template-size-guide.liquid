@@ -1,0 +1,163 @@
+{% unless template == 'page.contact' %}
+<!-- Image for mobile -->
+<span class="relative">
+    <picture class="block lg:hidden relative z-5 w-full mb-24 lg:mb-36">
+        <source srcset="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}">
+        <source srcset="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}">
+        <img src="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1200" height="770">
+    </picture>
+</span>
+{% endunless %}
+
+<div class="mx-auto mb-32 lg:mb-36 grid grid-cols-1 lg:gap-24 relative containerequal">
+    
+    <div class="w-full">
+        <h1 class="font-heading font-big text-grey pb-4">{{ section.settings.title }}</h1>
+        
+        
+        <div class="overflow-x-auto">
+            <table class="min-w-max w-full border-collapse border border-gray-300">
+              <thead>
+                <tr class="bg-gray-100">
+                  <th class="sticky left-0 bg-gray-100 px-4 py-2 border border-gray-300 text-left">Size</th>
+                  <th class="px-4 py-2 border border-gray-300">XXS</th>
+                  <th class="px-4 py-2 border border-gray-300">XS</th>
+                  <th class="px-4 py-2 border border-gray-300">S</th>
+                  <th class="px-4 py-2 border border-gray-300">S Tall</th>
+                  <th class="px-4 py-2 border border-gray-300">M</th>
+                  <th class="px-4 py-2 border border-gray-300">M Tall</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="sticky left-0 bg-gray-50 px-4 py-2 border border-gray-300">Chest (in.)</td>
+                  <td class="px-4 py-2 border border-gray-300">28.1 - 31.5</td>
+                  <td class="px-4 py-2 border border-gray-300">31.5 - 35</td>
+                  <td class="px-4 py-2 border border-gray-300">35 - 37.5</td>
+                  <td class="px-4 py-2 border border-gray-300">35 - 37.5</td>
+                  <td class="px-4 py-2 border border-gray-300">37.5 - 41</td>
+                  <td class="px-4 py-2 border border-gray-300">37.5 - 41</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="sticky left-0 bg-gray-50 px-4 py-2 border border-gray-300">Waist (in.)</td>
+                  <td class="px-4 py-2 border border-gray-300">22.5 - 25.5</td>
+                  <td class="px-4 py-2 border border-gray-300">25.5 - 29</td>
+                  <td class="px-4 py-2 border border-gray-300">29 - 32</td>
+                  <td class="px-4 py-2 border border-gray-300">29 - 32</td>
+                  <td class="px-4 py-2 border border-gray-300">32 - 35</td>
+                  <td class="px-4 py-2 border border-gray-300">32 - 35</td>
+                </tr>
+                <tr>
+                  <td class="sticky left-0 bg-gray-50 px-4 py-2 border border-gray-300">Hip (in.)</td>
+                  <td class="px-4 py-2 border border-gray-300">28.5 - 31.5</td>
+                  <td class="px-4 py-2 border border-gray-300">31.5 - 35</td>
+                  <td class="px-4 py-2 border border-gray-300">35 - 37.5</td>
+                  <td class="px-4 py-2 border border-gray-300">35 - 37.5</td>
+                  <td class="px-4 py-2 border border-gray-300">37.5 - 41</td>
+                  <td class="px-4 py-2 border border-gray-300">37.5 - 41</td>
+                </tr>
+                <tr class="bg-gray-50">
+                  <td class="sticky left-0 bg-gray-50 px-4 py-2 border border-gray-300">Height (in.)</td>
+                  <td class="px-4 py-2 border border-gray-300">&lt; 5'7"</td>
+                  <td class="px-4 py-2 border border-gray-300">5'7" - 6'0"</td>
+                  <td class="px-4 py-2 border border-gray-300">5'7" - 6'0"</td>
+                  <td class="px-4 py-2 border border-gray-300">6'0" - 6'5"</td>
+                  <td class="px-4 py-2 border border-gray-300">5'7" - 6'0"</td>
+                  <td class="px-4 py-2 border border-gray-300">6'0" - 6'5"</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>
+        
+          
+
+    </div>
+
+</div>
+
+{% schema %}
+{
+    "name": "Size Guide Section",
+    "presets": [
+        {
+            "name": "Size Guide Section"
+        }
+    ],
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "default": "Title",
+            "label": "H1 Title"
+        },
+        {
+            "type": "richtext",
+            "id": "body",
+            "default": "<p>Body text</p>",
+            "label": "Body Text"
+        },
+        {
+            "type": "image_picker",
+            "id": "copy_image",
+            "label": "Copy Image"
+        },
+        {
+            "type": "checkbox",
+            "id": "show_image",
+            "label": "Show Image",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "short_image",
+            "label": "Use Short Image?",
+            "default": false
+        },
+        {
+            "type": "select",
+            "id": "image_position",
+            "label": "Image Position",
+            "default": "left",
+            "options": [
+              {
+                "value": "left",
+                "label": "Image Left"
+              },
+              {
+                "value": "right",
+                "label": "Image Right"
+              }
+            ]
+        },
+        {
+            "type": "header",
+            "content": "Contact Form Settings"
+        },
+        {
+            "type": "text",
+            "id": "contact_title",
+            "label": "Contact Form Title"
+        },
+        {
+            "type": "textarea",
+            "id": "contact_content",
+            "label": "Contact Form Content"
+        },
+        {
+            "type": "text",
+            "id": "contact_mail",
+            "label": "Contact Email"
+        },
+        {
+            "type": "text",
+            "id": "contact_telephone",
+            "label": "Contact Telephone"
+        },
+        {
+            "type": "text",
+            "id": "contact_insta_handle",
+            "label": "Instagram Handle"
+        }
+    ]
+}
+{% endschema %}
