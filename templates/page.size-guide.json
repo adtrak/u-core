@@ -26,6 +26,7 @@
       "settings": {
         "title": "Title",
         "body": "<p>Body text</p>",
+        "copy_image": "shopify://shop_images/DSC00151-2.jpg",
         "show_image": true,
         "short_image": false,
         "image_position": "left",
