@@ -1,86 +1,212 @@
-{% unless template == 'page.contact' %}
-<!-- Image for mobile -->
-<span class="relative">
-    <picture class="block lg:hidden relative z-5 w-full mb-24 lg:mb-36">
-        <source srcset="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}">
-        <source srcset="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}">
-        <img src="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1200" height="770">
-    </picture>
-</span>
-{% endunless %}
-
-<div class="mx-auto mb-32 lg:mb-36 grid grid-cols-1 lg:gap-24 relative containerequal">
+<div class="mx-auto mb-32 lg:mb-36 grid grid-cols-1 relative containerequal">
 
     <div class="w-full">
         <h1 class="font-heading font-big text-grey pb-4">{{ section.settings.title }}</h1>
         
         {% if section.settings.body != blank %}
-            <div class="mb-8 font-light text-grey copy">
+            <div class="mb-4 font-light text-grey copy">
                 {{ section.settings.body | richtext }}
             </div>
         {% endif %}
     </div>
+
+    {% if section.settings.size_type == 'mens' %}
     
     <div class="w-full">
-        <div class="overflow-x-auto">
-            <table class="min-w-max w-full border-collapse border border-gray-300">
+        <div class="overflow-x-auto size-table-container relative">
+          <div class="size-table-inner-container border-gray-100 border-x">
+            <table class="min-w-max w-full border-collapse border-y border-gray-100">
               <thead>
                 <tr class="bg-gray-100">
-                  <th class="sticky left-0 bg-gray-100 px-4 py-2 border border-gray-300 text-left">Size</th>
-                  <th class="px-4 py-2 border border-gray-300">XXS</th>
-                  <th class="px-4 py-2 border border-gray-300">XS</th>
-                  <th class="px-4 py-2 border border-gray-300">S</th>
-                  <th class="px-4 py-2 border border-gray-300">S Tall</th>
-                  <th class="px-4 py-2 border border-gray-300">M</th>
-                  <th class="px-4 py-2 border border-gray-300">M Tall</th>
+                  <th class="sticky left-0 bg-white br-1 border-y border-gray-100 text-left">Size</th>
+                  <th class="text-left">Chest <br />Width</th>
+                  <th class="text-left">Sleeve <br />Length</th>
+                  <th class="text-left">Front <br />Length</th>
+                  <th class="text-left">Shoulder <br />Width</th>
+                  <th class="text-left">Waist</th>
+                  <th class="text-left">Hem</th>
+                  <th class="text-left">Chest <br />in Inches</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="sticky left-0 bg-gray-50 px-4 py-2 border border-gray-300">Chest (in.)</td>
-                  <td class="px-4 py-2 border border-gray-300">28.1 - 31.5</td>
-                  <td class="px-4 py-2 border border-gray-300">31.5 - 35</td>
-                  <td class="px-4 py-2 border border-gray-300">35 - 37.5</td>
-                  <td class="px-4 py-2 border border-gray-300">35 - 37.5</td>
-                  <td class="px-4 py-2 border border-gray-300">37.5 - 41</td>
-                  <td class="px-4 py-2 border border-gray-300">37.5 - 41</td>
+                  <td class="sticky left-0 bg-white br-1 border-y border-gray-300">XS</td>
+                  <td class="border-y border-gray-300">51.5</td>
+                  <td class="border-y border-gray-300">66</td>
+                  <td class="border-y border-gray-300">68</td>
+                  <td class="border-y border-gray-300">43</td>
+                  <td class="border-y border-gray-300">48</td>
+                  <td class="border-y border-gray-300">40</td>
+                  <td class="border-y border-gray-300">34"</td>
                 </tr>
                 <tr class="bg-gray-50">
-                  <td class="sticky left-0 bg-gray-50 px-4 py-2 border border-gray-300">Waist (in.)</td>
-                  <td class="px-4 py-2 border border-gray-300">22.5 - 25.5</td>
-                  <td class="px-4 py-2 border border-gray-300">25.5 - 29</td>
-                  <td class="px-4 py-2 border border-gray-300">29 - 32</td>
-                  <td class="px-4 py-2 border border-gray-300">29 - 32</td>
-                  <td class="px-4 py-2 border border-gray-300">32 - 35</td>
-                  <td class="px-4 py-2 border border-gray-300">32 - 35</td>
+                  <td class="sticky left-0 bg-white br-1 border-y border-gray-300">S</td>
+                  <td class="border-y border-gray-300">54.5</td>
+                  <td class="border-y border-gray-300">67</td>
+                  <td class="border-y border-gray-300">70</td>
+                  <td class="border-y border-gray-300">45.5</td>
+                  <td class="border-y border-gray-300">51</td>
+                  <td class="border-y border-gray-300">43</td>
+                  <td class="border-y border-gray-300">36"</td>
                 </tr>
                 <tr>
-                  <td class="sticky left-0 bg-gray-50 px-4 py-2 border border-gray-300">Hip (in.)</td>
-                  <td class="px-4 py-2 border border-gray-300">28.5 - 31.5</td>
-                  <td class="px-4 py-2 border border-gray-300">31.5 - 35</td>
-                  <td class="px-4 py-2 border border-gray-300">35 - 37.5</td>
-                  <td class="px-4 py-2 border border-gray-300">35 - 37.5</td>
-                  <td class="px-4 py-2 border border-gray-300">37.5 - 41</td>
-                  <td class="px-4 py-2 border border-gray-300">37.5 - 41</td>
+                  <td class="sticky left-0 bg-white br-1 border-y border-gray-300">M</td>
+                  <td class="border-y border-gray-300">57.5</td>
+                  <td class="border-y border-gray-300">68</td>
+                  <td class="border-y border-gray-300">72</td>
+                  <td class="border-y border-gray-300">48</td>
+                  <td class="border-y border-gray-300">54</td>
+                  <td class="border-y border-gray-300">46</td>
+                  <td class="border-y border-gray-300">38"</td>
                 </tr>
                 <tr class="bg-gray-50">
-                  <td class="sticky left-0 bg-gray-50 px-4 py-2 border border-gray-300">Height (in.)</td>
-                  <td class="px-4 py-2 border border-gray-300">&lt; 5'7"</td>
-                  <td class="px-4 py-2 border border-gray-300">5'7" - 6'0"</td>
-                  <td class="px-4 py-2 border border-gray-300">5'7" - 6'0"</td>
-                  <td class="px-4 py-2 border border-gray-300">6'0" - 6'5"</td>
-                  <td class="px-4 py-2 border border-gray-300">5'7" - 6'0"</td>
-                  <td class="px-4 py-2 border border-gray-300">6'0" - 6'5"</td>
+                  <td class="sticky left-0 bg-white br-1 border-y border-gray-300">L</td>
+                  <td class="border-y border-gray-300">60.5</td>
+                  <td class="border-y border-gray-300">69</td>
+                  <td class="border-y border-gray-300">74</td>
+                  <td class="border-y border-gray-300">50.5</td>
+                  <td class="border-y border-gray-300">57</td>
+                  <td class="border-y border-gray-300">49</td>
+                  <td class="border-y border-gray-300">40"</td>
                 </tr>
+                <tr class="bg-gray-50">
+                    <td class="sticky left-0 bg-white br-1 border-y border-gray-300">XL</td>
+                    <td class="border-y border-gray-300">63.5</td>
+                    <td class="border-y border-gray-300">70</td>
+                    <td class="border-y border-gray-300">76</td>
+                    <td class="border-y border-gray-300">53</td>
+                    <td class="border-y border-gray-300">60</td>
+                    <td class="border-y border-gray-300">52</td>
+                    <td class="border-y border-gray-300">42"</td>
+                  </tr>
               </tbody>
             </table>
+          </div>
+          <div class="overflow"></div>
         </div>
-
-          
-
+        <p class="text-md mt-2">All measurements are given in CM unless otherwise stated.</p>
+        
     </div>
 
+    {% elsif section.settings.size_type == 'womens' %}
+
+    <div class="w-full">
+        <div class="overflow-x-auto size-table-container relative">
+            <div class="size-table-inner-container border-gray-100 border-x">
+            <table class="min-w-max w-full border-collapse border-y border-gray-100">
+                <thead>
+                <tr class="bg-gray-100">
+                    <th class="sticky left-0 bg-white br-1 border-y border-gray-100 text-left">Size</th>
+                    <th class="text-left">Womens <br />Width</th>
+                    <th class="text-left">Sleeve <br />Length</th>
+                    <th class="text-left">Front <br />Length</th>
+                    <th class="text-left">Shoulder <br />Width</th>
+                    <th class="text-left">Waist</th>
+                    <th class="text-left">Hem</th>
+                    <th class="text-left">Chest <br />in Inches</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="sticky left-0 bg-white br-1 border-y border-gray-300">XS</td>
+                    <td class="border-y border-gray-300">51.5</td>
+                    <td class="border-y border-gray-300">66</td>
+                    <td class="border-y border-gray-300">68</td>
+                    <td class="border-y border-gray-300">43</td>
+                    <td class="border-y border-gray-300">48</td>
+                    <td class="border-y border-gray-300">40</td>
+                    <td class="border-y border-gray-300">34"</td>
+                </tr>
+                <tr class="bg-gray-50">
+                    <td class="sticky left-0 bg-white br-1 border-y border-gray-300">S</td>
+                    <td class="border-y border-gray-300">54.5</td>
+                    <td class="border-y border-gray-300">67</td>
+                    <td class="border-y border-gray-300">70</td>
+                    <td class="border-y border-gray-300">45.5</td>
+                    <td class="border-y border-gray-300">51</td>
+                    <td class="border-y border-gray-300">43</td>
+                    <td class="border-y border-gray-300">36"</td>
+                </tr>
+                <tr>
+                    <td class="sticky left-0 bg-white br-1 border-y border-gray-300">M</td>
+                    <td class="border-y border-gray-300">57.5</td>
+                    <td class="border-y border-gray-300">68</td>
+                    <td class="border-y border-gray-300">72</td>
+                    <td class="border-y border-gray-300">48</td>
+                    <td class="border-y border-gray-300">54</td>
+                    <td class="border-y border-gray-300">46</td>
+                    <td class="border-y border-gray-300">38"</td>
+                </tr>
+                <tr class="bg-gray-50">
+                    <td class="sticky left-0 bg-white br-1 border-y border-gray-300">L</td>
+                    <td class="border-y border-gray-300">60.5</td>
+                    <td class="border-y border-gray-300">69</td>
+                    <td class="border-y border-gray-300">74</td>
+                    <td class="border-y border-gray-300">50.5</td>
+                    <td class="border-y border-gray-300">57</td>
+                    <td class="border-y border-gray-300">49</td>
+                    <td class="border-y border-gray-300">40"</td>
+                </tr>
+                <tr class="bg-gray-50">
+                    <td class="sticky left-0 bg-white br-1 border-y border-gray-300">XL</td>
+                    <td class="border-y border-gray-300">63.5</td>
+                    <td class="border-y border-gray-300">70</td>
+                    <td class="border-y border-gray-300">76</td>
+                    <td class="border-y border-gray-300">53</td>
+                    <td class="border-y border-gray-300">60</td>
+                    <td class="border-y border-gray-300">52</td>
+                    <td class="border-y border-gray-300">42"</td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            <div class="overflow"></div>
+        </div>
+        <p class="text-md mt-2">All measurements are given in CM unless otherwise stated.</p>
+        
+    </div>
+
+    {% endif %}
+
 </div>
+
+<style>
+  .size-table-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .size-table-inner-container {
+    overflow-x: auto;
+    padding-right: 30px;
+    margin-right: -30px;
+  }
+
+  .overflow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to left,rgba(17,17,17,.12) 0%,rgba(255,255,255,0) 100%);
+    pointer-events: none;
+  }
+
+  /* Add this new style for alternating cell backgrounds */
+  .size-table-container td:nth-child(odd),
+  .size-table-container th:nth-child(odd) {
+    background-color: white;
+  }
+  
+  .size-table-container td:nth-child(even),
+  .size-table-container th:nth-child(even) {
+    background-color: rgb(249 250 251); /* This is the Tailwind gray-50 color */
+  }
+
+  th, td {
+    padding: 15px;
+    }
+</style>
 
 {% schema %}
 {
@@ -104,21 +230,20 @@
             "label": "Body Text"
         },
         {
-            "type": "image_picker",
-            "id": "copy_image",
-            "label": "Copy Image"
-        },
-        {
-            "type": "checkbox",
-            "id": "show_image",
-            "label": "Show Image",
-            "default": true
-        },
-        {
-            "type": "checkbox",
-            "id": "short_image",
-            "label": "Use Short Image?",
-            "default": false
+            "type": "select",
+            "id": "size_type",
+            "label": "Size Guide Type",
+            "options": [
+                {
+                    "value": "mens",
+                    "label": "Mens"
+                },
+                {
+                    "value": "womens",
+                    "label": "Womens"
+                }
+            ],
+            "default": "mens"
         },
         {
             "type": "header",
