@@ -85,34 +85,6 @@
         "collection": "example-promotion"
       }
     },
-    "featured_collection_colours_bL8qqB": {
-      "type": "featured-collection-colours",
-      "blocks": {
-        "product_E4EHfj": {
-          "type": "product",
-          "settings": {
-            "product": "womens-hoodie",
-            "colors": "dusky pink"
-          }
-        },
-        "product_FdMd8W": {
-          "type": "product",
-          "settings": {
-            "product": "mens-hoodie",
-            "colors": "black,white"
-          }
-        }
-      },
-      "block_order": [
-        "product_E4EHfj",
-        "product_FdMd8W"
-      ],
-      "settings": {
-        "title": "Trending Products",
-        "featured_collection": "trending",
-        "number_of_products_to_show": 6
-      }
-    },
     "template_usps_gYYMw7": {
       "type": "template-usps",
       "blocks": {
@@ -225,10 +197,9 @@
     "template_hero_YGwtBG",
     "template_features_gLX79e",
     "template_promotion_J8YKGY",
-    "featured_collection_colours_bL8qqB",
+    "featured-collection",
     "template_usps_gYYMw7",
     "template_copy_MgKqwe",
-    "template_copy_feature_N8HfXb",
-    "featured-collection"
+    "template_copy_feature_N8HfXb"
   ]
 }
