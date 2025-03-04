@@ -6,8 +6,7 @@
           <div class="w-full overflow-hidden aspect-[4/3]">
             <div class="relative w-full h-full pr-6 pb-6">
               <img
-                class="w-full h-full object-cover"
-                style="object-position: center -50px;"
+                class="w-full h-full object-cover product-card-image"
                 src="{{ current_variant.image | img_url: '1024x1024' }}"
                 alt="{{ current_variant.image.alt | default: current_variant.title }}">
             </div>
@@ -16,8 +15,7 @@
           <div class="w-full overflow-hidden aspect-[4/3]">
             <div class="relative w-full h-full pr-6 pb-6">
               <img
-                class="w-full h-full object-cover"
-                style="object-position: center -50px;"
+                class="w-full h-full object-cover product-card-image"
                 src="{{ product_product.featured_image | img_url: '1024x1024' }}"
                 alt="{{ product_product.featured_image.alt }}">
             </div>
