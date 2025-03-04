@@ -85,32 +85,12 @@
         "collection": "example-promotion"
       }
     },
-    "featured_collection_colours_bL8qqB": {
-      "type": "featured-collection-colours",
-      "blocks": {
-        "product_E4EHfj": {
-          "type": "product",
-          "settings": {
-            "product": "womens-hoodie",
-            "colors": "dusky pink"
-          }
-        },
-        "product_FdMd8W": {
-          "type": "product",
-          "settings": {
-            "product": "mens-hoodie",
-            "colors": "black,white"
-          }
-        }
-      },
-      "block_order": [
-        "product_E4EHfj",
-        "product_FdMd8W"
-      ],
+    "featured-collection": {
+      "type": "featured-collection",
       "settings": {
-        "title": "Trending Products",
-        "featured_collection": "trending",
-        "number_of_products_to_show": 6
+        "title": "Products",
+        "featured_collection": "all",
+        "number_of_products_to_show": 4
       }
     },
     "template_usps_gYYMw7": {
@@ -138,14 +118,6 @@
             "usp_heading": "Anti-Theft Design",
             "usp_sub_heading": "Our front-facing, central pocket makes it difficult for thieves to access your phone, providing extra security without sacrificing convenience.",
             "icon": "icon-shield"
-          }
-        },
-        "usp_MUPiPX": {
-          "type": "usp",
-          "settings": {
-            "usp_heading": "Peace of Mind",
-            "usp_sub_heading": "Your phone is always safeguarded to keep it out of the reach of prying hands.",
-            "icon": "icon-stars"
           }
         },
         "usp_VWxH97": {
@@ -177,7 +149,6 @@
         "usp_4X9Nfx",
         "usp_hYbmwr",
         "usp_MPC6hB",
-        "usp_MUPiPX",
         "usp_VWxH97",
         "usp_jamkwK",
         "usp_gpyK9A"
@@ -192,7 +163,7 @@
       "type": "template-copy",
       "settings": {
         "title": "Clothing & Sportswear with Pockets",
-        "body": "<p>For many of us, our mobile phones are our lives.  </p><p>Whether it’s helping us to stay in touch with friends and family, catching up on important work calls or planning our day, these days it’s essential to stay connected.</p><p>That means missing an important phone call can be extremely frustrating. </p><p>But with Ucore’s clothing and sportswear, you never have to worry about a thing. </p><p>Do you put your phone in a pocket or a bag when at the gym or when popping into the shop? Now you don’t have to.</p><p>All of our stylish hoodies come with a groundbreaking central pocket that neatly holds a mobile phone on the upper torso - an area extremely sensitive to your phone’s vibration. </p><h2>Phone Holder for Running & Sport</h2><p>Many brands offer sportswear or hoodies with pockets. But at Ucore, our activewear is truly unique. </p><p>Our innovative, 21st-century pocket technology helps solve the real problem of missing important calls when staying active. </p><p>Due to the thin, lightweight nature of modern phones, we’ve developed an innovative solution - a phone holder pocket that is integrated with the apparel and located centrally on the garment. </p><p>The unique design keeps your phone protected due to the pocket’s narrow opening, while maintaining a stylish, aesthetic appearance. This also allows for seamless removal for both left and right-handed users. <br/></p>",
+        "body": "<p>For many of us, our mobile phones are our lives.  </p><p>Whether it’s helping us to stay in touch with friends and family, catching up on important work calls or planning our day, these days it’s essential to stay connected.</p><p>That means missing an important phone call can be extremely frustrating. </p><p>But with Ucore’s clothing and sportswear, you never have to worry about a thing. </p><p>Do you put your phone in a pocket or a bag when at the gym or when popping into the shop? Now you don’t have to.</p><p>All of our hoodies come with a groundbreaking central pocket that neatly holds a mobile phone on the upper torso - an area extremely sensitive to your phone’s vibration.</p><h2>Phone Holder for Running & Sport</h2><p>Many brands offer sportswear or hoodies with pockets. But at Ucore, our activewear is truly unique. </p><p>Our innovative, 21st-century pocket technology helps solve the real problem of missing important calls when staying active. </p><p>Due to the thin, lightweight nature of modern phones, we’ve developed an innovative solution - a phone holder pocket that is integrated with the apparel and located centrally on the garment. </p><p>The unique design keeps your phone protected due to the pocket’s narrow opening, while maintaining a stylish, aesthetic appearance. This also allows for seamless removal for both left and right-handed users. <br/></p>",
         "copy_image": "shopify://shop_images/mens-grey-5.jpg",
         "show_image": true,
         "short_image": false,
@@ -211,24 +182,15 @@
         "body": "<p>Not only will you never miss a phone call, but our innovative patent-pending phone pocket provides a wide range of other benefits.</p><p>Suitable as sportswear, activewear and technical outerwear, the use of hands-free technology makes Ucore’s clothing ideal for a variety of environments where holding your phone may not be practical. This could include the gym, at the shops, doing DIY, at music events, football matches and much more. With your phone’s microphone even closer to your mouth, there is no need for earpods either. Just invert your phone so that the mic is at the pocket opening. </p><p>Discover the freedom of Ucore clothing and order online today. </p>",
         "copy_video": "shopify://files/videos/hero.mp4"
       }
-    },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Products",
-        "featured_collection": "all",
-        "number_of_products_to_show": 4
-      }
     }
   },
   "order": [
     "template_hero_YGwtBG",
     "template_features_gLX79e",
     "template_promotion_J8YKGY",
-    "featured_collection_colours_bL8qqB",
+    "featured-collection",
     "template_usps_gYYMw7",
     "template_copy_MgKqwe",
-    "template_copy_feature_N8HfXb",
-    "featured-collection"
+    "template_copy_feature_N8HfXb"
   ]
 }
