@@ -85,6 +85,14 @@
         "collection": "example-promotion"
       }
     },
+    "featured-collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Products",
+        "featured_collection": "all",
+        "number_of_products_to_show": 4
+      }
+    },
     "template_usps_gYYMw7": {
       "type": "template-usps",
       "blocks": {
@@ -110,14 +118,6 @@
             "usp_heading": "Anti-Theft Design",
             "usp_sub_heading": "Our front-facing, central pocket makes it difficult for thieves to access your phone, providing extra security without sacrificing convenience.",
             "icon": "icon-shield"
-          }
-        },
-        "usp_MUPiPX": {
-          "type": "usp",
-          "settings": {
-            "usp_heading": "Peace of Mind",
-            "usp_sub_heading": "Your phone is always safeguarded to keep it out of the reach of prying hands.",
-            "icon": "icon-stars"
           }
         },
         "usp_VWxH97": {
@@ -149,7 +149,6 @@
         "usp_4X9Nfx",
         "usp_hYbmwr",
         "usp_MPC6hB",
-        "usp_MUPiPX",
         "usp_VWxH97",
         "usp_jamkwK",
         "usp_gpyK9A"
@@ -182,14 +181,6 @@
         "title": "Hands Free Tech",
         "body": "<p>Not only will you never miss a phone call, but our innovative patent-pending phone pocket provides a wide range of other benefits.</p><p>Suitable as sportswear, activewear and technical outerwear, the use of hands-free technology makes Ucore’s clothing ideal for a variety of environments where holding your phone may not be practical. This could include the gym, at the shops, doing DIY, at music events, football matches and much more. With your phone’s microphone even closer to your mouth, there is no need for earpods either. Just invert your phone so that the mic is at the pocket opening. </p><p>Discover the freedom of Ucore clothing and order online today. </p>",
         "copy_video": "shopify://files/videos/hero.mp4"
-      }
-    },
-    "featured-collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Products",
-        "featured_collection": "all",
-        "number_of_products_to_show": 4
       }
     }
   },
