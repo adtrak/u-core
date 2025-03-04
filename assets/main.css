@@ -255,6 +255,18 @@ form-embed {
   position: relative;
 }
 
+/* Card Styles */
+
+.product-card-image {
+  object-position: center -10px;
+}
+
+@media (min-width: 940px) {
+  .product-card-image {
+    object-position: center -50px;
+  }
+}
+
 
 /* Copy Section */
 

@@ -2175,6 +2175,12 @@ video {
     gap: 6rem;
   }
 
+  .lg\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
   .lg\:p-12 {
     padding: 3rem;
   }
@@ -2246,14 +2252,10 @@ video {
     -moz-column-gap: 2rem;
          column-gap: 2rem;
   }
-}
 
-.product-card-image {
-  object-position: center -10px;
-}
-
-@media (min-width: 940px) {
-  .product-card-image {
-    object-position: center -50px;
+  .xl\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2.5rem * var(--tw-space-x-reverse));
+    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 }

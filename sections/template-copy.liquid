@@ -9,7 +9,7 @@
 </span>
 {% endunless %}
 
-<div class="mx-auto mb-32 lg:mb-36 grid grid-cols-1 lg:grid-cols-2 lg:gap-24 relative containerequal">
+<div class="mx-auto mb-32 lg:mb-36 grid grid-cols-1 {% unless section.settings.full_width %}lg:grid-cols-2 lg:gap-24{% endunless %} relative containerequal">
     {% if section.settings.image_position == 'right' %}
         <div class="w-full">
             <h1 class="font-heading font-big text-grey pb-4">{{ section.settings.title }}</h1>
@@ -177,6 +177,13 @@
             "type": "text",
             "id": "contact_insta_handle",
             "label": "Instagram Handle"
+        },
+        {
+            "type": "checkbox",
+            "id": "full_width",
+            "label": "Full Width Content",
+            "default": false,
+            "info": "Makes the content section full width instead of split with image"
         }
     ]
 }
