@@ -34,7 +34,8 @@
         "contact_content": "",
         "contact_mail": "",
         "contact_telephone": "",
-        "contact_insta_handle": ""
+        "contact_insta_handle": "",
+        "full_width": true
       }
     }
   },
