@@ -983,6 +983,14 @@ video {
   min-height: 100%;
 }
 
+.min-h-\[800px\] {
+  min-height: 800px;
+}
+
+.min-h-\[700px\] {
+  min-height: 700px;
+}
+
 .w-1\/2 {
   width: 50%;
 }
