@@ -29,7 +29,7 @@
         "show_image": true,
         "short_image": true,
         "image_position": "left",
-        "full_width": false
+        "full_width": true
       }
     },
     "173832250630ea7398": {
