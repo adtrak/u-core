@@ -41,12 +41,12 @@
         <div class="promotions-right relative w-full lg:w-5/12">
             <div class="h-full left-0 w-full">
                 <picture>
-                    <source srcset="{{ section.settings.image | img_url: '800x500', crop: 'center' }}">
-                        <source srcset="{{ section.settings.image | img_url: '800x500', crop: 'center' }}">
-                        <img src="{{ section.settings.image | img_url: '800x500', crop: 'center' }}" 
-                            class="relative w-full h-full object-cover" 
-                            loading="lazy" 
-                            alt="">
+                    <source srcset="{{ section.settings.image | img_url: '800x1000', crop: 'center' }}">
+                    <source srcset="{{ section.settings.image | img_url: '800x1000', crop: 'center' }}">
+                    <img src="{{ section.settings.image | img_url: '800x1000', crop: 'center' }}" 
+                        class="relative w-full h-full object-cover" 
+                        loading="lazy" 
+                        alt="{{ section.settings.image.alt | escape }}">
                 </picture> 
             </div>
         </div>
