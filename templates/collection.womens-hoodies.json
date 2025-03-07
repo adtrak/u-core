@@ -13,7 +13,7 @@
       "type": "template-hero",
       "settings": {
         "title": "Women's Hoodies",
-        "sub_title": "Combining function and fashion",
+        "sub_title": "The future of fashion",
         "hero_image": "shopify://shop_images/womens-grey-2.jpg"
       }
     },
@@ -32,11 +32,7 @@
         "show_image": true,
         "short_image": false,
         "image_position": "left",
-        "contact_title": "",
-        "contact_content": "",
-        "contact_mail": "",
-        "contact_telephone": "",
-        "contact_insta_handle": ""
+        "full_width": false
       }
     }
   },
