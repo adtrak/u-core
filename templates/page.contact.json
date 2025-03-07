@@ -13,13 +13,24 @@
       "type": "template-hero",
       "settings": {
         "title": "Contact Us",
-        "sub_title": "Get in touch today",
-        "hero_image": "shopify://shop_images/DSC01994.jpg"
+        "sub_title": "Get in touch today"
       }
     },
     "template": {
       "type": "template-page",
       "settings": {}
+    },
+    "template_copy_3idNhy": {
+      "type": "template-copy",
+      "settings": {
+        "title": "Contact Us",
+        "body": "<p>If you need any more information on any of our great products, feel free to get in touch with the friendly Ucore team today.</p><p>Simply give us a call or complete the online form, we look forward to hearing from you.</p>",
+        "copy_image": "shopify://shop_images/DSC03492-Edit_1.jpg",
+        "show_image": true,
+        "short_image": true,
+        "image_position": "left",
+        "full_width": false
+      }
     },
     "173832250630ea7398": {
       "type": "apps",
@@ -51,6 +62,7 @@
   "order": [
     "template_hero_TcAcDN",
     "template",
+    "template_copy_3idNhy",
     "173832250630ea7398"
   ]
 }
