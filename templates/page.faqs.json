@@ -30,11 +30,7 @@
         "show_image": true,
         "short_image": true,
         "image_position": "left",
-        "contact_title": "",
-        "contact_content": "",
-        "contact_mail": "",
-        "contact_telephone": "",
-        "contact_insta_handle": ""
+        "full_width": false
       }
     },
     "template_faqs_hhQqXp": {
@@ -134,7 +130,7 @@
         "product_ffxNH9"
       ],
       "settings": {
-        "title": "Trending",
+        "title": "Trending Products",
         "featured_collection": "trending",
         "number_of_products_to_show": 9
       }
