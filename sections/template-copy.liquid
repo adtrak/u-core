@@ -25,6 +25,7 @@
             {% endif %}
         </div>
 
+        
         <div class="w-full">
             <span class="relative h-full fade-in-container">
                 {% if section.settings.short_image == true %}
@@ -52,30 +53,35 @@
         </div>
         
     {% else %}
-        
-        <div class="w-full">
-            <span class="relative h-full fade-in-container">
-                {% if section.settings.short_image == true %}
-                    <picture class="hidden lg:block relative z-5 h-full max-h-[850px]">
-                        <source srcset="{{ section.settings.copy_image | img_url: '800x500', crop: 'center' }}">
-                        <source srcset="{{ section.settings.copy_image | img_url: '800x500', crop: 'center' }}">
-                        <img src="{{ section.settings.copy_image | img_url: '800x500', crop: 'center' }}" 
-                            class="relative w-full h-full object-cover" 
-                            loading="lazy" 
-                            alt="">
-                    </picture>
-                {% else %}
-                    <picture class="hidden lg:block relative z-5 h-full max-h-[850px]">
-                        <source srcset="{{ section.settings.copy_image | img_url: '800x1200', crop: 'center' }}">
-                        <source srcset="{{ section.settings.copy_image | img_url: '800x1200', crop: 'center' }}">
-                        <img src="{{ section.settings.copy_image | img_url: '800x1200', crop: 'center' }}" 
-                            class="relative w-full h-full object-cover" 
-                            loading="lazy" 
-                            alt="">
-                    </picture>
-                {% endif %}
-            </span>
-        </div>
+
+        {%  unless template == 'page.contact' %}
+
+            <div class="w-full">
+                <span class="relative h-full fade-in-container">
+                    {% if section.settings.short_image == true %}
+                        <picture class="hidden lg:block relative z-5 h-full max-h-[850px]">
+                            <source srcset="{{ section.settings.copy_image | img_url: '800x500', crop: 'center' }}">
+                            <source srcset="{{ section.settings.copy_image | img_url: '800x500', crop: 'center' }}">
+                            <img src="{{ section.settings.copy_image | img_url: '800x500', crop: 'center' }}" 
+                                class="relative w-full h-full object-cover" 
+                                loading="lazy" 
+                                alt="">
+                        </picture>
+                    {% else %}
+                        <picture class="hidden lg:block relative z-5 h-full max-h-[850px]">
+                            <source srcset="{{ section.settings.copy_image | img_url: '800x1200', crop: 'center' }}">
+                            <source srcset="{{ section.settings.copy_image | img_url: '800x1200', crop: 'center' }}">
+                            <img src="{{ section.settings.copy_image | img_url: '800x1200', crop: 'center' }}" 
+                                class="relative w-full h-full object-cover" 
+                                loading="lazy" 
+                                alt="">
+                        </picture>
+                    {% endif %}
+                </span>
+            </div>
+
+        {% endunless %}
+
     
         <div class="w-full">
             <h1 class="font-heading font-big text-grey pb-4">{{ section.settings.title }}</h1>
@@ -86,11 +92,6 @@
                 </div>
             {% endif %}
 
-            {% if template == 'page.contact' %}
-                <div id="custom-form-wrapper" class="p-6 bg-gray-100 rounded-lg">
-                    {{ shop.metafields.shopify_forms.form_330263 }}
-                </div>
-            {% endif %}
         </div>
     {% endif %}
 </div>
