@@ -200,6 +200,13 @@ form-embed {
   padding-bottom: 16px;
 }
 
+.copy ul {
+ list-style: circle;
+ list-style-position: inside;
+ padding-left: 10px;
+ padding-bottom: 35px;
+}
+
 .copy strong {
   font-weight: 900;
 }
