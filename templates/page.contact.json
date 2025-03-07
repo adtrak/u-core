@@ -25,8 +25,7 @@
       "settings": {
         "title": "Contact Us",
         "body": "<p>If you need any more information on any of our great products, feel free to get in touch with the friendly Ucore team today.</p><p>Simply give us a call or complete the online form, we look forward to hearing from you.</p>",
-        "copy_image": "shopify://shop_images/DSC03492-Edit_1.jpg",
-        "show_image": true,
+        "show_image": false,
         "short_image": true,
         "image_position": "left",
         "full_width": true
