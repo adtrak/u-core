@@ -46,6 +46,16 @@ module.exports = {
       '5xl': '3.052rem',
       '6xl': '4.1rem',
     },
+    extend: {
+      fontWeight: {
+        thin: '100',
+        light: '300',
+        regular: '400',
+        medium: '500',
+        bold: '700',
+        black: '900',
+      }
+    },
   },
   plugins: [],
 }

@@ -200,6 +200,9 @@ form-embed {
   padding-bottom: 16px;
 }
 
+.copy strong {
+  font-weight: 900;
+}
 
 #shopify-pc__banner {
   display: none!important;
