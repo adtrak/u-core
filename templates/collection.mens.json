@@ -12,7 +12,7 @@
     "template_hero_LaRNEn": {
       "type": "template-hero",
       "settings": {
-        "title": "Mens Clothing",
+        "title": "Men's Clothing",
         "sub_title": "Stylish sportswear for men",
         "hero_image": "shopify://shop_images/DSC03490.jpg"
       }
@@ -32,11 +32,7 @@
         "show_image": true,
         "short_image": false,
         "image_position": "left",
-        "contact_title": "",
-        "contact_content": "",
-        "contact_mail": "",
-        "contact_telephone": "",
-        "contact_insta_handle": ""
+        "full_width": false
       }
     }
   },
