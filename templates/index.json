@@ -15,14 +15,14 @@
         "button_eATUiM": {
           "type": "button",
           "settings": {
-            "button_text": "Mens",
+            "button_text": "Men",
             "button_link": "shopify://collections/mens"
           }
         },
         "button_VDnAHa": {
           "type": "button",
           "settings": {
-            "button_text": "Womens",
+            "button_text": "Women",
             "button_link": "shopify://collections/womens"
           }
         }
@@ -168,11 +168,7 @@
         "show_image": true,
         "short_image": false,
         "image_position": "left",
-        "contact_title": "",
-        "contact_content": "",
-        "contact_mail": "",
-        "contact_telephone": "",
-        "contact_insta_handle": ""
+        "full_width": false
       }
     },
     "template_copy_feature_N8HfXb": {
