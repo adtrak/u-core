@@ -1,5 +1,9 @@
 <div class="mx-auto py-56 pt-32 lg:py-56 lg:pt-40 sm:px-0 lg:px-8 mb-32 lg:mb-36 bg-black copy-feature-section relative">
-    <div class="mb-[500px] containercustom">
+    {% if page.handle == 'our-story' %}
+        <div class="containercustom">
+    {% else %}
+        <div class="mb-[700px] containercustom">
+    {% endif %}
         <h1 class="font-heading fade-in-text font-huge text-white mb-12">{{ section.settings.title }}</h1>
         
         {% if section.settings.body != blank %}
@@ -10,12 +14,18 @@
 
     </div>
 
-    {% if section.settings.copy_video != blank %}
+    {% if page.handle == 'our-story' %}
+        <div class="containercustom">
+            <div style='position:relative;height:0;padding-bottom:56.25%'><iframe class='sproutvideo-player' src='https://videos.sproutvideo.com/embed/4d91d5b71b1fe4c0c4/807bb03375300efc?playerTheme=dark&amp;playerColor=041448' style='position:absolute;width:100%;height:100%;left:0;top:0' frameborder='0' allowfullscreen referrerpolicy='no-referrer-when-downgrade' title='Video Player'></iframe></div>
+        </div>
+    {% endif %}
+
+    {% if section.settings.copy_video != blank and template.name != 'page' and page.handle != 'our-story' %}
         <div class="w-full absolute bottom-5 right-0 copy-video mb-10 mr-10">
 
             <div class="w-full bg-white block">
             
-                <video autoplay muted loop playsinline class="w-full h-[600px] block object-cover">
+                <video autoplay muted loop playsinline class="w-full h-[800px] block object-cover">
                     <source src="{{ section.settings.copy_video }}" type="video/mp4">
                     <source src="{{ 'hero.mp4' | asset_url }}" type="video/mp4">
                 Your browser does not support the video tag.
