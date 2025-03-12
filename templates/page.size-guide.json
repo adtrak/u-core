@@ -24,19 +24,17 @@
     "template_size_guide_MH4gUD": {
       "type": "template-size-guide",
       "settings": {
-        "title": "Mens Hoodie",
+        "title": "Men's Hoodie",
         "body": "<p>Size guide for our men's hoodie.</p>",
-        "size_type": "mens",
-        "contact_title": ""
+        "size_type": "mens"
       }
     },
     "template_size_guide_Nebiaj": {
       "type": "template-size-guide",
       "settings": {
-        "title": "Womens Hoodie",
+        "title": "Women's Hoodie",
         "body": "<p>Size guide for our women's hoodie.</p>",
-        "size_type": "womens",
-        "contact_title": ""
+        "size_type": "womens"
       }
     }
   },
