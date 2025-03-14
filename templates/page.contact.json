@@ -24,7 +24,7 @@
       "type": "template-copy",
       "settings": {
         "title": "Contact Us",
-        "body": "<p>If you need any more information on any of our great products, feel free to get in touch with the friendly Ucore team today.</p><p>Simply give us a call or complete the online form, we look forward to hearing from you.</p>",
+        "body": "<p>If you need any more information on any of our great products, feel free to get in touch with the friendly Ucore team today.</p><p>Simply complete the online form, we look forward to hearing from you.</p>",
         "show_image": false,
         "short_image": true,
         "image_position": "left",
