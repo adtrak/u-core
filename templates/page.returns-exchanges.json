@@ -25,16 +25,12 @@
       "type": "template-copy",
       "settings": {
         "title": "Returns & Exchanges",
-        "body": "<p>We hope you’ll love your Ucore products as soon as they arrive, but if you need to return them, please do so within 28 days. They must be returned in the same condition, and feature the swing tags they are delivered with.</p>\n\n<p>If you have any questions about returns or exchanges, contact Ucore today. </p>",
+        "body": "<p>We hope you’ll love your Ucore products as soon as they arrive, but if you need to return them, please do so within 28 days. They must be returned in the same condition, and feature the swing tags they are delivered with.</p><p>If you have any questions about returns or exchanges, <a href=\"/pages/contact\" title=\"Contact Us\">contact Ucore today</a>. </p>",
         "copy_image": "shopify://shop_images/DSC00471.jpg",
         "show_image": true,
         "short_image": true,
         "image_position": "right",
-        "contact_title": "",
-        "contact_content": "",
-        "contact_mail": "",
-        "contact_telephone": "",
-        "contact_insta_handle": ""
+        "full_width": false
       }
     }
   },
