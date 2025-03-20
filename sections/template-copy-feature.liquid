@@ -1,10 +1,14 @@
-<div class="mx-auto py-56 pt-32 lg:py-56 lg:pt-40 sm:px-0 lg:px-8 mb-32 lg:mb-36 bg-black copy-feature-section relative">
+{% if page.handle == 'our-story' %}
+    <div class="mx-auto py-56 pt-32 lg:py-56 lg:pt-40 sm:px-0 lg:px-8 mb-32 lg:mb-36 bg-black copy-feature-section relative">
+{% else %}
+    <div class="mx-auto py-56 pt-32 lg:pt-40 sm:px-0 lg:px-8 mb-0 lg:mb-0 bg-black copy-feature-section relative">
+{% endif %}
     {% if page.handle == 'our-story' %}
         <div class="containercustom">
     {% else %}
         <div class="mb-[700px] containercustom">
     {% endif %}
-        <h1 class="font-heading fade-in-text font-huge text-white mb-12">{{ section.settings.title }}</h1>
+        <p class="font-heading fade-in-text font-huge text-white mb-12">{{ section.settings.title }}</p>
         
         {% if section.settings.body != blank %}
             <div class="mb-8 font-light fade-in-container text-white copy lg:w-3/4">

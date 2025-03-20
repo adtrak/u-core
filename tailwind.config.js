@@ -18,6 +18,7 @@ module.exports = {
       'midgrey': '#A6B3B5',
       'darkgrey': '#39383A',
       'yellow': '#D5DE24',
+      'red' : '#C32D2D',
     },
     fontSize: {
     },
