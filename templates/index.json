@@ -75,6 +75,16 @@
         "sub_title": ""
       }
     },
+    "template_promotion_YVLtKA": {
+      "type": "template-promotion",
+      "settings": {
+        "image": "shopify://shop_images/mens-grey-1.jpg",
+        "icon": "icon-rosette",
+        "heading": "Mothers Day",
+        "content": "Sale for mothers day",
+        "collection": "example-promotion"
+      }
+    },
     "featured-collection": {
       "type": "featured-collection",
       "settings": {
@@ -173,6 +183,7 @@
   "order": [
     "template_hero_YGwtBG",
     "template_features_gLX79e",
+    "template_promotion_YVLtKA",
     "featured-collection",
     "template_usps_gYYMw7",
     "template_copy_MgKqwe",
