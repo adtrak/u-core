@@ -50,7 +50,7 @@
         {% endif %}
 
         {% unless product %}
-            <div class="my-16 ml-2 cursor-pointer" id="scroll-arrow">
+            <div class="inline-block my-16 ml-2 cursor-pointer transition-transform duration-300 hover:translate-y-[8px]" id="scroll-arrow">
                 {% render 'icon-arrow-down', icon-colour: "white" %}
             </div>
         {% endunless %}

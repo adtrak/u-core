@@ -221,11 +221,11 @@ form-embed {
   font-weight: 900;
 }
 
-.copy a {
+.copy a:not(.btn) {
   text-decoration: underline;
 }
 
-.copy a:hover {
+.copy a:not(.btn):hover {
   color: #8B8B8B;
 }
 
