@@ -7,6 +7,21 @@
       </div>
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('[data-testid="form"]');
+      if (form) {
+        form.addEventListener('submit', function(event) {
+          // Send GA4 event
+          gtag('event', 'conversion', {
+            'event_category': 'contact form',
+            'event_label': 'successful contact form'
+          });
+        });
+      }
+    });
+  </script>
   
   {% schema %}
   {

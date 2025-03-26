@@ -211,6 +211,18 @@ form-embed {
   font-weight: 900;
 }
 
+.copy a {
+  text-decoration: underline;
+}
+
+.copy a:hover {
+  color: #8B8B8B;
+}
+
+.faq span {
+  max-width: 1050px;
+}
+
 #shopify-pc__banner {
   display: none!important;
 }
