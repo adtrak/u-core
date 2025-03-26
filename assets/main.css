@@ -1,5 +1,15 @@
 /* Fade in text styles */
 
+[x-cloak] {
+  display: none !important;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 .fade-in-text {
   opacity: 1; /* Ensure container remains visible */
   display: inline-block;
