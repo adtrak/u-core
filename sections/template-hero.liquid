@@ -39,15 +39,15 @@
             <span class="text-yellow uppercase text-xl lg:text-3xl font-heading block w-full">{{  section.settings.sub_title }}</span>
         {% endif %}
         
-        <div class="mt-16 flex gap-4">
-            
-            {% for block in section.blocks %}
-                {% if block.type == 'button' %}
-                    {% render 'button', text: block.settings.button_text, url: block.settings.button_link, btn-style: "white" %}
-                {% endif %}
-            {% endfor %}
-            
-        </div>
+        {% if section.blocks != blank %}
+            <div class="mt-16 flex gap-4">
+                {% for block in section.blocks %}
+                    {% if block.type == 'button' %}
+                        {% render 'button', text: block.settings.button_text, url: block.settings.button_link, btn-style: "white" %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
 
         {% unless product %}
             <div class="my-16 ml-2 cursor-pointer" id="scroll-arrow">

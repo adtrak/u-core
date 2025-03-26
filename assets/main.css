@@ -375,7 +375,7 @@ form-embed {
 .card-image:before {
   content: "";
   background: url('card-shape.svg') no-repeat bottom right;
-  background-size: 130px 113px;
+  background-size: 160px 138px;
   display: block;
   position: absolute;
   bottom: 22px;
@@ -383,6 +383,12 @@ form-embed {
   width: 100%;
   height: 100%;
   z-index: 1;
+
+  @media screen and (min-width: 600px) {
+    width: 100%;
+    height: 100%;
+    background-size: 287px 249px;
+  }
 
   @media screen and (min-width: 1024px) {
     width: 100%;
@@ -417,7 +423,7 @@ form-embed {
 .pdp-image-swiper:before {
   content: "";
   background: url('grey-shape.svg') no-repeat bottom right;
-  background-size: 216px 188px;
+  background-size: 160px 138px;
   display: block;
   position: absolute;
   bottom: -1px;
@@ -425,6 +431,12 @@ form-embed {
   width: 321px;
   height: 285px;
   z-index: 2;
+
+  @media screen and (min-width: 600px) {
+    width: 100%;
+    height: 100%;
+    background-size: 216px 188px;
+  }
 }
 
 .swiper-horizontal>.swiper-scrollbar {
