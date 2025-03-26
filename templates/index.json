@@ -75,13 +75,13 @@
         "sub_title": ""
       }
     },
-    "template_promotion_J8YKGY": {
+    "template_promotion_YVLtKA": {
       "type": "template-promotion",
       "settings": {
-        "image": "shopify://shop_images/mens-black-9.jpg",
+        "image": "shopify://shop_images/mens-grey-1.jpg",
         "icon": "icon-rosette",
-        "heading": "Promotion title",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dignissim tellus id nisi molestie elementum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+        "heading": "Mothers Day",
+        "content": "Sale for mothers day",
         "collection": "example-promotion"
       }
     },
@@ -183,7 +183,7 @@
   "order": [
     "template_hero_YGwtBG",
     "template_features_gLX79e",
-    "template_promotion_J8YKGY",
+    "template_promotion_YVLtKA",
     "featured-collection",
     "template_usps_gYYMw7",
     "template_copy_MgKqwe",
