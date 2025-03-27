@@ -1049,6 +1049,10 @@ video {
   width: max-content;
 }
 
+.w-\[100px\] {
+  width: 100px;
+}
+
 .min-w-\[120px\] {
   min-width: 120px;
 }
@@ -2329,6 +2333,10 @@ video {
 
   .lg\:pt-\[250px\] {
     padding-top: 250px;
+  }
+
+  .lg\:pb-0 {
+    padding-bottom: 0px;
   }
 
   .lg\:text-3xl {

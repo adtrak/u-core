@@ -9,8 +9,8 @@
             {% assign block_count = 0 %}
             {% for block in section.blocks %}
                 {% if block.type == 'usp' %}
-                    <div class="usp w-full {% unless forloop.last %}border-b-2 border-b-midgrey{% endunless %} py-10 text-grey flex {% if forloop.index > 4 %}hidden js-extra-usp{% endif %}">
-                        <span class="usp-icons flex justify-center items-center w-full h-[100px] max-w-[100px] mr-4">
+                    <div class="usp w-full {% unless forloop.last %}border-b-2 border-b-midgrey{% endunless %} py-10 text-grey flex flex-wrap lg:flex-nowrap {% if forloop.index > 4 %}hidden js-extra-usp{% endif %}">
+                        <span class="usp-icons flex justify-center items-center w-full h-[100px] max-w-[100px] mr-4 mb-4 lg:mb-0">
                             
                             {% case block.settings.icon %}
                             {% when 'icon-shield' %}
@@ -30,7 +30,7 @@
                             {% endcase %}
                            
                         </span>
-                        <span>
+                        <span class="w-full">
                             <p class="font-heading font-big pb-2 text-grey">{{ block.settings.usp_heading }}</p>
                             <p>{{ block.settings.usp_sub_heading }}</p>
                         </span>
