@@ -12,7 +12,7 @@
     "template_hero_iVazHm": {
       "type": "template-hero",
       "settings": {
-        "title": "ThankYou",
+        "title": "Thank You",
         "sub_title": "Your enquiry has been submitted"
       }
     },
@@ -23,7 +23,7 @@
     "template_copy_LELjPR": {
       "type": "template-copy",
       "settings": {
-        "title": "Title",
+        "title": "Thank you",
         "body": "<p>Thank you. We've received your enquiry and aim to respond within 24 hours. </p>",
         "show_image": false,
         "short_image": false,
