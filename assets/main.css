@@ -233,6 +233,10 @@ form-embed {
   max-width: 1050px;
 }
 
+._formFieldset_1nihh_63, ._formFieldContainer_1ydxd_5  {
+  padding-top: 1px!important;
+}
+
 #shopify-pc__banner {
   display: none!important;
 }

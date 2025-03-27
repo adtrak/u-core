@@ -9,7 +9,7 @@
 </span>
 {% endunless %}
 
-<div class="mx-auto mb-32 lg:mb-36 grid grid-cols-1 {% unless section.settings.full_width %}lg:grid-cols-2 lg:gap-24{% endunless %} relative containerequal">
+<div class="mx-auto {% if template == 'page.contact' %}mb-8 lg:mb-16{% else %}mb-32 lg:mb-36{% endif %} grid grid-cols-1 {% unless section.settings.full_width %}lg:grid-cols-2 lg:gap-24{% endunless %} relative containerequal">
     {% if section.settings.image_position == 'right' %}
         <div class="w-full">
             <h1 class="font-heading font-big text-grey pb-4">{{ section.settings.title }}</h1>
