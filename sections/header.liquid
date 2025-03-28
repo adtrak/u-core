@@ -9,11 +9,11 @@
 <link rel="stylesheet" href="{{ 'main.css' | asset_url }}" />
 
 <div
-  class="absolute top-0 w-full z-10"
+  class="fixed top-0 left-0 right-0 w-full z-50"
   x-data="{ mobileMenuOpen: false }"
   x-cloak>
   <div class="mx-auto containerwide">
-    <div class="flex lg:justify-center justify-between items-center py-6 px-8 lg:px-12 mt-6 xl:space-x-10 border-white border-2 rounded-full">
+    <div class="flex lg:justify-center justify-between items-center py-6 px-8 lg:px-12 mt-6 xl:space-x-10 border-white border-2 rounded-full bg-black/30 backdrop-blur-md">
       <!-- STORE NAME / STORE LOGO -->
       <div class="flex justify-start lg:flex-1 truncate">
         <a href="{{ routes.root_url }}" class="max-w-[200px]">
