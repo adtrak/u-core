@@ -1,5 +1,5 @@
 <div class="w-full card group hover:scale-[1.02] transition-all">
-  <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative block">
+  <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative block w-full xl:w-auto">
     <div class="card-image relative bg-lightgrey overflow-hidden h-full">
     
         {% if current_variant.image %}
@@ -29,8 +29,8 @@
     <div class="card-text">
 
       {% if include_colour == true %}
-      <div class="flex justify-between items-center p-4 flex-wrap md:flexno-wrap">
-        <div class="flex flex-col lg:px-4 py-4">
+      <div class="flex justify-between items-center p-4 flex-wrap">
+        <div class="flex flex-col lg:px-4 py-4 w-full">
           <p class="text-gray-700 font-heading font-medium uppercase text-black items-center mb-1">{{ product_product.title }} - {{ current_color }}</p>
           <p class="text-midgrey font-heading">{{ product_product.price | money }}</p>
         </div>
@@ -48,7 +48,7 @@
 
     {% else %}
 
-      <div class="flex justify-between items-center p-4 flex-wrap md:flexno-wrap">
+      <div class="flex justify-between items-center p-4 flex-wrap">
         <div class="flex flex-col lg:px-4 py-4">
           <p class="text-gray-700 font-heading font-medium uppercase text-black items-center mb-1">{{ product_product.title }}</p>
           <p class="text-midgrey font-heading">{{ product_product.price | money }}</p>

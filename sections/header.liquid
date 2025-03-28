@@ -43,7 +43,7 @@
             <li class="group/parent relative">
               {% render 'button', text: link.title, url: link.url, btn-style: "white", extra-class: "relative min-w-[120px] z-10 fade-in-container" %}
               {% if link.links != blank %}
-                <ul class="child hidden group/parent group-hover/parent:block absolute top-0 p-6 pt-16 bg-white rounded-[30px] w-full">
+                <ul class="child hidden group/parent group-hover/parent:block absolute top-0 p-6 pt-[68px] bg-white rounded-[30px] w-full shadow-lg">
                   {% for child_link in link.links %}
                     <li class="group/child w-full">
                       <a href="{{ child_link.url }}" class="relative w-full block">{{ child_link.title }}</a>
@@ -81,9 +81,9 @@
       </div>
 
       <!-- MOBILE HIDDEN MENU CONTAINER -->
-      <div x-show="mobileMenuOpen" class="absolute top-0 inset-x-0 p-6 transform origin-top-left lg:hidden mx-auto containerwide z-50">
-        <div class="shadow-lg rounded-[45px] border-white border-2 ring-1 ring-black ring-opacity-5 bg-white w-full">
-          <div class="py-6 px-8 divide-y-2 divide-gray-50 ">
+      <div x-show="mobileMenuOpen" class="absolute top-0 inset-x-0 transform origin-top-left lg:hidden mx-auto z-50">
+        <div class="shadow-lg rounded-[45px] border-white border-4 ring-1 ring-black ring-opacity-5 bg-white w-full">
+          <div class="py-5 px-[28px] divide-y-2 divide-gray-50 ">
 
             <!-- MOBILE MENU HEADER TITLE PLUS CLOSE BUTTON -->
 
