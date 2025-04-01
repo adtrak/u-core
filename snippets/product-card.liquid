@@ -6,6 +6,8 @@
           <div class="w-full overflow-hidden aspect-[4/3]">
             <div class="relative w-full h-full pr-6 pb-6">
               <img
+                width="1024"
+                height="1024"
                 class="w-full h-full object-cover product-card-image"
                 src="{{ current_variant.image | img_url: '1024x1024' }}"
                 alt="{{ current_variant.image.alt | default: current_variant.title }}">
@@ -15,6 +17,8 @@
           <div class="w-full overflow-hidden aspect-[4/3]">
             <div class="relative w-full h-full pr-6 pb-6">
               <img
+                width="1024"
+                height="1024"
                 class="w-full h-full object-cover product-card-image"
                 src="{{ product_product.featured_image | img_url: '1024x1024' }}"
                 alt="{{ product_product.featured_image.alt }}">
@@ -40,11 +44,11 @@
         </div>
 
         {% if current_variant.inventory_quantity <= 0 %}
-          <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group transition">
+          <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group transition" aria-label="pre order" role="button">
             <span class="leading-none mx-auto">Pre-Order</span>
           </a>
         {% else %}
-          <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group transition">
+          <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}"  class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group transition" aria-label="buy now" role="button">
             <span class="leading-none mx-auto">Buy Now</span>
           </a>
         {% endif %}
@@ -59,11 +63,11 @@
         </div>
         
         {% if current_variant.inventory_quantity <= 0 %}
-          <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group-hover:text-grey group-hover:bg-lightgrey transition">
+          <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group-hover:text-grey group-hover:bg-lightgrey transition" aria-label="pre order" role="button">
               <span class="leading-none mx-auto">Pre-Order</span>
           </a>
         {% else %}
-          <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group-hover:text-grey group-hover:bg-lightgrey transition">
+          <a href="{{ product_product.url }}{% if current_variant %}?variant={{ current_variant.id }}{% endif %}" class="relative flex items-center font-heading font-light text-base rounded-[40px] py-[15px] px-[25px] text-center tracking-wide bg-white border-yellow border-2 text-grey uppercase group-hover:text-grey group-hover:bg-lightgrey transition" aria-label="buy now" role="button">
             <span class="leading-none mx-auto">Buy Now</span>
           </a>
         {% endif %}

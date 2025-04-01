@@ -25,7 +25,9 @@
                                         class="w-full h-full object-cover"
                                         style="object-position: center;"
                                         src="{{ block.settings.image | img_url: '1024x1024' }}"
-                                        alt="{{ block.settings.image.alt | default: current_variant.title }}">
+                                        alt="{{ block.settings.image.alt | default: current_variant.title }}"
+                                        width="1024"
+                                        height="1024">
                                     </div>
                                 </div>
                             
