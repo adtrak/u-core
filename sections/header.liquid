@@ -43,7 +43,7 @@
             <li class="group/parent relative">
               {% render 'button', text: link.title, url: link.url, btn-style: "white", extra-class: "relative min-w-[120px] z-10 fade-in-container" %}
               {% if link.links != blank %}
-                <ul class="child hidden group/parent group-hover/parent:block absolute top-0 p-6 pt-[68px] bg-white rounded-[30px] w-full shadow-lg">
+                <ul class="child hidden group/parent group-hover/parent:block absolute top-0 p-6 pt-[68px] bg-white rounded-[30px] w-full shadow-lg transition-all">
                   {% for child_link in link.links %}
                     <li class="group/child w-full">
                       <a href="{{ child_link.url }}" class="relative w-full block">{{ child_link.title }}</a>
