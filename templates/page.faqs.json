@@ -122,12 +122,20 @@
             "product": "womens-hoodie",
             "colors": "dusky pink"
           }
+        },
+        "product_cLMjyN": {
+          "type": "product",
+          "settings": {
+            "product": "womens-hoodie",
+            "colors": "black"
+          }
         }
       },
       "block_order": [
         "product_HFHBK9",
         "product_RV8BFT",
-        "product_ffxNH9"
+        "product_ffxNH9",
+        "product_cLMjyN"
       ],
       "settings": {
         "title": "Trending Products",
