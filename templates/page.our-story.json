@@ -64,12 +64,20 @@
             "product": "mens-hoodie",
             "colors": "white"
           }
+        },
+        "product_mVbE3E": {
+          "type": "product",
+          "settings": {
+            "product": "womens-hoodie",
+            "colors": "grey"
+          }
         }
       },
       "block_order": [
         "product_QnBera",
         "product_P3kGkq",
-        "product_wUqa8F"
+        "product_wUqa8F",
+        "product_mVbE3E"
       ],
       "settings": {
         "title": "Trending Products",
