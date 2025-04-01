@@ -2012,8 +2012,23 @@ video {
   color: rgb(166 179 181 / var(--tw-text-opacity, 1));
 }
 
+.hover\:text-darkgrey:hover {
+  --tw-text-opacity: 1;
+  color: rgb(57 56 58 / var(--tw-text-opacity, 1));
+}
+
 .hover\:underline:hover {
   text-decoration-line: underline;
+}
+
+.focus\:bg-lightgrey:focus {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 244 244 / var(--tw-bg-opacity, 1));
+}
+
+.focus\:text-grey:focus {
+  --tw-text-opacity: 1;
+  color: rgb(57 56 58 / var(--tw-text-opacity, 1));
 }
 
 .focus\:underline:focus {

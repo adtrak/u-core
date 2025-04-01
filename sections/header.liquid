@@ -23,14 +23,14 @@
 
       <!-- Mobile Menu Icon -->
       <div class="flex lg:hidden items-center justify-end lg:flex-1 space-x-2 pl-6">
-        <a href="{{ routes.cart_url }}" class="bg-black whitespace-nowrap text-base text-white p-2 rounded-full hover:text-gray-900">
+        <a href="{{ routes.cart_url }}" class="bg-black whitespace-nowrap text-base text-white p-2 rounded-full hover:text-gray-900 focus:text-gray-900">
           {% render 'icon-shopping-bag' icon-colour: "white" %}
         </a>
 
         <button
           x-on:click="mobileMenuOpen = true"
           type="button"
-          class="bg-black whitespace-nowrap text-base text-white p-2 rounded-full hover:text-gray-900">
+          class="bg-black whitespace-nowrap text-base text-white p-2 rounded-full hover:text-gray-900 focus:text-gray-900">
           {% render 'icon-menu', icon-colour: "white" %}
         </button>
       </div>
@@ -41,12 +41,12 @@
         <ul class="parent flex space-x-2 ml-4">
           {% for link in linklists.main-menu.links %}
             <li class="group/parent relative">
-              {% render 'button', text: link.title, url: link.url, btn-style: "white", extra-class: "relative min-w-[120px] z-10 fade-in-container" %}
+              {% render 'button', text: link.title, url: link.url, btn-style: "white", extra-class: "relative min-w-[120px] z-10 fade-in-container transition-all" %}
               {% if link.links != blank %}
                 <ul class="child hidden group/parent group-hover/parent:block absolute top-0 p-6 pt-[68px] bg-white rounded-[30px] w-full shadow-lg transition-all">
                   {% for child_link in link.links %}
                     <li class="group/child w-full">
-                      <a href="{{ child_link.url }}" class="relative w-full block">{{ child_link.title }}</a>
+                      <a href="{{ child_link.url }}" class="relative w-full block hover:text-midgrey transition-all">{{ child_link.title }}</a>
                       {% if child_link.links != blank %}
                         <ul class="grandchild hidden group-hover/child:block absolute right-0 w-full">
                           {% for grandchild_link in child_link.links %}
