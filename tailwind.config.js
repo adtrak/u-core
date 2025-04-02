@@ -7,6 +7,9 @@ module.exports = {
     './templates/customers/*.liquid',
     './templates/*.liquid',
   ],
+  safelist: [
+    '._gridItem_stahb_172'
+  ],
   theme: {
     colors: {
       transparent: 'transparent',

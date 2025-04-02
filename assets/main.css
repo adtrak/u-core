@@ -267,7 +267,7 @@ form-embed {
 
 /* Hero Styling */
 
-.hero-container.rounded {
+.hero-container.round {
   position: relative;
   border-bottom: 2px white solid;
 }
@@ -326,7 +326,7 @@ form-embed {
 
 /* Rounded Corner Styling */
 
-.hero-container.rounded:before,
+.hero-container.round:before,
 .copy-section:before {
   content: "";
   background: url('hero-shape.svg') no-repeat bottom right;
@@ -501,4 +501,8 @@ form-embed {
 
 #scroll-arrow:hover {
   transform: translateY(10px);
+}
+
+._gridItem_stahb_172 {
+  margin-top: 1px!important;
 }
