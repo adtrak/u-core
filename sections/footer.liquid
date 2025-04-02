@@ -18,13 +18,13 @@
     <picture class="block lg:hidden relative z-5 w-full object-cover">
         <source media="(max-width: 767px)" srcset="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'center' }}" type="image/webp">
         <source media="(max-width: 767px)" srcset="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'center' }}" type="image/jpeg">
-        <img src="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1024" height="800">
+        <img src="{{ section.settings.footer_image.src | img_url: '1024x800', crop: 'center' }}" class="relative" loading="lazy" alt="{{ section.settings.footer_image.alt }}" width="1024" height="800">
     </picture>
 
     <picture class="hidden lg:block relative z-5 mx-auto">
         <source media="(min-width: 768px)" srcset="{{ section.settings.footer_image.src | img_url: '1800x450', crop: 'center' }}" type="image/webp">
         <source media="(min-width: 768px)" srcset="{{ section.settings.footer_image.src | img_url: '1800x450', crop: 'center' }}" type="image/jpeg">
-        <img src="{{ section.settings.footer_image.src | img_url: '1800x450', crop: 'center' }}" class="relative mx-auto" loading="lazy" alt="" width="1800" height="350">
+        <img src="{{ section.settings.footer_image.src | img_url: '1800x450', crop: 'center' }}" class="relative mx-auto" loading="lazy" alt="{{ section.settings.footer_image.alt }}" width="1800" height="350">
     </picture>
 </span>
 </section>

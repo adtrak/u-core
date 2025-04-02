@@ -495,26 +495,10 @@ form-embed {
   }
 }
 
-/* .half-leftstretch {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  width: calc(100% + 4.5rem);
+#scroll-arrow {
+  transition: transform 0.3s ease-in-out;
+}
 
-  @media screen and (min-width: 1600px) {
-    width: calc(100% + ((100vw - 1600px) / 2) + 4.5rem);
-  }
-} */
-
-/* .full-rightstretch {
-  height: 100%;
-  width: calc(100% + 4.5rem);
-
-  @media screen and (min-width: 1600px) {
-    width: calc(100% + ((100vw - 1600px) / 2) + 4.5rem);
-  }
-} */
-
-
-/* 1600 */
+#scroll-arrow:hover {
+  transform: translateY(10px);
+}

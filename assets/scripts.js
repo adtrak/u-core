@@ -58,4 +58,16 @@ document.addEventListener("DOMContentLoaded", function () {
   
     elements.forEach((el) => observer.observe(el)); // Start observing each element
   });
+
+//   Scroll arrow animation
   
+  document.getElementById('scroll-arrow').addEventListener('click', function() {
+    const heroSection = this.closest('.hero-container');
+    const heroHeight = heroSection.offsetHeight;
+    const offset = -80; // Adjust this value based on your header height
+    
+    window.scrollTo({
+        top: heroHeight + offset,
+        behavior: 'smooth'
+    });
+});

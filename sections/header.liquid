@@ -41,7 +41,7 @@
         <ul class="parent flex space-x-2 ml-4">
           {% for link in linklists.main-menu.links %}
             <li class="group/parent relative">
-              {% render 'button', text: link.title, url: link.url, btn-style: "white", extra-class: "relative min-w-[120px] z-10 fade-in-container transition-all" %}
+              {% render 'button', text: link.title, url: link.url, btn-style: "white", extra-class: "relative min-w-[120px] z-10 fade-in-container transition-all {{ active_class | strip }}" %}
               {% if link.links != blank %}
                 <ul class="child hidden group/parent group-hover/parent:block absolute top-0 p-6 pt-[68px] bg-white rounded-[30px] w-full shadow-lg transition-all">
                   {% for child_link in link.links %}
