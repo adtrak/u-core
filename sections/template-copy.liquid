@@ -4,7 +4,7 @@
     <picture class="block lg:hidden relative z-5 w-full mb-24 lg:mb-36">
         <source srcset="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}">
         <source srcset="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}">
-        <img src="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}" class="relative" loading="lazy" alt="" width="1200" height="770">
+        <img src="{{ section.settings.copy_image | img_url: '600x600', crop: 'center' }}" class="relative" loading="lazy" alt="{{ section.settings.copy_image.alt }}" width="1200" height="770">
     </picture>
 </span>
 {% endunless %}
@@ -36,7 +36,7 @@
                             <img src="{{ section.settings.copy_image | img_url: '800x500', crop: 'center' }}" 
                                 class="relative w-full h-full object-cover" 
                                 loading="lazy" 
-                                alt=""
+                                alt="{{ section.settings.copy_image }}"
                                 width="800"
                                 height="1024">
                         </picture>
@@ -47,7 +47,7 @@
                             <img src="{{ section.settings.copy_image | img_url: '800x1200', crop: 'center' }}" 
                                 class="relative w-full h-full object-cover" 
                                 loading="lazy" 
-                                alt=""
+                                alt="{{ section.settings.copy_image }}"
                                 width="800"
                                 height="1024">
                         </picture>
@@ -72,7 +72,7 @@
                                 <img src="{{ section.settings.copy_image | img_url: '800x500', crop: 'center' }}" 
                                     class="relative w-full h-full object-cover" 
                                     loading="lazy" 
-                                    alt="">
+                                    alt="{{ section.settings.copy_image }}">
                             </picture>
                         {% else %}
                             <picture class="hidden lg:block relative z-5 h-full max-h-[850px]">
@@ -81,7 +81,7 @@
                                 <img src="{{ section.settings.copy_image | img_url: '800x1200', crop: 'center' }}" 
                                     class="relative w-full h-full object-cover" 
                                     loading="lazy" 
-                                    alt="">
+                                    alt="{{ section.settings.copy_image }}">
                             </picture>
                         {% endif %}
                     </span>
