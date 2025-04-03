@@ -104,6 +104,22 @@
     {% endif %}
 </div>
 
+{% if template == 'page.contact' %}
+<script>
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        
+        // Your form submission logic here
+        
+        // On successful submission:
+        gtag('event', 'conversion', {
+            'event_category': 'contact form',
+            'event_label': 'successful contact form'
+        });
+    }
+</script>
+{% endif %}
+
 {% schema %}
 {
     "name": "Copy Section",
