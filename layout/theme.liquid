@@ -84,9 +84,9 @@
           };
         }
 
-        // Track add to cart events
-        document.body.addEventListener('click', function(e) {
-          if (e.target.matches('form[action="/cart/add"] button[type="submit"], .add-to-cart-button')) {
+        // Track add to cart events - both click and form submission
+        document.body.addEventListener('submit', function(e) {
+          if (e.target.matches('form[action="/cart/add"]')) {
             const productData = getProductData(e.target);
             if (productData) {
               gtag('event', 'add_to_cart', {
@@ -97,6 +97,35 @@
             }
           }
         });
+
+        // Track Ajax cart additions
+        const originalFetch = window.fetch;
+        window.fetch = function() {
+          const request = arguments[0];
+          const init = arguments[1];
+          
+          if (request && typeof request === 'string' && request.includes('/cart/add')) {
+            const formData = init?.body instanceof FormData ? init.body : new URLSearchParams(init?.body);
+            const variantId = formData.get('id');
+            
+            // Try to find product details from the page
+            const productElement = document.querySelector(`[data-variant-id="${variantId}"]`);
+            if (productElement) {
+              gtag('event', 'add_to_cart', {
+                currency: '{{ shop.currency }}',
+                value: parseFloat(productElement.dataset.price || 0),
+                items: [{
+                  item_id: variantId,
+                  item_name: productElement.dataset.productTitle,
+                  price: parseFloat(productElement.dataset.price || 0),
+                  currency: '{{ shop.currency }}'
+                }]
+              });
+            }
+          }
+          
+          return originalFetch.apply(this, arguments);
+        };
 
         // Track product page views
         if (window.location.pathname.includes('/products/')) {
