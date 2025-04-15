@@ -181,8 +181,8 @@
   const closeSearchBtn = document.getElementById("closeSearch")
   const search = document.getElementById("searchbar")
 
-  openSearchBtn.addEventListener("click", revealSearch);
-  closeSearchBtn.addEventListener("click", closeSearch);
+  {% comment %} openSearchBtn.addEventListener("click", revealSearch);
+  closeSearchBtn.addEventListener("click", closeSearch); {% endcomment %}
 
   function revealSearch() {
     search.style.display = "block";
