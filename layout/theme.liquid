@@ -64,8 +64,131 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-TH6WYV2ZN7');
+
+      document.addEventListener('DOMContentLoaded', function() {
+        // Helper function to get product data
+        function getProductData(element) {
+          const form = element.closest('form[action="/cart/add"]');
+          if (!form) return null;
+          
+          const variantId = form.querySelector('[name="id"]').value;
+          const price = parseFloat(form.querySelector('[data-price]')?.dataset.price || 0);
+          const productName = form.querySelector('[data-product-title]')?.dataset.productTitle;
+          
+          return {
+            item_id: variantId,
+            item_name: productName,
+            price: price,
+            currency: '{{ shop.currency }}'
+          };
+        }
+
+        // Track add to cart events
+        document.body.addEventListener('click', function(e) {
+          if (e.target.matches('form[action="/cart/add"] button[type="submit"], .add-to-cart-button')) {
+            const productData = getProductData(e.target);
+            if (productData) {
+              gtag('event', 'add_to_cart', {
+                currency: productData.currency,
+                value: productData.price,
+                items: [productData]
+              });
+            }
+          }
+        });
+
+        // Track product page views
+        if (window.location.pathname.includes('/products/')) {
+          const productData = getProductData(document.querySelector('form[action="/cart/add"]'));
+          if (productData) {
+            gtag('event', 'view_item', {
+              currency: productData.currency,
+              value: productData.price,
+              items: [productData]
+            });
+          }
+        }
+
+        // Track collection/product list views
+        if (window.location.pathname.includes('/collections/')) {
+          const products = Array.from(document.querySelectorAll('.product-card')).map(card => ({
+            item_id: card.dataset.productId,
+            item_name: card.dataset.productTitle,
+            price: parseFloat(card.dataset.productPrice || 0)
+          }));
+
+          gtag('event', 'view_item_list', {
+            item_list_name: document.querySelector('h1')?.textContent?.trim(),
+            items: products
+          });
+        }
+
+        // Track cart views
+        if (window.location.pathname.includes('/cart')) {
+          const cartItems = Array.from(document.querySelectorAll('.cart-item')).map(item => ({
+            item_id: item.dataset.variantId,
+            item_name: item.dataset.productTitle,
+            price: parseFloat(item.dataset.price || 0),
+            quantity: parseInt(item.dataset.quantity || 1)
+          }));
+
+          gtag('event', 'view_cart', {
+            currency: '{{ shop.currency }}',
+            value: cartItems.reduce((total, item) => total + (item.price * item.quantity), 0),
+            items: cartItems
+          });
+        }
+
+        // Track checkout steps
+        if (window.location.pathname.includes('/checkout')) {
+          gtag('event', 'begin_checkout');
+        }
+
+        // Track search
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('q') || urlParams.has('query')) {
+          gtag('event', 'search', {
+            search_term: urlParams.get('q') || urlParams.get('query')
+          });
+        }
+
+        // Track successful purchase
+        if (Shopify && Shopify.checkout) {
+          gtag('event', 'purchase', {
+            transaction_id: Shopify.checkout.order_id,
+            value: Shopify.checkout.total_price,
+            currency: Shopify.checkout.currency,
+            tax: Shopify.checkout.tax_price,
+            shipping: Shopify.checkout.shipping_price,
+            items: Shopify.checkout.line_items.map(item => ({
+              item_id: item.variant_id,
+              item_name: item.title,
+              price: item.price,
+              quantity: item.quantity
+            }))
+          });
+        }
+
+        // Track when users start the payment process
+        document.body.addEventListener('click', function(e) {
+          if (e.target.matches('.payment-button, .checkout-button')) {
+            gtag('event', 'add_payment_info');
+          }
+        });
+
+        // Track when users add shipping info
+        document.body.addEventListener('change', function(e) {
+          if (e.target.matches('[name*="shipping"], [name*="address"]')) {
+            gtag('event', 'add_shipping_info');
+          }
+        });
+
+        // Track when users create an account
+        if (window.location.pathname.includes('/account') && document.querySelector('form[action="/account"]')) {
+          gtag('event', 'sign_up');
+        }
+      });
     </script>
 
     <meta name="msvalidate.01" content="26803B326C309C052306B56DC80376F2" />
