@@ -3,7 +3,7 @@
 
     {% assign items = section.settings.ticker_text | split: ',' %}
 
-    {% for i in (1..3) %} {# repeat list 3 times for smooth loop #}
+    {% for i in (1..3) %} 
       {% for item in items %}
         {% assign text = item | strip %}
 
