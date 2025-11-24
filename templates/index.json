@@ -13,7 +13,7 @@
       "type": "ticker",
       "name": "Ticker Bar",
       "settings": {
-        "ticker_text": "BLACK FRIDAY DEALS, 40% DISCOUNT"
+        "ticker_text": "BLACK FRIDAY DEALS, 40% DISCOUNT,"
       }
     },
     "template_hero_YGwtBG": {
