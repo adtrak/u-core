@@ -1,0 +1,38 @@
+<div class="ticker-bar bg-[#d7f430] text-black overflow-hidden whitespace-nowrap py-2">
+  <div class="ticker-content animate-ticker inline-block">
+    {% assign items = section.settings.ticker_text | split: ',' %}
+    {% for item in items %}
+      <span class="mx-6 uppercase font-heading tracking-wide">
+        {{ item | strip }}
+      </span>
+      <span class="mx-6">+</span>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  @keyframes ticker-move {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  .animate-ticker {
+    animation: ticker-move 20s linear infinite;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Ticker Bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "ticker_text",
+      "label": "Ticker items (comma separated)",
+      "default": "BLACK FRIDAY DEALS, 40% DISCOUNT, FREE SHIPPING"
+    }
+  ],
+  "presets": [
+    { "name": "Ticker Bar" }
+  ]
+}
+{% endschema %}
