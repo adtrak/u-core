@@ -3,11 +3,10 @@
 
     {% assign items = section.settings.ticker_text | split: ',' %}
 
-    {% for loop_index in (1..4) %} {# Repeat 4x for smoothness #}
+    {% for loop_index in (1..4) %} 
       {% for item in items %}
         {% assign text = item | strip %}
 
-        {# Bold specific words #}
         {% assign text = text | replace: 'BLACK FRIDAY', '<strong>BLACK FRIDAY</strong>' %}
         {% assign text = text | replace: '40%', '<strong>40%</strong>' %}
 
