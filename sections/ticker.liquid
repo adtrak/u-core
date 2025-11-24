@@ -1,12 +1,17 @@
 <div class="ticker-bar bg-yellow text-black overflow-hidden whitespace-nowrap py-2">
   <div class="ticker-content animate-ticker inline-block">
+
     {% assign items = section.settings.ticker_text | split: ',' %}
     {% for item in items %}
       <span class="mx-6 uppercase font-heading tracking-wide">
-        {{ item | strip }}
+        {{ item | strip | replace: 'BLACK FRIDAY', '<strong>BLACK FRIDAY</strong>' | replace: '40%', '<strong>40%</strong>' }}
       </span>
-      <span class="mx-12">+</span>
+
+      {% unless forloop.last %}
+        <span class="mx-12">+</span>
+      {% endunless %}
     {% endfor %}
+
   </div>
 </div>
 
@@ -17,6 +22,9 @@
   }
   .animate-ticker {
     animation: ticker-move 10s linear infinite;
+  }
+  strong {
+    font-weight: 700;
   }
 </style>
 
