@@ -7,6 +7,25 @@
 %}
 
 <link rel="stylesheet" href="{{ 'main.css' | asset_url }}" />
+<div class="ticker-bar bg-[#d7f430] text-black overflow-hidden whitespace-nowrap py-2">
+  <div class="ticker-content animate-ticker inline-block">
+    <span class="mx-6 uppercase">BLACK FRIDAY DEALS</span>
+    <span class="mx-6">+</span>
+    <span class="mx-6 uppercase">40% DISCOUNT</span>
+    <span class="mx-6">+</span>
+    <span class="mx-6 uppercase">BLACK FRIDAY DEALS</span>
+  </div>
+</div>
+
+<style>
+  @keyframes ticker-move {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  .animate-ticker {
+    animation: ticker-move 20s linear infinite;
+  }
+</style>
 
 <div
   class="fixed top-0 left-0 right-0 w-full z-50"
