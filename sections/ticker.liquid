@@ -1,25 +1,36 @@
 <div class="ticker-bar bg-yellow text-black overflow-hidden whitespace-nowrap py-2">
   <div class="ticker-content animate-ticker inline-flex">
 
-    {% assign items = section.settings.ticker_text | split: ',' %}
+    <!-- HARD CODED LOOP CONTENT -->
+    <span class="uppercase font-heading tracking-wide mx-8">
+      <strong>BLACK FRIDAY</strong> DEALS
+    </span>
+    <span class="mx-8">+</span>
 
-    {% for loop_index in (1..4) %} 
-      {% for item in items %}
-        {% assign text = item | strip %}
+    <span class="uppercase font-heading tracking-wide mx-8">
+      <strong>40%</strong> DISCOUNT
+    </span>
+    <span class="mx-8">+</span>
 
-        {% assign text = text | replace: 'BLACK FRIDAY', '<strong>BLACK FRIDAY</strong>' %}
-        {% assign text = text | replace: '40%', '<strong>40%</strong>' %}
+    <!-- Repeat for smooth looping -->
+    <span class="uppercase font-heading tracking-wide mx-8">
+      <strong>BLACK FRIDAY</strong> DEALS
+    </span>
+    <span class="mx-8">+</span>
 
-        <span class="uppercase font-heading tracking-wide mx-8">
-          {{ text | strip | raw }}
-        </span>
+    <span class="uppercase font-heading tracking-wide mx-8">
+      <strong>40%</strong> DISCOUNT
+    </span>
+    <span class="mx-8">+</span>
 
-        {% unless forloop.last %}
-          <span class="mx-8">+</span>
-        {% endunless %}
+    <span class="uppercase font-heading tracking-wide mx-8">
+      <strong>BLACK FRIDAY</strong> DEALS
+    </span>
+    <span class="mx-8">+</span>
 
-      {% endfor %}
-    {% endfor %}
+    <span class="uppercase font-heading tracking-wide mx-8">
+      <strong>40%</strong> DISCOUNT
+    </span>
 
   </div>
 </div>
@@ -38,6 +49,7 @@
     font-weight: 800;
   }
 </style>
+
 
 {% schema %}
 {
