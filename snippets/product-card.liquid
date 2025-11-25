@@ -38,7 +38,7 @@
           <p class="text-gray-700 font-heading font-medium uppercase text-black items-center mb-1">{{ product_product.title }} - {{ current_color }}</p>
           {% if current_variant.compare_at_price > current_variant.price %}
             <p class="text-midgrey font-heading">
-              <span class="line-through mr-2">{{ current_variant.compare_at_price | money }}</span>
+              <span class="line-through mr-2 text-yellow">{{ current_variant.compare_at_price | money }}</span>
               {{ current_variant.price | money }}
             </p>
           {% else %}
