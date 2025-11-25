@@ -36,11 +36,15 @@
       <div class="flex justify-between items-center p-4 flex-wrap">
         <div class="flex flex-col lg:px-4 py-4 w-full">
           <p class="text-gray-700 font-heading font-medium uppercase text-black items-center mb-1">{{ product_product.title }} - {{ current_color }}</p>
-          {% if product.compare_at_price > product.price %}
-            <p class="text-midgrey font-heading"><span class="line-through">{{ product.compare_at_price | money }}</span> {{ product_product.price | money }}</p>
+          {% if current_variant.compare_at_price > current_variant.price %}
+            <p class="text-midgrey font-heading">
+              <span class="line-through mr-2">{{ current_variant.compare_at_price | money }}</span>
+              {{ current_variant.price | money }}
+            </p>
           {% else %}
-            <p class="text-midgrey font-heading">{{ product_product.price | money }}</p>
+            <p class="text-midgrey font-heading">{{ current_variant.price | money }}</p>
           {% endif %}
+
         </div>
 
         {% if current_variant.inventory_quantity <= 0 %}
