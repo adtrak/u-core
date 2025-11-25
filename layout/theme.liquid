@@ -146,7 +146,7 @@
             item_id: card.dataset.productId,
             item_name: card.dataset.productTitle,
             price: parseFloat(card.dataset.productPrice || 0)
-          }));
+          })); 
 
           gtag('event', 'view_item_list', {
             item_list_name: document.querySelector('h1')?.textContent?.trim(),

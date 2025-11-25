@@ -2349,3 +2349,6 @@ video {
     margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 }
+:not(#\20):not(#\20).r-10rod93 {
+  text-decoration: line-through;
+}
