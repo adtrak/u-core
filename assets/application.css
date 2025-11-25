@@ -2349,6 +2349,3 @@ video {
     margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 }
-.alchemy-rte span {
-  text-decoration: line-through;
-}
