@@ -9,13 +9,6 @@
  */
 {
   "sections": {
-    "ticker_6CAtH6": {
-      "type": "ticker",
-      "name": "Ticker Bar",
-      "settings": {
-        "ticker_text": "BLACK FRIDAY DEALS, 40% DISCOUNT"
-      }
-    },
     "template_hero_YGwtBG": {
       "type": "template-hero",
       "blocks": {
@@ -178,7 +171,6 @@
     }
   },
   "order": [
-    "ticker_6CAtH6",
     "template_hero_YGwtBG",
     "template_features_gLX79e",
     "featured-collection",
