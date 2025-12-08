@@ -9,6 +9,14 @@
  */
 {
   "sections": {
+    "ticker_EDcqmn": {
+      "type": "ticker",
+      "disabled": true,
+      "name": "Ticker Bar",
+      "settings": {
+        "ticker_text": "CHRISTMAS DEALS, 40% DISCOUNT"
+      }
+    },
     "template_hero_YGwtBG": {
       "type": "template-hero",
       "blocks": {
@@ -171,6 +179,7 @@
     }
   },
   "order": [
+    "ticker_EDcqmn",
     "template_hero_YGwtBG",
     "template_features_gLX79e",
     "featured-collection",
