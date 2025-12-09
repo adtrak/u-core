@@ -42,7 +42,7 @@
             "button_primary_text_hover": "#ffffff",
             "button_primary_border_hover": "#333333",
             "button_secondary_label": "Womens",
-            "button_secondary_link": "",
+            "button_secondary_link": "shopify://products/womens-hoodie",
             "button_secondary_bg": "#ffffff",
             "button_secondary_text_color": "#000000",
             "button_secondary_border": "#bdea12",
