@@ -16,6 +16,61 @@
         "ticker_text": "CHRISTMAS DEALS, 40% DISCOUNT"
       }
     },
+    "176527919051d4da94": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_795a005_iFPJJr": {
+          "type": "ai_gen_block_795a005",
+          "settings": {
+            "background_image_desktop": "shopify://shop_images/Christmas_Banner_background_file_a5d39f25-1533-4b95-bd6f-90fb573017bc.webp",
+            "background_image_mobile": "shopify://shop_images/Christmas_Mobile_Banner_file_0d75d237-38d2-4c70-baba-767128e1e1f3.webp",
+            "banner_height_desktop": 1000,
+            "banner_height_mobile": 800,
+            "overlay_image": "shopify://shop_images/Christmas_Banner_text_file.webp",
+            "overlay_max_width": 45,
+            "hide_overlay_mobile": true,
+            "overlay_x_desktop": 26,
+            "overlay_y_desktop": 43,
+            "overlay_x_mobile": 50,
+            "overlay_y_mobile": 30,
+            "button_primary_label": "Mens",
+            "button_primary_link": "shopify://products/mens-hoodie",
+            "button_primary_bg": "#ffffff",
+            "button_primary_text_color": "#000000",
+            "button_primary_border": "#bdea12",
+            "button_primary_bg_hover": "#333333",
+            "button_primary_text_hover": "#ffffff",
+            "button_primary_border_hover": "#333333",
+            "button_secondary_label": "Womens",
+            "button_secondary_link": "",
+            "button_secondary_bg": "#ffffff",
+            "button_secondary_text_color": "#000000",
+            "button_secondary_border": "#bdea12",
+            "button_secondary_bg_hover": "#333333",
+            "button_secondary_text_hover": "#ffffff",
+            "button_secondary_border_hover": "#333333",
+            "button_font": "archivo_black_n4",
+            "button_font_size": 16,
+            "button_padding_vertical": 12,
+            "button_padding_horizontal": 24,
+            "button_border_radius": 50,
+            "button_border_width": 1,
+            "button_gap": 15,
+            "button_layout_desktop": "row",
+            "buttons_x_desktop": 13,
+            "buttons_y_desktop": 61,
+            "button_layout_mobile": "row",
+            "buttons_x_mobile": 50,
+            "buttons_y_mobile": 45
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_795a005_iFPJJr"
+      ],
+      "settings": {}
+    },
     "template_hero_YGwtBG": {
       "type": "template-hero",
       "blocks": {
@@ -38,10 +93,11 @@
         "button_eATUiM",
         "button_VDnAHa"
       ],
+      "disabled": true,
       "settings": {
-        "title": "Putting you at the centre",
-        "sub_title": "Safe, secure, ucore",
-        "hero_image": "shopify://shop_images/UCORE_BlackFriday_HeroImage.jpg"
+        "title": "",
+        "sub_title": "",
+        "hero_image": "shopify://shop_images/Christmas_Banner_file.jpg"
       }
     },
     "template_features_gLX79e": {
@@ -179,6 +235,7 @@
   },
   "order": [
     "ticker_BnanBG",
+    "176527919051d4da94",
     "template_hero_YGwtBG",
     "template_features_gLX79e",
     "featured-collection",
