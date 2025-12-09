@@ -1,6 +1,552 @@
+{% doc %}
+  @prompt
+    Generate a hero section that has the facility to add two buttons. There should be controls to allow for customisation of the buttons including hover, outline, radius etc You should have full control of where these buttons sit on the element. There should be an upload option for both desktop and mobile background image to ensure full responsiveness and controls for the height of this ensuing the banner is always full width. There should also be the option to upload an image on top of the banner with controls for placement  , Please can you add the function allow for custom position of the buttons similar to the overlay image controls. There also needs to be the option to change the fonts used on the buttons , Please allow for the overlay image to be toggled on and off on mobile and to be able to independently change the position of the button on mobile as well as having them in an vertical or horizontal layout , The fonts current dont seem to apply to the buttons, please can you make sure that we can apply the fonts to the buttons, I need to use Normalidad Wide Bold
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-hero-banner-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    height: {{ block.settings.banner_height_desktop }}px;
+    overflow: hidden;
+  }
+
+  .ai-hero-banner-background-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-hero-banner-background-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f4f4f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ai-hero-banner-background-placeholder-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ai-hero-banner-overlay-image-{{ ai_gen_id }} {
+    position: absolute;
+    top: {{ block.settings.overlay_y_desktop }}%;
+    left: {{ block.settings.overlay_x_desktop }}%;
+    transform: translate(-50%, -50%);
+    max-width: {{ block.settings.overlay_max_width }}%;
+    z-index: 2;
+  }
+
+  .ai-hero-banner-overlay-image-{{ ai_gen_id }} img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .ai-hero-banner-buttons-{{ ai_gen_id }} {
+    position: absolute;
+    top: {{ block.settings.buttons_y_desktop }}%;
+    left: {{ block.settings.buttons_x_desktop }}%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: {{ block.settings.button_gap }}px;
+    z-index: 3;
+    flex-direction: {{ block.settings.button_layout_desktop }};
+  }
+
+  .ai-hero-banner-button-{{ ai_gen_id }} {
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-family: {{ block.settings.button_font.family }}, {{ block.settings.button_font.fallback_families }};
+    font-weight: {{ block.settings.button_font.weight }};
+    font-style: {{ block.settings.button_font.style }};
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    border: {{ block.settings.button_border_width }}px solid;
+  }
+
+  .ai-hero-banner-button-primary-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_primary_bg }};
+    color: {{ block.settings.button_primary_text_color }};
+    border-color: {{ block.settings.button_primary_border }};
+  }
+
+  .ai-hero-banner-button-primary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_primary_bg_hover }};
+    color: {{ block.settings.button_primary_text_hover }};
+    border-color: {{ block.settings.button_primary_border_hover }};
+  }
+
+  .ai-hero-banner-button-secondary-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_secondary_bg }};
+    color: {{ block.settings.button_secondary_text_color }};
+    border-color: {{ block.settings.button_secondary_border }};
+  }
+
+  .ai-hero-banner-button-secondary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_secondary_bg_hover }};
+    color: {{ block.settings.button_secondary_text_hover }};
+    border-color: {{ block.settings.button_secondary_border_hover }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-hero-banner-{{ ai_gen_id }} {
+      height: {{ block.settings.banner_height_mobile }}px;
+    }
+
+    .ai-hero-banner-overlay-image-{{ ai_gen_id }} {
+      top: {{ block.settings.overlay_y_mobile }}%;
+      left: {{ block.settings.overlay_x_mobile }}%;
+      {% if block.settings.hide_overlay_mobile %}
+        display: none;
+      {% endif %}
+    }
+
+    .ai-hero-banner-buttons-{{ ai_gen_id }} {
+      top: {{ block.settings.buttons_y_mobile }}%;
+      left: {{ block.settings.buttons_x_mobile }}%;
+      flex-direction: {{ block.settings.button_layout_mobile }};
+    }
+  }
+{% endstyle %}
+
+<div class="ai-hero-banner-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.background_image_desktop %}
+    <picture>
+      {% if block.settings.background_image_mobile %}
+        <source media="(max-width: 749px)" srcset="{{ block.settings.background_image_mobile | image_url: width: 750 }}">
+      {% endif %}
+      <img
+        src="{{ block.settings.background_image_desktop | image_url: width: 2000 }}"
+        alt="{{ block.settings.background_image_desktop.alt | escape }}"
+        class="ai-hero-banner-background-{{ ai_gen_id }}"
+        loading="lazy"
+        width="{{ block.settings.background_image_desktop.width }}"
+        height="{{ block.settings.background_image_desktop.height }}"
+      >
+    </picture>
+  {% else %}
+    <div class="ai-hero-banner-background-placeholder-{{ ai_gen_id }}">
+      {{ 'hero-apparel-1' | placeholder_svg_tag }}
+    </div>
+  {% endif %}
+
+  {% if block.settings.overlay_image %}
+    <div class="ai-hero-banner-overlay-image-{{ ai_gen_id }}">
+      <img
+        src="{{ block.settings.overlay_image | image_url: width: 1000 }}"
+        alt="{{ block.settings.overlay_image.alt | escape }}"
+        loading="lazy"
+        width="{{ block.settings.overlay_image.width }}"
+        height="{{ block.settings.overlay_image.height }}"
+      >
+    </div>
+  {% endif %}
+
+  <div class="ai-hero-banner-buttons-{{ ai_gen_id }}">
+    {% if block.settings.button_primary_label != blank %}
+      <a
+        href="{{ block.settings.button_primary_link }}"
+        class="ai-hero-banner-button-{{ ai_gen_id }} ai-hero-banner-button-primary-{{ ai_gen_id }}"
+      >
+        {{ block.settings.button_primary_label }}
+      </a>
+    {% endif %}
+
+    {% if block.settings.button_secondary_label != blank %}
+      <a
+        href="{{ block.settings.button_secondary_link }}"
+        class="ai-hero-banner-button-{{ ai_gen_id }} ai-hero-banner-button-secondary-{{ ai_gen_id }}"
+      >
+        {{ block.settings.button_secondary_label }}
+      </a>
+    {% endif %}
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Hero banner",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background images"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_desktop",
+      "label": "Desktop background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Mobile background image"
+    },
+    {
+      "type": "range",
+      "id": "banner_height_desktop",
+      "min": 200,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "Desktop height",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "banner_height_mobile",
+      "min": 200,
+      "max": 800,
+      "step": 10,
+      "unit": "px",
+      "label": "Mobile height",
+      "default": 400
+    },
+    {
+      "type": "header",
+      "content": "Overlay image"
+    },
+    {
+      "type": "image_picker",
+      "id": "overlay_image",
+      "label": "Overlay image"
+    },
+    {
+      "type": "range",
+      "id": "overlay_max_width",
+      "min": 10,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Maximum width",
+      "default": 50
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_overlay_mobile",
+      "label": "Hide overlay on mobile",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Overlay position (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "overlay_x_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "overlay_y_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Overlay position (mobile)"
+    },
+    {
+      "type": "range",
+      "id": "overlay_x_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "overlay_y_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Primary button"
+    },
+    {
+      "type": "text",
+      "id": "button_primary_label",
+      "label": "Label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_primary_link",
+      "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_bg",
+      "label": "Background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_text_color",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_border",
+      "label": "Border",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_bg_hover",
+      "label": "Hover background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_text_hover",
+      "label": "Hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_primary_border_hover",
+      "label": "Hover border",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button"
+    },
+    {
+      "type": "text",
+      "id": "button_secondary_label",
+      "label": "Label",
+      "default": "Learn more"
+    },
+    {
+      "type": "url",
+      "id": "button_secondary_link",
+      "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "button_secondary_bg",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_secondary_text_color",
+      "label": "Text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_secondary_border",
+      "label": "Border",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_secondary_bg_hover",
+      "label": "Hover background",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "color",
+      "id": "button_secondary_text_hover",
+      "label": "Hover text",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_secondary_border_hover",
+      "label": "Hover border",
+      "default": "#333333"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "font_picker",
+      "id": "button_font",
+      "label": "Font",
+      "default": "helvetica_n4"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "button_gap",
+      "min": 5,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Gap between buttons",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Button position (desktop)"
+    },
+    {
+      "type": "select",
+      "id": "button_layout_desktop",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "row",
+          "label": "Horizontal"
+        },
+        {
+          "value": "column",
+          "label": "Vertical"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "range",
+      "id": "buttons_x_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "buttons_y_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 70
+    },
+    {
+      "type": "header",
+      "content": "Button position (mobile)"
+    },
+    {
+      "type": "select",
+      "id": "button_layout_mobile",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "row",
+          "label": "Horizontal"
+        },
+        {
+          "value": "column",
+          "label": "Vertical"
+        }
+      ],
+      "default": "column"
+    },
+    {
+      "type": "range",
+      "id": "buttons_x_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Horizontal position",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "buttons_y_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Vertical position",
+      "default": 70
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero banner"
+    }
+  ]
+}
 {% endschema %}
