@@ -23,10 +23,10 @@
           "type": "ai_gen_block_795a005",
           "settings": {
             "background_image_desktop": "shopify://shop_images/Christmas_Banner_background_file_a5d39f25-1533-4b95-bd6f-90fb573017bc.webp",
-            "background_image_mobile": "shopify://shop_images/Christmas_Mobile_Banner_file_0d75d237-38d2-4c70-baba-767128e1e1f3.webp",
+            "background_image_mobile": "shopify://shop_images/Christmas_Banner_Working_file-05.webp",
             "banner_height_desktop": 1000,
             "banner_height_mobile": 800,
-            "overlay_image": "shopify://shop_images/Christmas_Banner_text_file.webp",
+            "overlay_image": "shopify://shop_images/Christmas_Banner_Working_file-03.webp",
             "overlay_max_width": 45,
             "hide_overlay_mobile": true,
             "overlay_x_desktop": 26,
