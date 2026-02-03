@@ -11,6 +11,7 @@
   "sections": {
     "ticker_BnanBG": {
       "type": "ticker",
+      "disabled": true,
       "name": "Ticker Bar",
       "settings": {
         "ticker_text": "CHRISTMAS DEALS, 40% DISCOUNT"
@@ -69,6 +70,7 @@
       "block_order": [
         "ai_gen_block_795a005_iFPJJr"
       ],
+      "disabled": true,
       "settings": {}
     },
     "template_hero_YGwtBG": {
@@ -93,11 +95,10 @@
         "button_eATUiM",
         "button_VDnAHa"
       ],
-      "disabled": true,
       "settings": {
-        "title": "",
-        "sub_title": "",
-        "hero_image": "shopify://shop_images/Christmas_Banner_file.jpg"
+        "title": "Stay Connected Without Compromise",
+        "sub_title": "Secure Style Meets Smart Functionality",
+        "hero_image": "shopify://shop_images/mens-black-4.jpg"
       }
     },
     "template_features_gLX79e": {
